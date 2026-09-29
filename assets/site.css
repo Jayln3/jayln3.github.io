@@ -35,7 +35,7 @@
 }
 #aside-content .card-info .contact-icon i:hover { transform: none; }
 a.contact-icon:hover { background: rgba(73,177,245,.12); }
-a.contact-icon:focus-visible, .knowledge-base-link:focus-visible, #card-info-btn:focus-visible {
+a.contact-icon:focus-visible, .knowledge-base-link:focus-visible, .knowledge-base-qr a:focus-visible, #card-info-btn:focus-visible {
   outline: 3px solid #eaae65; outline-offset: 3px;
 }
 .knowledge-base-cta {
@@ -52,11 +52,15 @@ a.contact-icon:focus-visible, .knowledge-base-link:focus-visible, #card-info-btn
 .knowledge-base-cta p { margin: 0; line-height: 1.8; }
 #post .knowledge-base-link {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 44px; padding: 10px 18px; border-radius: 8px;
+  min-height: 44px; margin-top: 18px; padding: 10px 18px; border-radius: 8px;
   background: #1476b8; color: #fff; font-weight: 500; line-height: 1.6;
   text-decoration: none; box-sizing: border-box;
 }
 #post .knowledge-base-link:hover { background: #105f94; }
+.knowledge-base-qr { flex: 0 1 240px; width: 240px; max-width: 100%; margin: 0 auto; }
+.knowledge-base-qr a { display: block; border-radius: 8px; }
+.knowledge-base-qr img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.knowledge-base-qr figcaption { margin-top: 8px; text-align: center; font-size: .85rem; }
 .translation-note {
   margin: 0 0 1.5rem; padding: .7rem 1rem;
   border-left: 3px solid #238b86; background: rgba(35,139,134,.08);
@@ -81,6 +85,7 @@ html[lang="en"] .content {
 }
 @media (max-width: 768px) {
   .knowledge-base-cta { padding: 20px; }
+  .knowledge-base-copy { flex-basis: 100%; }
   #post .knowledge-base-link { width: 100%; }
   .language-switch { margin-right: .6rem; padding: .15rem .45rem; font-size: .8rem; }
   #nav #blog-info { min-width: 0; flex: 1; }

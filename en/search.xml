@@ -1,160 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
-    <url>/en/posts/c3a7f2/</url>
-    <content><![CDATA[
-TL;DR
-
-Long-running agents face lost context, weak retrieval, growing token costs and fragmented information across sessions.
-The original review highlights Mem0, Letta, Cognee and SuperMemory, alongside eight related projects.
-Its selection framework starts with the use case: a prototype, a stateful production agent, relationship-heavy reasoning or multi-agent collaboration.
-
-
-Project descriptions and star counts below are from the original March 26, 2026 article.
-1. Four obstacles for long-running agentsTask completionA model’s context window is limited. As a conversation grows, earlier constraints may be lost or displaced, making long, multi-step tasks harder to complete consistently.
-Fragmented memory and weak retrievalStoring every conversation as a flat list in a vector database does not guarantee that the right detail will be retrieved.
-For example, “the parameters of that Python script we used last time” may need to resolve to a record about a named file and its configuration. Similarity between words is only part of that task.
-Token costsOne response to lost context is to include more history in every prompt. That increases the amount of material processed and the cost of repeated requests.
-The original article uses long GPT-4o contexts as an example of this problem. The general design question is how to supply useful context without repeatedly sending the entire history.
-Information split across servicesA user may discuss a task in one channel and expect an agent in another channel to continue it. Separate conversation stores make that difficult, especially when the agent also needs CRM data, documents and team messages.
-Poor memory can therefore lead to larger prompts, greater cost and a harder deployment process.
-2. Twelve approaches1. Mem0 — approximately 51,334 starsPositioning in the original review: a general-purpose memory layer for AI agents.
-The review highlights extraction, consolidation and retrieval to maintain continuity; compression and prioritization to reduce context size; and a common API for memory across sessions.
-It describes recent, important and long-term memory, with retention based on time and relevance, and emphasizes self-hosting.
-Suggested use: prototypes, assistants that remember preferences, and customer-service agents that need consistency across conversations.
-2. Letta — approximately 21,785 starsPositioning: a platform for stateful agents.
-The review focuses on persistent agent state, memory management, summaries and information sharing between agents. It also describes integration with commonly used agent frameworks.
-Suggested use: long-lived assistants, enterprise support and applications that need continuity across sessions.
-3. Cognee — approximately 14,717 starsPositioning: a knowledge engine that turns documents into a network of related information.
-The article emphasizes the combination of vector retrieval and knowledge graphs. The aim is to retrieve relationships between entities as well as semantically similar text.
-It also describes extracting knowledge from different input formats, returning structured context, and inspecting the resulting graph through a local interface.
-Suggested use: relationship-heavy document tasks, research assistants and knowledge bases built from unstructured material.
-4. SuperMemory — approximately 20,076 starsPositioning: a fast, scalable memory API.
-The original review emphasizes retrieval latency, compression, hybrid vector and keyword search, and a straightforward integration interface.
-Suggested use: interactive agents and applications sensitive to response time.
-5. MemVid — approximately 13,642 starsPositioning: a memory approach based on video-encoded storage.
-The article describes encoding stored information into video, with retrieval and replay as alternatives to a more elaborate retrieval pipeline.
-Suggested use in the original review: long-term archives and large histories where storage and context costs are a concern.
-6. Memori — approximately 12,781 starsPositioning: a SQL-native memory layer for language models and agents.
-The review emphasizes relational queries, a shared SQL store and integration with an existing enterprise stack.
-Suggested use: organizations already using SQL and applications requiring structured memory queries.
-7. DeepLake — approximately 9,053 starsPositioning: an AI data runtime and multimodal data layer.
-The article describes support for vectors, text, images and video, with indexing designed around AI workloads and options intended to reduce operational work.
-Suggested use: multimodal agents and large-scale data retrieval or training.
-8. MemOS — approximately 7,910 starsPositioning: a memory operating system for models and agents.
-The review focuses on persistent skills, reuse across tasks and knowledge sharing among agents. It describes compatibility with agent ecosystems such as OpenClaw and MoleBot.
-Suggested use: systems in which multiple agents accumulate and reuse skills.
-9. OpenViking — approximately 19,650 starsPositioning: a context database designed for AI agents such as OpenClaw.
-The article describes a filesystem-like hierarchy for memory, resources and skills, with context delivered at different levels of detail.
-Suggested use: OpenClaw-related systems and applications with complex context-management needs.
-10. 12-factor-agents — approximately 18,957 starsPositioning: principles and practices for production agents.
-This is a different kind of resource from a memory-storage engine. The review presents it as guidance for moving from a prototype to production, including memory, safety and monitoring.
-Suggested use: teams designing and deploying production systems.
-11. PraisonAI — approximately 57,742 starsPositioning: a low-code platform for multi-agent automation.
-The article highlights built-in memory and retrieval support, handoffs and guardrails, support for many models, and integrations with services such as Telegram, Discord and WhatsApp.
-Suggested use: business automation and workflows that coordinate several specialized agents.
-12. MemMachine — roughly 5,000 stars in the original comparison tablePositioning: a general-purpose memory layer.
-The review focuses on a common memory interface, support for different storage backends, and simplifying the state-management work of a larger agent system.
-Suggested use: systems that need a consistent abstraction over storage and retrieval.
-3. ComparisonThe strengths and suitability below summarize the original author’s assessments.
-
-
-
-Project
-Main emphasis
-Suggested use
-
-
-
-Mem0
-General-purpose memory and accessible integration
-Prototypes and memory across sessions
-
-
-Letta
-Persistent agent state
-Long-lived assistants and support
-
-
-Cognee
-Graph and vector retrieval
-Relationship-heavy knowledge tasks
-
-
-SuperMemory
-Fast retrieval
-Interactive, low-latency applications
-
-
-MemVid
-Video-based memory storage
-Archival and long histories
-
-
-Memori
-SQL-based memory
-Existing relational-data stacks
-
-
-DeepLake
-Multimodal data
-Large and varied datasets
-
-
-MemOS
-Reusable skills and shared memory
-Multi-agent collaboration
-
-
-OpenViking
-Hierarchical context
-Complex context management
-
-
-12-factor-agents
-Production design principles
-Architecture and deployment
-
-
-PraisonAI
-Low-code multi-agent workflows
-Business automation
-
-
-MemMachine
-A common memory abstraction
-Complex agent systems
-
-
-4. Direction and selectionThe original article sees agent memory as a rapidly expanding area. It identifies three development directions:
-
-Compression: representing more useful information with less context.
-Temporal reasoning: distinguishing an old preference from the current one.
-Multimodal memory: incorporating information from images, audio and video.
-
-Its practical starting points are:
-
-Prototype: evaluate Mem0 or SuperMemory.
-Production architecture: investigate Letta alongside the principles in 12-factor-agents.
-Relationships and context: investigate Cognee or OpenViking.
-Multiple agents: investigate PraisonAI or MemOS.
-Archival experiments: investigate MemVid.
-
-These are the original review’s selection suggestions; they are starting points for evaluating a workload, rather than a substitute for testing it.
-Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>Memory</tag>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
     <url>/en/posts/e6656c2b/</url>
     <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
@@ -420,9 +266,9 @@ The original article attributed its selection to GitHub Trending over the preced
         <category>AI &amp; Automation</category>
       </categories>
       <tags>
-        <tag>GitHub</tag>
         <tag>Open Source</tag>
         <tag>AI</tag>
+        <tag>GitHub</tag>
         <tag>Daily Digest</tag>
       </tags>
   </entry>
@@ -493,6 +339,160 @@ Current plan specifications, availability and coupon validity should be checked 
         <tag>CN2 GIA</tag>
         <tag>Networking</tag>
         <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
+    <url>/en/posts/c3a7f2/</url>
+    <content><![CDATA[
+TL;DR
+
+Long-running agents face lost context, weak retrieval, growing token costs and fragmented information across sessions.
+The original review highlights Mem0, Letta, Cognee and SuperMemory, alongside eight related projects.
+Its selection framework starts with the use case: a prototype, a stateful production agent, relationship-heavy reasoning or multi-agent collaboration.
+
+
+Project descriptions and star counts below are from the original March 26, 2026 article.
+1. Four obstacles for long-running agentsTask completionA model’s context window is limited. As a conversation grows, earlier constraints may be lost or displaced, making long, multi-step tasks harder to complete consistently.
+Fragmented memory and weak retrievalStoring every conversation as a flat list in a vector database does not guarantee that the right detail will be retrieved.
+For example, “the parameters of that Python script we used last time” may need to resolve to a record about a named file and its configuration. Similarity between words is only part of that task.
+Token costsOne response to lost context is to include more history in every prompt. That increases the amount of material processed and the cost of repeated requests.
+The original article uses long GPT-4o contexts as an example of this problem. The general design question is how to supply useful context without repeatedly sending the entire history.
+Information split across servicesA user may discuss a task in one channel and expect an agent in another channel to continue it. Separate conversation stores make that difficult, especially when the agent also needs CRM data, documents and team messages.
+Poor memory can therefore lead to larger prompts, greater cost and a harder deployment process.
+2. Twelve approaches1. Mem0 — approximately 51,334 starsPositioning in the original review: a general-purpose memory layer for AI agents.
+The review highlights extraction, consolidation and retrieval to maintain continuity; compression and prioritization to reduce context size; and a common API for memory across sessions.
+It describes recent, important and long-term memory, with retention based on time and relevance, and emphasizes self-hosting.
+Suggested use: prototypes, assistants that remember preferences, and customer-service agents that need consistency across conversations.
+2. Letta — approximately 21,785 starsPositioning: a platform for stateful agents.
+The review focuses on persistent agent state, memory management, summaries and information sharing between agents. It also describes integration with commonly used agent frameworks.
+Suggested use: long-lived assistants, enterprise support and applications that need continuity across sessions.
+3. Cognee — approximately 14,717 starsPositioning: a knowledge engine that turns documents into a network of related information.
+The article emphasizes the combination of vector retrieval and knowledge graphs. The aim is to retrieve relationships between entities as well as semantically similar text.
+It also describes extracting knowledge from different input formats, returning structured context, and inspecting the resulting graph through a local interface.
+Suggested use: relationship-heavy document tasks, research assistants and knowledge bases built from unstructured material.
+4. SuperMemory — approximately 20,076 starsPositioning: a fast, scalable memory API.
+The original review emphasizes retrieval latency, compression, hybrid vector and keyword search, and a straightforward integration interface.
+Suggested use: interactive agents and applications sensitive to response time.
+5. MemVid — approximately 13,642 starsPositioning: a memory approach based on video-encoded storage.
+The article describes encoding stored information into video, with retrieval and replay as alternatives to a more elaborate retrieval pipeline.
+Suggested use in the original review: long-term archives and large histories where storage and context costs are a concern.
+6. Memori — approximately 12,781 starsPositioning: a SQL-native memory layer for language models and agents.
+The review emphasizes relational queries, a shared SQL store and integration with an existing enterprise stack.
+Suggested use: organizations already using SQL and applications requiring structured memory queries.
+7. DeepLake — approximately 9,053 starsPositioning: an AI data runtime and multimodal data layer.
+The article describes support for vectors, text, images and video, with indexing designed around AI workloads and options intended to reduce operational work.
+Suggested use: multimodal agents and large-scale data retrieval or training.
+8. MemOS — approximately 7,910 starsPositioning: a memory operating system for models and agents.
+The review focuses on persistent skills, reuse across tasks and knowledge sharing among agents. It describes compatibility with agent ecosystems such as OpenClaw and MoleBot.
+Suggested use: systems in which multiple agents accumulate and reuse skills.
+9. OpenViking — approximately 19,650 starsPositioning: a context database designed for AI agents such as OpenClaw.
+The article describes a filesystem-like hierarchy for memory, resources and skills, with context delivered at different levels of detail.
+Suggested use: OpenClaw-related systems and applications with complex context-management needs.
+10. 12-factor-agents — approximately 18,957 starsPositioning: principles and practices for production agents.
+This is a different kind of resource from a memory-storage engine. The review presents it as guidance for moving from a prototype to production, including memory, safety and monitoring.
+Suggested use: teams designing and deploying production systems.
+11. PraisonAI — approximately 57,742 starsPositioning: a low-code platform for multi-agent automation.
+The article highlights built-in memory and retrieval support, handoffs and guardrails, support for many models, and integrations with services such as Telegram, Discord and WhatsApp.
+Suggested use: business automation and workflows that coordinate several specialized agents.
+12. MemMachine — roughly 5,000 stars in the original comparison tablePositioning: a general-purpose memory layer.
+The review focuses on a common memory interface, support for different storage backends, and simplifying the state-management work of a larger agent system.
+Suggested use: systems that need a consistent abstraction over storage and retrieval.
+3. ComparisonThe strengths and suitability below summarize the original author’s assessments.
+
+
+
+Project
+Main emphasis
+Suggested use
+
+
+
+Mem0
+General-purpose memory and accessible integration
+Prototypes and memory across sessions
+
+
+Letta
+Persistent agent state
+Long-lived assistants and support
+
+
+Cognee
+Graph and vector retrieval
+Relationship-heavy knowledge tasks
+
+
+SuperMemory
+Fast retrieval
+Interactive, low-latency applications
+
+
+MemVid
+Video-based memory storage
+Archival and long histories
+
+
+Memori
+SQL-based memory
+Existing relational-data stacks
+
+
+DeepLake
+Multimodal data
+Large and varied datasets
+
+
+MemOS
+Reusable skills and shared memory
+Multi-agent collaboration
+
+
+OpenViking
+Hierarchical context
+Complex context management
+
+
+12-factor-agents
+Production design principles
+Architecture and deployment
+
+
+PraisonAI
+Low-code multi-agent workflows
+Business automation
+
+
+MemMachine
+A common memory abstraction
+Complex agent systems
+
+
+4. Direction and selectionThe original article sees agent memory as a rapidly expanding area. It identifies three development directions:
+
+Compression: representing more useful information with less context.
+Temporal reasoning: distinguishing an old preference from the current one.
+Multimodal memory: incorporating information from images, audio and video.
+
+Its practical starting points are:
+
+Prototype: evaluate Mem0 or SuperMemory.
+Production architecture: investigate Letta alongside the principles in 12-factor-agents.
+Relationships and context: investigate Cognee or OpenViking.
+Multiple agents: investigate PraisonAI or MemOS.
+Archival experiments: investigate MemVid.
+
+These are the original review’s selection suggestions; they are starting points for evaluating a workload, rather than a substitute for testing it.
+Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>Open Source</tag>
+        <tag>GitHub</tag>
+        <tag>Memory</tag>
       </tags>
   </entry>
   <entry>
@@ -693,84 +693,6 @@ The core lesson is that a live session needs coordinated promotion, presentation
         <tag>Meta Ads</tag>
         <tag>Facebook Live</tag>
         <tag>Live Commerce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Geographic Targeting for High-Value Products</title>
-    <url>/en/posts/e5c9f4/</url>
-    <content><![CDATA[
-TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
-
-Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
-Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
-Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
-Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
-For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
-Configure geographic targeting
-Open the campaign’s ad-set settings.
-Find the location controls.
-Use the bulk-location workflow if it is available.
-Select the supported location type and target country.
-Paste the verified locations.
-Review every matched location before adding it.
-
-The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
-Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
-Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
-Examples from the original article
-
-
-Product
-Market
-Area-selection approach
-
-
-
-Jade
-Malaysia
-Research and verify relevant areas
-
-
-Jade
-Singapore
-Check the target area and postal-code match
-
-
-Jade
-Hong Kong
-Use supported named geographic areas
-
-
-Luxury products
-California
-Verify the intended ZIP-code areas
-
-
-Wholesale
-Multiple markets
-Research industrial and commercial centers
-
-
-The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
-Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
-Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
-Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
-A practical test sequence
-Research the market and verify the proposed locations.
-Review the available geographic and interest controls.
-Prepare appropriate product imagery and copy.
-Run a limited test.
-Compare qualified inquiries and orders, then refine the locations.
-
-Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
-]]></content>
-      <categories>
-        <category>Global Growth</category>
-      </categories>
-      <tags>
-        <tag>Meta Ads</tag>
-        <tag>Geo Targeting</tag>
-        <tag>Jewelry</tag>
       </tags>
   </entry>
   <entry>
@@ -991,9 +913,9 @@ The original Chinese roundup was automatically compiled and published using Open
       </categories>
       <tags>
         <tag>AI Agent</tag>
-        <tag>GitHub</tag>
         <tag>Open Source</tag>
         <tag>AI</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -1014,6 +936,203 @@ Keep in touchFind my projects on GitHub, or leave a message in the guestbook. Se
       </categories>
       <tags>
         <tag>Site News</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Geographic Targeting for High-Value Products</title>
+    <url>/en/posts/e5c9f4/</url>
+    <content><![CDATA[
+TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
+
+Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
+Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
+Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
+Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
+For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
+Configure geographic targeting
+Open the campaign’s ad-set settings.
+Find the location controls.
+Use the bulk-location workflow if it is available.
+Select the supported location type and target country.
+Paste the verified locations.
+Review every matched location before adding it.
+
+The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
+Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
+Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
+Examples from the original article
+
+
+Product
+Market
+Area-selection approach
+
+
+
+Jade
+Malaysia
+Research and verify relevant areas
+
+
+Jade
+Singapore
+Check the target area and postal-code match
+
+
+Jade
+Hong Kong
+Use supported named geographic areas
+
+
+Luxury products
+California
+Verify the intended ZIP-code areas
+
+
+Wholesale
+Multiple markets
+Research industrial and commercial centers
+
+
+The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
+Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
+Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
+Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
+A practical test sequence
+Research the market and verify the proposed locations.
+Review the available geographic and interest controls.
+Prepare appropriate product imagery and copy.
+Run a limited test.
+Compare qualified inquiries and orders, then refine the locations.
+
+Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>Geo Targeting</tag>
+        <tag>Jewelry</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
+    <url>/en/posts/c9a4d8/</url>
+    <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
+
+
+Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.
+
+LisaHost &#x2F; Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m.
+BandwagonHost &#x2F; IT7: recorded upload rates stayed close to 118 Mbps. The article saw more headroom for high-bitrate streaming or sending streams to multiple platforms.
+
+The original multi-platform example estimates a combined 60–80 Mbps for YouTube, Twitch and Bilibili.
+Evening upload measurementsWindow: 19:30–23:00 China Standard Time (UTC+8).
+Metric: upload throughput in Mbps.
+
+
+
+Time
+LisaHost &#x2F; Cogent
+BandwagonHost &#x2F; IT7
+Ratio
+Original assessment
+
+
+
+19:30
+60.04
+114.28
+1.9×
+Both exceed the working threshold
+
+
+20:00
+40.30
+118.17
+2.9×
+A clear drop on LisaHost
+
+
+21:00
+65.45
+122.79
+1.8×
+More headroom on BandwagonHost
+
+
+22:00
+57.60
+119.43
+2.0×
+BandwagonHost remains stable
+
+
+23:00
+64.40
+119.32
+1.8×
+BandwagonHost remains stable
+
+
+Mean
+57.56
+118.80
+2.06×
+—
+
+
+The article’s interpretation is that BandwagonHost remained close to 120 Mbps, while LisaHost still exceeded its working threshold but varied more.
+Packet loss and jitterThe original article also gives a qualitative comparison involving a standard international Alibaba Cloud route:
+
+
+
+Observation
+LisaHost &#x2F; Cogent
+Alibaba Cloud international, standard route
+BandwagonHost &#x2F; CN2 GIA
+
+
+
+Routing description
+Budget-oriented route
+Standard BGP route
+Premium China Telecom route
+
+
+Reported evening loss
+Occasional loss
+Multiple timeouts in the reported test
+Almost no loss in the reported test
+
+
+Reported jitter
+Noticeable
+Pronounced
+Low
+
+
+Author’s streaming assessment
+Usable with reservations
+Poor in this test
+Preferred in this test
+
+
+The author describes being surprised by the observed timeouts on the tested Alibaba Cloud route and by the comparatively steady CN2 GIA results.
+These observations describe the original test. The article does not supply raw logs or a full reproducible test configuration.
+BandwagonHost purchase page — affiliate link
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Streaming</tag>
+        <tag>LisaHost</tag>
+        <tag>Reviews</tag>
+        <tag>4K Streaming</tag>
       </tags>
   </entry>
   <entry>
@@ -1169,125 +1288,6 @@ The article’s central argument is that the relevance of a B2B inquiry can matt
         <tag>ABM</tag>
         <tag>Job Targeting</tag>
         <tag>International Ads</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
-    <url>/en/posts/c9a4d8/</url>
-    <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
-
-
-Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.
-
-LisaHost &#x2F; Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m.
-BandwagonHost &#x2F; IT7: recorded upload rates stayed close to 118 Mbps. The article saw more headroom for high-bitrate streaming or sending streams to multiple platforms.
-
-The original multi-platform example estimates a combined 60–80 Mbps for YouTube, Twitch and Bilibili.
-Evening upload measurementsWindow: 19:30–23:00 China Standard Time (UTC+8).
-Metric: upload throughput in Mbps.
-
-
-
-Time
-LisaHost &#x2F; Cogent
-BandwagonHost &#x2F; IT7
-Ratio
-Original assessment
-
-
-
-19:30
-60.04
-114.28
-1.9×
-Both exceed the working threshold
-
-
-20:00
-40.30
-118.17
-2.9×
-A clear drop on LisaHost
-
-
-21:00
-65.45
-122.79
-1.8×
-More headroom on BandwagonHost
-
-
-22:00
-57.60
-119.43
-2.0×
-BandwagonHost remains stable
-
-
-23:00
-64.40
-119.32
-1.8×
-BandwagonHost remains stable
-
-
-Mean
-57.56
-118.80
-2.06×
-—
-
-
-The article’s interpretation is that BandwagonHost remained close to 120 Mbps, while LisaHost still exceeded its working threshold but varied more.
-Packet loss and jitterThe original article also gives a qualitative comparison involving a standard international Alibaba Cloud route:
-
-
-
-Observation
-LisaHost &#x2F; Cogent
-Alibaba Cloud international, standard route
-BandwagonHost &#x2F; CN2 GIA
-
-
-
-Routing description
-Budget-oriented route
-Standard BGP route
-Premium China Telecom route
-
-
-Reported evening loss
-Occasional loss
-Multiple timeouts in the reported test
-Almost no loss in the reported test
-
-
-Reported jitter
-Noticeable
-Pronounced
-Low
-
-
-Author’s streaming assessment
-Usable with reservations
-Poor in this test
-Preferred in this test
-
-
-The author describes being surprised by the observed timeouts on the tested Alibaba Cloud route and by the comparatively steady CN2 GIA results.
-These observations describe the original test. The article does not supply raw logs or a full reproducible test configuration.
-BandwagonHost purchase page — affiliate link
-]]></content>
-      <categories>
-        <category>Infrastructure</category>
-      </categories>
-      <tags>
-        <tag>BandwagonHost</tag>
-        <tag>CN2 GIA</tag>
-        <tag>Streaming</tag>
-        <tag>LisaHost</tag>
-        <tag>Reviews</tag>
-        <tag>4K Streaming</tag>
       </tags>
   </entry>
 </search>
