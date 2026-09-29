@@ -58,6 +58,19 @@ if (site.customDomainEnabled && baseUrl === site.activeBlogUrl.replace(/\/$/, ''
     if (pages.cname !== new URL(baseUrl).hostname) throw new Error('GitHub Pages custom domain does not match ' + baseUrl);
     console.log('Pages domain: ' + pages.cname + '; certificate: ' + (pages.https_certificate?.state || 'pending') + '; enforce HTTPS: ' + pages.https_enforced);
     if (pages.https_enforced) break;
+    if (attempt === 0 && !pages.https_certificate) {
+      const configure = await fetch(pagesApi, {
+        method: 'PUT', headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cname: pages.cname }), signal: AbortSignal.timeout(30000)
+      });
+      if (!configure.ok) {
+        const message = 'Save the custom domain in repository Settings → Pages to start HTTPS provisioning. API response: HTTP ' + configure.status + ' ' + await configure.text();
+        console.warn(message);
+        await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, message + '\n');
+        break;
+      }
+      console.log('Requested certificate provisioning for ' + pages.cname);
+    }
     if (pages.https_certificate?.state === 'approved') {
       const enforce = await fetch(pagesApi, {
         method: 'PUT', headers: { ...headers, 'Content-Type': 'application/json' },
