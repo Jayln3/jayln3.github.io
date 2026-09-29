@@ -86,7 +86,7 @@ for (const [lang, locale] of Object.entries(site.locales)) {
   const brandRows = [
     [isEnglish ? 'Author' : '作者', site.author],
     [isEnglish ? 'Home (planned)' : '主站（筹备中）', new URL(site.planned.home).hostname],
-    [isEnglish ? 'Blog domain (planned)' : '博客域名（筹备中）', new URL(site.planned.blog).hostname],
+    [site.customDomainEnabled ? (isEnglish ? 'Blog domain' : '博客域名') : (isEnglish ? 'Blog domain (planned)' : '博客域名（筹备中）'), new URL(site.planned.blog).hostname],
     [isEnglish ? 'Projects (planned)' : '项目（筹备中）', new URL(site.planned.projects).hostname],
     [isEnglish ? 'Email' : '邮箱', site.planned.email + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
     [isEnglish ? 'Alternate email' : '备用邮箱', site.planned.alternateEmail + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
@@ -95,7 +95,6 @@ for (const [lang, locale] of Object.entries(site.locales)) {
   let about = await fs.readFile(path.join(context, 'source/about/index.md'), 'utf8');
   about += '\n\n| ' + (isEnglish ? 'Profile | Address' : '个人品牌 | 地址') + ' |\n| --- | --- |\n' +
     brandRows.map(row => '| ' + row.join(' | ') + ' |').join('\n') + '\n';
-  if (site.customDomainEnabled) about = about.replace(/（筹备中）|\s*\(planned\)/g, '');
   await write(path.join(context, 'source/about/index.md'), about);
   const child = spawnSync(process.execPath, [path.join(ROOT, 'tools/render-locale.mjs'), context], { cwd: ROOT, stdio: 'inherit' });
   if (child.status !== 0) throw new Error('Failed to build ' + lang + ' (status ' + child.status + ')');
