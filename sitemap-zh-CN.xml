@@ -83,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/posts/d4b8e3/</loc>
-    
-    <lastmod>2026-04-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.com/posts/b2e4d1/</loc>
     
     <lastmod>2026-04-01</lastmod>
@@ -102,6 +93,15 @@
   
   <url>
     <loc>https://jayln3.com/posts/e5c9f4/</loc>
+    
+    <lastmod>2026-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/posts/d4b8e3/</loc>
     
     <lastmod>2026-04-01</lastmod>
     
@@ -182,7 +182,14 @@
 
   
   <url>
-    <loc>https://jayln3.com/tags/ai/</loc>
+    <loc>https://jayln3.com/tags/ai-agent/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/memory/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -203,20 +210,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/tags/daily-digest/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/ai-agent/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.com/tags/automation/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -224,7 +217,14 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/tags/memory/</loc>
+    <loc>https://jayln3.com/tags/ai/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/daily-digest/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -322,27 +322,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/tags/whatsapp/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/conversational-commerce/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/online-stores/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.com/tags/facebook-live/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -378,6 +357,48 @@
   </url>
   
   <url>
+    <loc>https://jayln3.com/tags/abm/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/job-targeting/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/international-ads/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/whatsapp/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/conversational-commerce/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/tags/online-stores/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayln3.com/tags/streaming/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -400,27 +421,6 @@
   
   <url>
     <loc>https://jayln3.com/tags/4k-streaming/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/abm/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/job-targeting/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/tags/international-ads/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
