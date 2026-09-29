@@ -1,8 +1,8 @@
 # Jayln3 的双语博客
 
-中文首页：<https://jayln3.github.io/>
+中文首页：<https://jayln3.com/>
 
-English: <https://jayln3.github.io/en/>
+English: <https://jayln3.com/en/>
 
 GitHub：<https://github.com/jayln3>
 
@@ -64,7 +64,7 @@ Hexo 8 + Butterfly，单一源码仓库，分别构建中文和英文后合并�
 
 ## 域名
 
-规划的博客域名是 blog.jayln3.com；在域名购买、归属验证和 DNS 配置完成前，继续使用 GitHub Pages 地址。域名、邮箱开关均默认关闭，不会提前生成 CNAME 或展示不可用的邮箱按钮。
+博客使用 jayln3.com，英文版位于 /en/；www.jayln3.com 由 GitHub Pages 跳转至主域名。config/site.json 的 activeBlogUrl 是发布地址，customDomainEnabled 控制 CNAME 生成。blog.jayln3.com、projects.jayln3.com 和邮箱仍是规划，邮箱开关保持关闭。
 
 详细步骤见 [域名与品牌配置](docs/domains.md)。FlowLn 商业项目规划使用 flowln.dev，与个人博客的域名配置分开管理。
 

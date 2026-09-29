@@ -8,7 +8,7 @@ author: Jayln3
 language: zh-CN
 default_language: zh-CN
 timezone: Asia/Shanghai
-url: https://jayln3.github.io
+url: https://jayln3.com
 root: /
 permalink: posts/:abbrlink/
 permalink_defaults: null

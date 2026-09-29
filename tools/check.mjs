@@ -91,7 +91,8 @@ export async function checkSite(directory = output) {
   const xmlFiles = entries.filter(f => /\.(xml|txt|json)$/.test(f) && !f.includes('/vendor/'));
   for (const file of xmlFiles) assert(!/jayli[nm]|jaylon/i.test(await fs.readFile(file, 'utf8')), 'Retired name in metadata: ' + file);
   const cname = paths.has('/CNAME');
-  assert.equal(cname, site.customDomainEnabled && baseUrl === site.planned.blog, 'Domain must be explicitly enabled');
+  assert.equal(cname, site.customDomainEnabled && baseUrl === site.activeBlogUrl.replace(/\/$/, ''), 'Domain must be explicitly enabled');
+  if (cname) assert.equal((await fs.readFile(path.join(directory, 'CNAME'), 'utf8')).trim(), new URL(baseUrl).hostname, 'CNAME matches the published origin');
   console.log('Validated ' + pageCount + ' HTML pages, ' + posts.length + ' articles, locale search/feeds, redirects and ' + images.assets.length + ' optimized covers.');
   return { pages: pageCount, posts: posts.length };
 }

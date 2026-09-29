@@ -2,7 +2,7 @@
   "brand": "Jayln3",
   "author": "Jayln3",
   "github": "https://github.com/jayln3",
-  "activeBlogUrl": "https://jayln3.github.io",
+  "activeBlogUrl": "https://jayln3.com",
   "planned": {
     "home": "https://jayln3.com",
     "blog": "https://blog.jayln3.com",
@@ -11,7 +11,7 @@
     "alternateEmail": "hello@jayln3.com",
     "commercial": "https://flowln.dev"
   },
-  "customDomainEnabled": false,
+  "customDomainEnabled": true,
   "emailEnabled": false,
   "locales": {
     "zh-CN": {

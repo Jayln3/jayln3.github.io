@@ -99,7 +99,7 @@ export async function finishSite(directory, allPosts) {
   await write(path.join(directory, 'llms.txt'), llms);
   await write(path.join(directory, 'translations.json'), JSON.stringify(Object.fromEntries(translations), null, 2) + '\n');
   await write(path.join(directory, '.nojekyll'), '');
-  if (site.customDomainEnabled && baseUrl === site.planned.blog) {
+  if (site.customDomainEnabled && baseUrl === site.activeBlogUrl.replace(/\/$/, '')) {
     await write(path.join(directory, 'CNAME'), new URL(baseUrl).hostname + '\n');
   }
 }

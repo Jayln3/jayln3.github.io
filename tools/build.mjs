@@ -85,8 +85,8 @@ for (const [lang, locale] of Object.entries(site.locales)) {
     '\n\n<div class="image-gallery">\n' + gallery + '\n</div>\n');
   const brandRows = [
     [isEnglish ? 'Author' : '作者', site.author],
-    [isEnglish ? 'Home (planned)' : '主站（筹备中）', new URL(site.planned.home).hostname],
-    [site.customDomainEnabled ? (isEnglish ? 'Blog domain' : '博客域名') : (isEnglish ? 'Blog domain (planned)' : '博客域名（筹备中）'), new URL(site.planned.blog).hostname],
+    [site.customDomainEnabled && baseUrl === site.planned.home ? (isEnglish ? 'Home' : '主站') : (isEnglish ? 'Home (planned)' : '主站（筹备中）'), new URL(site.planned.home).hostname],
+    [site.customDomainEnabled && baseUrl === site.planned.blog ? (isEnglish ? 'Blog domain' : '博客域名') : (isEnglish ? 'Blog subdomain (planned)' : '博客子域名（筹备中）'), new URL(site.planned.blog).hostname],
     [isEnglish ? 'Projects (planned)' : '项目（筹备中）', new URL(site.planned.projects).hostname],
     [isEnglish ? 'Email' : '邮箱', site.planned.email + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
     [isEnglish ? 'Alternate email' : '备用邮箱', site.planned.alternateEmail + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
