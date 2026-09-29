@@ -223,8 +223,8 @@
       <name>Jayln3</name>
     </author>
     <category term="AI 与自动化" scheme="https://jayln3.com/categories/ai-automation/"/>
-    <category term="跨境电商" scheme="https://jayln3.com/tags/ecommerce/"/>
     <category term="自动化" scheme="https://jayln3.com/tags/automation/"/>
+    <category term="跨境电商" scheme="https://jayln3.com/tags/ecommerce/"/>
     <content>
       <![CDATA[<h2 id="为什么选择自动化运营？"><a href="#为什么选择自动化运营？" class="headerlink" title="为什么选择自动化运营？"></a>为什么选择自动化运营？</h2><p>在跨境电商领域，FB广告投放和独立站维护占据了运营人员大量的时间。通过 <strong>n8n</strong> 这种自动化工具，我们可以实现：</p><ol><li><strong>自动采集</strong>：定时抓取竞品价格。</li><li><strong>消息推送</strong>：订单状态实时同步到手机。</li><li><strong>高效投放</strong>：批量生成广告素材并监控回报率。</li></ol>]]>
     </content>
