@@ -28,5 +28,10 @@
   "streaming": {"zh-CN": "直播推流", "en": "Streaming"},
   "lisahost": {"zh-CN": "Lisa 主机", "en": "LisaHost"},
   "reviews": {"zh-CN": "测评", "en": "Reviews"},
-  "4k-streaming": {"zh-CN": "4K 直播", "en": "4K Streaming"}
+  "4k-streaming": {"zh-CN": "4K 直播", "en": "4K Streaming"},
+  "dynadot": {"zh-CN": "Dynadot", "en": "Dynadot"},
+  "cloudflare": {"zh-CN": "Cloudflare", "en": "Cloudflare"},
+  "domains": {"zh-CN": "域名", "en": "Domains"},
+  "business-email": {"zh-CN": "企业邮箱", "en": "Business Email"},
+  "github-pages": {"zh-CN": "GitHub Pages", "en": "GitHub Pages"}
 }

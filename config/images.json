@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/jayln3/blog-images",
-  "commit": "13176e10aa8560823a4e779e41bae7c09e1dc885",
+  "commit": "195cea9d4e3512375ed404ef8c829d856fe7c3ec",
   "assets": [
     {
       "id": "agent-memory",
@@ -183,6 +183,66 @@
       "height": 941,
       "bytes": 2194299,
       "sha256": "017c20c96fd06376d4b089c855527fc5e9e7002d0912d07e29cdb80d8fbe00f8"
+    },
+    {
+      "id": "dynadot-domain-email",
+      "file": "posts/dynadot-domain-email/dynadot-add-ons-v1.png",
+      "article": "dynadot-domain-email-review.md",
+      "abbrlink": "d9a729",
+      "alt": {
+        "zh-CN": "Dynadot 购物车中的五个附加组件入口，部分功能标有升级选项。",
+        "en": "Dynadot shopping cart showing five add-on entries, some with upgrade options."
+      },
+      "caption": {
+        "zh-CN": "2026-09-29 实操截图：浏览 jayln3mall.com 时的附加组件入口。免费套餐有额度限制，Registry Lock 属于付费升级，详见正文。",
+        "en": "Screenshot from September 29, 2026, while browsing jayln3mall.com. Free plans have limits; Registry Lock is a paid upgrade."
+      },
+      "width": 1509,
+      "height": 828,
+      "bytes": 209423,
+      "sha256": "3eff56b7b0c8497f30724ad927e40c889311e2a482601d448dd0a438fcef94b5",
+      "kind": "user-screenshot",
+      "role": "cover"
+    },
+    {
+      "id": "dynadot-mailbox-setup",
+      "file": "posts/dynadot-domain-email/dynadot-mailbox-setup-v1.png",
+      "article": "dynadot-domain-email-review.md",
+      "abbrlink": "d9a729",
+      "alt": {
+        "zh-CN": "Dynadot 邮箱开通阶段，界面提示检查 DNS 并设置免费方案主邮箱。",
+        "en": "Dynadot mailbox during setup, showing DNS and primary-address notices."
+      },
+      "caption": {
+        "zh-CN": "2026-09-29 开通阶段截图，提示在后续配置完成后已消失。",
+        "en": "Setup screenshot from September 29, 2026; the notices disappeared after configuration."
+      },
+      "width": 1740,
+      "height": 869,
+      "bytes": 80749,
+      "sha256": "4692aab5e00bed516f6da006682657ed375fed584c81a72e2ec552117f4eaef4",
+      "kind": "user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "dynadot-github-pages",
+      "file": "posts/dynadot-domain-email/dynadot-github-pages-v1.png",
+      "article": "dynadot-domain-email-review.md",
+      "abbrlink": "d9a729",
+      "alt": {
+        "zh-CN": "GitHub Pages 显示 jayln3.com 的 DNS 检查成功且已启用强制 HTTPS。",
+        "en": "GitHub Pages settings showing a successful DNS check and Enforce HTTPS enabled for jayln3.com."
+      },
+      "caption": {
+        "zh-CN": "2026-09-29 实操截图：域名检查与 HTTPS 设置。",
+        "en": "Screenshot from September 29, 2026: domain validation and HTTPS settings."
+      },
+      "width": 1905,
+      "height": 1206,
+      "bytes": 197581,
+      "sha256": "110f13c189e5547076064b0537e3c7adc29f24abdfe3c42004c597e2e61db110",
+      "kind": "user-screenshot",
+      "role": "body"
     }
   ]
 }

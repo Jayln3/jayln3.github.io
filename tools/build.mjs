@@ -81,7 +81,7 @@ for (const [lang, locale] of Object.entries(site.locales)) {
       '"></a><figcaption><a href="' + post.url + '">' + escapeHTML(post.data.title) + '</a></figcaption></figure>';
   }).join('\n');
   await write(path.join(context, 'source/gallery/index.md'), '---\ntitle: ' + (isEnglish ? 'Gallery' : '图库') +
-    '\ncomments: false\n---\n\n' + (isEnglish ? 'AI-generated conceptual illustrations for this blog.' : '为博客文章制作的 AI 概念插画。') +
+    '\ncomments: false\n---\n\n' + (isEnglish ? 'Article visuals. See individual article captions for image sources.' : '博客文章配图，包含概念插画与实操截图；具体来源见文章图注。') +
     '\n\n<div class="image-gallery">\n' + gallery + '\n</div>\n');
   const brandRows = [
     [isEnglish ? 'Author' : '作者', site.author],

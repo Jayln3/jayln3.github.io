@@ -66,9 +66,9 @@ a.contact-icon:focus-visible, .knowledge-base-link:focus-visible, .knowledge-bas
   border-left: 3px solid #238b86; background: rgba(35,139,134,.08);
   font-size: .9rem;
 }
-.article-illustration { margin: 0 0 2rem; }
-.article-illustration img { width: 100%; height: auto; border-radius: 12px; }
-.article-illustration figcaption { color: var(--font-color); opacity: .75; font-size: .8rem; text-align: center; }
+.article-illustration, .article-screenshot { margin: 0 0 2rem; }
+.article-illustration img, .article-screenshot img { width: 100%; height: auto; border-radius: 12px; }
+.article-illustration figcaption, .article-screenshot figcaption { color: var(--font-color); opacity: .75; font-size: .8rem; text-align: center; }
 .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
 .image-gallery figure { margin: 0; }
 .image-gallery img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; }
