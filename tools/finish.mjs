@@ -25,6 +25,22 @@ export async function finishSite(directory, allPosts) {
     const counterpart = paired ? proposed : isEnglish ? '/' : '/en/';
     const $ = load(await fs.readFile(file, 'utf8'));
     $('html').attr('lang', lang);
+    const socialLinks = [
+      { id: 'email', icon: 'fas fa-envelope', label: (isEnglish ? 'Email: ' : '邮箱：') + site.contactEmail, url: site.emailEnabled ? 'mailto:' + site.contactEmail : '' },
+      { id: 'facebook', icon: 'fab fa-facebook-f', label: 'Facebook · Jayln3mall', url: site.social.facebook },
+      { id: 'x', icon: 'fab fa-x-twitter', label: 'X', url: site.social.x },
+      { id: 'linkedin', icon: 'fab fa-linkedin-in', label: 'LinkedIn', url: site.social.linkedin }
+    ];
+    const socialMarkup = socialLinks.map(({ id, icon, label, url }) => {
+      const title = label + (url ? '' : (isEnglish ? ' — coming soon' : '（待开通）'));
+      const attributes = ' class="social-icon contact-icon contact-icon-' + id + '" title="' + escapeHTML(title) + '" aria-label="' + escapeHTML(title) + '"';
+      const glyph = '<i class="' + icon + '" aria-hidden="true"></i>';
+      return url
+        ? '<a' + attributes + ' href="' + escapeHTML(url) + '"' + (id === 'email' ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + glyph + '</a>'
+        : '<span' + attributes + ' role="link" aria-disabled="true">' + glyph + '</span>';
+    }).join('');
+    $('.card-info-social-icons, #site_social_icons').html(socialMarkup);
+    $('#card-info-btn').attr('target', '_blank').attr('rel', 'noopener noreferrer').attr('aria-label', 'GitHub · Jayln3');
     $('link[rel="icon"]').remove();
     $('head').append('<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=ln3-v1">');
     for (const size of [16, 32, 48]) {
@@ -49,6 +65,12 @@ export async function finishSite(directory, allPosts) {
       '" aria-label="' + (isEnglish ? 'Read in Chinese' : 'Read in English') + '">' + label + '</a>';
     $('#menus').before(switcher);
     if (post) {
+      const knowledgeBase = site.knowledgeBase[lang];
+      $('#article-container').after('<aside class="knowledge-base-cta" aria-labelledby="knowledge-base-title">' +
+        '<div class="knowledge-base-copy"><h2 id="knowledge-base-title"><i class="fas fa-book-open" aria-hidden="true"></i> ' + escapeHTML(knowledgeBase.title) + '</h2>' +
+        '<p>' + escapeHTML(knowledgeBase.description) + '</p></div>' +
+        '<a class="knowledge-base-link" href="' + escapeHTML(site.knowledgeBase.contactUrl) + '" target="_blank" rel="noopener noreferrer">' +
+        escapeHTML(knowledgeBase.button) + '<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></aside>');
       const asset = images.assets.find(a => a.id === post.data.translation_key);
       const src = '/assets/images/' + asset.id + '-v1-1280.webp';
       $('#article-container').prepend('<figure class="article-illustration"><img src="' + src +

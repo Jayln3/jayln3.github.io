@@ -7,8 +7,7 @@
 | www | www.jayln3.com → jayln3.com |
 | 博客子域名（规划） | blog.jayln3.com |
 | 项目 | projects.jayln3.com |
-| 邮箱 | hi@jayln3.com |
-| 备用邮箱 | hello@jayln3.com |
+| 联系邮箱（待启用） | contact@jayln3.com |
 | GitHub | github.com/jayln3 |
 | FlowLn 商业项目 | flowln.dev |
 
@@ -40,7 +39,13 @@
 
 ## 启用邮箱
 
-选定邮件服务后，按照服务商要求设置 MX、SPF、DKIM、DMARC，创建或验证 hi / hello 两个邮箱或别名，完成实际收发测试后再将 emailEnabled 改为 true。不能仅添加网站 CNAME 就视为邮箱可用。
+当前指定使用 Dynadot 免费邮箱，联系地址为 contact@jayln3.com，并转发到用户指定的 QQ 邮箱。转发目标仅保存于账户配置和本地操作记录，不发布到博客源码或网页。
+
+2026-09-29：Dynadot OAuth 连接要求重新登录，邮箱尚未创建，emailEnabled 保持 false。完成邮箱开通、邮件 DNS 配置和收件验证后再启用链接；设置邮件时保留上面的 A、AAAA 和 www CNAME 网站记录。
+
+独立免费邮箱和域名邮件转发是两种不同方式。独立邮箱应在 My Emails 中打开邮箱，在 General Settings → Delivery Options 配置 Forwarding，并在目标邮箱完成 Dynadot 要求的验证。直接在域名 Email Settings 配置 Forwarding Email 会断开独立 Email Hosting，不要将两种方式混用。
+
+参考：[Dynadot 免费邮箱](https://www.dynadot.com/email)、[邮箱内转发设置](https://www.dynadot.com/help/question/set-up-email-forwarding)、[域名转发设置与验证](https://www.dynadot.com/help/question/email-forwarding)。
 
 ## 评论
 

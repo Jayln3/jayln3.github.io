@@ -42,7 +42,7 @@ for (const [lang, locale] of Object.entries(site.locales)) {
     source_dir: 'source', public_dir: 'public',
     url: baseUrl + (isEnglish ? '/en' : ''),
     root: locale.root, language: lang, default_language: lang, author: site.author,
-    email: site.emailEnabled ? site.planned.email : '',
+    email: site.emailEnabled ? site.contactEmail : '',
     category_map: Object.fromEntries(Object.entries(site.categories).map(([slug, labels]) => [labels[lang], slug])),
     tag_map: Object.fromEntries(Object.entries(tags).map(([slug, labels]) => [labels[lang], slug]))
   };
@@ -54,8 +54,8 @@ for (const [lang, locale] of Object.entries(site.locales)) {
   const paths = ['/', '/archives/', '/tags/', '/categories/', '/about/', '/gallery/', '/guestbook/'];
   const icons = ['home', 'archive', 'tags', 'folder-open', 'user', 'images', 'comments'];
   localizedTheme.menu = Object.fromEntries(labels.map((label, i) => [label, paths[i] + ' || fas fa-' + icons[i]]));
-  localizedTheme.social = { 'fab fa-github': site.github + ' || GitHub || "#24292f"' };
-  if (site.emailEnabled) localizedTheme.social['fas fa-envelope'] = 'mailto:' + site.planned.email + ' || Email || "#238b86"';
+  // Render links and unregistered account placeholders together in finishSite.
+  localizedTheme.social = {};
   localizedTheme.aside.card_author.button = { enable: true, icon: 'fab fa-github', text: 'GitHub', link: site.github };
   localizedTheme.aside.card_announcement.content = isEnglish
     ? 'Notes on global growth, AI and technology. Use the language button to read the corresponding translation.'
@@ -88,9 +88,9 @@ for (const [lang, locale] of Object.entries(site.locales)) {
     [site.customDomainEnabled && baseUrl === site.planned.home ? (isEnglish ? 'Home' : '主站') : (isEnglish ? 'Home (planned)' : '主站（筹备中）'), new URL(site.planned.home).hostname],
     [site.customDomainEnabled && baseUrl === site.planned.blog ? (isEnglish ? 'Blog domain' : '博客域名') : (isEnglish ? 'Blog subdomain (planned)' : '博客子域名（筹备中）'), new URL(site.planned.blog).hostname],
     [isEnglish ? 'Projects (planned)' : '项目（筹备中）', new URL(site.planned.projects).hostname],
-    [isEnglish ? 'Email' : '邮箱', site.planned.email + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
-    [isEnglish ? 'Alternate email' : '备用邮箱', site.planned.alternateEmail + (site.emailEnabled ? '' : (isEnglish ? ' (not active yet)' : '（尚未启用）'))],
-    ['GitHub', '[' + site.github.replace('https://', '') + '](' + site.github + ')']
+    [isEnglish ? 'Email' : '邮箱', site.emailEnabled ? '[' + site.contactEmail + '](mailto:' + site.contactEmail + ')' : site.contactEmail + (isEnglish ? ' (not active yet)' : '（尚未启用）')],
+    ['GitHub', '[' + site.github.replace('https://', '') + '](' + site.github + ')'],
+    ['Facebook', '[Jayln3mall](' + site.social.facebook + ')']
   ];
   let about = await fs.readFile(path.join(context, 'source/about/index.md'), 'utf8');
   about += '\n\n| ' + (isEnglish ? 'Profile | Address' : '个人品牌 | 地址') + ' |\n| --- | --- |\n' +

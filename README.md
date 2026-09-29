@@ -64,7 +64,15 @@ Hexo 8 + Butterfly，单一源码仓库，分别构建中文和英文后合并�
 
 ## 域名
 
-博客使用 jayln3.com，英文版位于 /en/；www.jayln3.com 由 GitHub Pages 跳转至主域名。config/site.json 的 activeBlogUrl 是发布地址，customDomainEnabled 控制 CNAME 生成。blog.jayln3.com、projects.jayln3.com 和邮箱仍是规划，邮箱开关保持关闭。
+博客使用 jayln3.com，英文版位于 /en/；www.jayln3.com 由 GitHub Pages 跳转至主域名。config/site.json 的 activeBlogUrl 是发布地址，customDomainEnabled 控制 CNAME 生成。blog.jayln3.com、projects.jayln3.com 仍是规划。
+
+## 联系方式与知识库入口
+
+config/site.json 统一维护联系方式。作者卡片保留蓝色 GitHub 按钮，下面显示邮箱、Facebook、X、LinkedIn。X 和 LinkedIn 的地址留空时显示不可点击的待开通图标；注册后填写 social.x / social.linkedin 并重新发布即可。
+
+contactEmail 为 contact@jayln3.com。emailEnabled 控制邮箱链接是否启用；在 Dynadot 邮箱创建和收件验证完成前保持 false，网站显示待开通状态。
+
+knowledgeBase.contactUrl 是用户提供的飞书加好友地址，knowledgeBase 下分别维护中英文引导文案。每篇文章正文之后显示一次“付费获取知识库”入口；首页、分类页和关于页不插入此入口。这里只引导咨询内容与购买方式，不包含付款流程。
 
 详细步骤见 [域名与品牌配置](docs/domains.md)。FlowLn 商业项目规划使用 flowln.dev，与个人博客的域名配置分开管理。
 

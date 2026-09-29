@@ -20,8 +20,8 @@ code_blocks:
   language: true
   shrink: false
   fullpage: false
-social:
-  fab fa-github: https://github.com/jayln3 || GitHub || "#24292f"
+# Social links are configured in config/site.json and rendered by tools/finish.mjs.
+social: {}
 favicon: /assets/images/ln3-favicon-v1-32.png
 avatar:
   img: /assets/images/ln3-logo-v1.webp

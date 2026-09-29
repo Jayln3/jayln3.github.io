@@ -2,6 +2,25 @@
   "brand": "Jayln3",
   "author": "Jayln3",
   "github": "https://github.com/jayln3",
+  "contactEmail": "contact@jayln3.com",
+  "social": {
+    "facebook": "https://www.facebook.com/Jayln3mall",
+    "x": "",
+    "linkedin": ""
+  },
+  "knowledgeBase": {
+    "contactUrl": "https://www.feishu.cn/invitation/page/add_contact/?token=018r68b1-5512-4be2-86cf-1dbe82ec7107&unique_id=vo5XLAOhJ7xXJdzq8lMsvQ==",
+    "zh-CN": {
+      "title": "付费获取知识库",
+      "description": "想继续深入学习？添加我的飞书，了解知识库内容与购买方式。",
+      "button": "添加飞书 · 了解知识库"
+    },
+    "en": {
+      "title": "Get paid access to the knowledge base",
+      "description": "Want to learn more? Connect with me on Feishu to explore the knowledge base and ask about purchasing access.",
+      "button": "Connect on Feishu"
+    }
+  },
   "activeBlogUrl": "https://jayln3.com",
   "planned": {
     "home": "https://jayln3.com",
