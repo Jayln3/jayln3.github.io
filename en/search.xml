@@ -1,347 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
-    <url>/en/posts/e6656c2b/</url>
-    <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
-Its proposed architecture combines:
-
-A knowledge foundation: LLM Wiki, Obsidian CLI and optionally Firecrawl.
-Episodic memory: MemPalace for conversations and preferences.
-Scheduling and coordination: GBrain and GStack.
-
-The goal is a personal knowledge assistant that can retain context, maintain information and carry out multi-step work.
-IntroductionThe original May 2026 article describes a shift from an individually operated copilot toward workflows that coordinate tools and tasks.
-It discusses CLI-based coding assistants, local workflows and specialized products for design, spreadsheets and website development. Its emphasis is on the infrastructure behind those experiences: memory, tool selection and orchestration.
-1. A modular tool stackThe original comparison uses a subjective “Hermes fit” score:
-
-5&#x2F;5: a skill or plugin that can act directly as an agent capability.
-3&#x2F;5: an integration requiring an adapter.
-1&#x2F;5: lower-level research or inference code used indirectly.
-
-Star counts and ratings are those recorded in the original article.
-
-
-
-Project
-Recorded stars
-Fit
-Capability described
-
-
-
-anthropics&#x2F;skills
-127.2k+
-5&#x2F;5
-Specifications and templates for reusable skills
-
-
-firecrawl
-114.1k+
-4&#x2F;5
-Search and conversion of web pages into usable text
-
-
-gstack
-88.0k+
-4&#x2F;5
-Role-based engineering workflows
-
-
-mempalace
-50.7k+
-4&#x2F;5
-Long-term episodic memory
-
-
-career-ops
-41.6k+
-4&#x2F;5
-Long, domain-specific operational workflows
-
-
-impeccable
-24.2k+
-5&#x2F;5
-Design vocabulary and UI guidance
-
-
-gbrain
-12.7k+
-5&#x2F;5
-Ingestion, relationships, retrieval and scheduled work
-
-
-llm_wiki
-5.4k+
-3&#x2F;5
-Building and maintaining a structured wiki
-
-
-dflash
-2.5k+
-2&#x2F;5
-Speculative-decoding research
-
-
-turboquant
-1.3k+
-1&#x2F;5
-KV-cache quantization and serving infrastructure
-
-
-The table covers tools at different levels of the stack. They are components to assess, rather than a requirement to install all ten.
-2. Three layers of memory and executionSemantic knowledge: LLM Wiki and ObsidianThe article describes a wiki-building approach associated with Andrej Karpathy: compile incoming material into structured knowledge rather than only storing chunks for later retrieval.
-In this model, an agent reads new documents, compares them with existing material, and creates or updates linked Markdown pages.
-Obsidian provides a local home for the resulting files. Future questions can use that already organized material.
-The intended benefits are:
-
-Information organized and connected at ingestion time.
-Links between related topics.
-A readable knowledge base that remains available outside a conversation.
-
-Episodic memory: MemPalaceA knowledge base does not automatically preserve the details of a conversation.
-The original article assigns MemPalace the task of retaining preferences, earlier decisions and task-specific context. A request such as “use the method from last time” should be able to find the relevant earlier interaction.
-The article describes this as a “memory palace” approach to retrievable conversations and preferences.
-Dynamic relationships and scheduling: GBrainThe third layer handles changing relationships and work over time.
-The original article describes GBrain as maintaining entity relationships and timelines, supporting retrieval and running scheduled tasks. In its example, a background task checks information sources, collects material and initiates updates to the knowledge base.
-The goal is to connect stored knowledge to an observable execution process.
-3. Introduce the system in stagesStage one: the knowledge foundationGoal: produce useful, structured knowledge from a document.
-Components:
-
-LLM Wiki for organizing the information.
-Obsidian CLI for local files.
-Firecrawl for collection, where needed.
-
-Acceptance check: give the system a document and inspect the generated wiki pages and links.
-Stage two: conversational continuityTrigger: long conversations repeatedly lose details or preferences.
-Component: MemPalace.
-Acceptance check: the assistant can retrieve the relevant earlier method or preference and apply it to a subsequent task.
-Stage three: scheduled workflowsTrigger: the work becomes recurring, multi-step and dependent on information from several sources.
-Components:
-
-GBrain for scheduled work and relationships.
-GStack for specialized engineering roles.
-
-Acceptance check: inspect whether the system can check sources, update the knowledge base and complete a multi-step task with useful records of what happened.
-4. Comparison frameworkKnowledge and memoryThe following reflects the original article’s conceptual comparison.
-
-
-
-Dimension
-Conventional RAG
-LLM Wiki
-MemPalace
-GBrain
-
-
-
-Main material
-Documents
-Structured, compiled knowledge
-Conversations and preferences
-Changing relationships
-
-
-Retrieval emphasis
-Find relevant passages
-Read prepared knowledge pages
-Recover an episode
-Traverse context and relationships
-
-
-Updating model
-Re-index inputs
-Rebuild or edit wiki pages
-Record new episodes
-Ingest and revisit sources
-
-
-Intended use
-Document lookup
-Knowledge-base maintenance
-Conversation continuity
-Relationships and recurring tasks
-
-
-Workflow orchestration
-
-
-Tool
-Intended use
-Original article’s strength
-Tradeoff
-
-
-
-GStack
-Software-development workflow
-Specialized roles and review
-Learning curve
-
-
-Career-Ops
-A long workflow in a specific domain
-Monitoring and end-to-end processing
-Domain-specific scope
-
-
-GBrain
-General recurring tasks
-Timelines and relationships
-Configuration complexity
-
-
-5. Practices and pitfallsPractices proposed in the original article
-Start with a working LLM Wiki and Obsidian setup.
-Back up the local knowledge repository.
-Begin with supervised or partly automated operation.
-Keep logs of background work.
-
-Common problems
-Expecting document retrieval alone to solve all long-term memory needs.
-Introducing every component at once.
-Giving a workflow capabilities without appropriate controls.
-Running recurring tasks without monitoring or a way to stop them.
-
-The original article mentions Impeccable as design guidance. System permissions and execution controls also need to be handled by the actual runtime; design guidance is not an access-control mechanism.
-6. Future directions in the original articleThe author anticipates improvements in:
-
-Memory that requires less explicit management.
-Reasoning about relationships and causes.
-Proactive planning and recurring work.
-Collaboration between specialized agents.
-
-These are the original article’s expectations, rather than measured capabilities of every tool in the table.
-Closing perspectiveThe architecture is best approached as an incremental engineering project. First make the knowledge base useful, then add conversational continuity, and finally introduce scheduled workflows where they solve a real problem.
-Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>Open Source</tag>
-        <tag>Automation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Daily AI Open-Source Digest — March 23, 2026</title>
-    <url>/en/posts/a7e2b6/</url>
-    <content><![CDATA[
-Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
-
-Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
-Stars recorded in the original roundup: 20.
-Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
-Features highlighted in the original article:
-
-Video downloads from more than 1,800 platforms.
-AI-generated video summaries.
-Mind-map generation.
-International payments through Stripe.
-
-GitHub
-2. opencode-lazyA plugin manager for OpenCode.
-Stars recorded: 4. Stack: TypeScript.
-
-Search for plugins online.
-Install and manage plugins.
-Work with plugins directly inside a session.
-
-GitHub
-3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
-Stars recorded: 4.
-The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
-GitHub
-ObservationsThe original roundup identified three themes:
-
-AI and video processing: combining downloads with AI summaries.
-Developer productivity: demand for plugin-management tools.
-API aggregation: interest in free LLM resources.
-
-The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>Open Source</tag>
-        <tag>AI</tag>
-        <tag>GitHub</tag>
-        <tag>Daily Digest</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
-    <url>/en/posts/b8f3c7/</url>
-    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
-It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
-BandwagonHost purchase page — affiliate link
-
-
-Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
-The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
-Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
-Location notes
-Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
-Osaka CN2 GIA: presented as an option for lower latency.
-Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
-
-Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
-
-
-
-Plan example
-CPU &#x2F; RAM
-Storage
-Transfer
-Port
-Recorded annual price
-
-
-
-CN2 GIA-E
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-2.5 Gbps
-$169.90
-
-
-Entry KVM
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-1 Gbps
-$49.90
-
-
-Hong Kong CN2 GIA
-2 cores &#x2F; 2 GB
-40 GB SSD
-500 GB
-1 Gbps
-$899.90
-
-
-The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
-View plans on BandwagonHost — affiliate link
-Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
-Current plan specifications, availability and coupon validity should be checked on the purchase page.
-]]></content>
-      <categories>
-        <category>Infrastructure</category>
-      </categories>
-      <tags>
-        <tag>BandwagonHost</tag>
-        <tag>VPS</tag>
-        <tag>CN2 GIA</tag>
-        <tag>Networking</tag>
-        <tag>Ecommerce</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
     <url>/en/posts/c3a7f2/</url>
     <content><![CDATA[
@@ -490,9 +149,125 @@ Originally published on Jayln3’s Blog. Please credit the source when quoting o
       </categories>
       <tags>
         <tag>AI Agent</tag>
-        <tag>Open Source</tag>
-        <tag>GitHub</tag>
         <tag>Memory</tag>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Daily AI Open-Source Digest — March 23, 2026</title>
+    <url>/en/posts/a7e2b6/</url>
+    <content><![CDATA[
+Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+
+Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
+Stars recorded in the original roundup: 20.
+Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
+Features highlighted in the original article:
+
+Video downloads from more than 1,800 platforms.
+AI-generated video summaries.
+Mind-map generation.
+International payments through Stripe.
+
+GitHub
+2. opencode-lazyA plugin manager for OpenCode.
+Stars recorded: 4. Stack: TypeScript.
+
+Search for plugins online.
+Install and manage plugins.
+Work with plugins directly inside a session.
+
+GitHub
+3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
+Stars recorded: 4.
+The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
+GitHub
+ObservationsThe original roundup identified three themes:
+
+AI and video processing: combining downloads with AI summaries.
+Developer productivity: demand for plugin-management tools.
+API aggregation: interest in free LLM resources.
+
+The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+        <tag>Daily Digest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
+    <url>/en/posts/b8f3c7/</url>
+    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
+It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
+BandwagonHost purchase page — affiliate link
+
+
+Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
+The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
+Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
+Location notes
+Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
+Osaka CN2 GIA: presented as an option for lower latency.
+Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
+
+Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
+
+
+
+Plan example
+CPU &#x2F; RAM
+Storage
+Transfer
+Port
+Recorded annual price
+
+
+
+CN2 GIA-E
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+2.5 Gbps
+$169.90
+
+
+Entry KVM
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+1 Gbps
+$49.90
+
+
+Hong Kong CN2 GIA
+2 cores &#x2F; 2 GB
+40 GB SSD
+500 GB
+1 Gbps
+$899.90
+
+
+The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
+View plans on BandwagonHost — affiliate link
+Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
+Current plan specifications, availability and coupon validity should be checked on the purchase page.
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>VPS</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Networking</tag>
+        <tag>Ecommerce</tag>
       </tags>
   </entry>
   <entry>
@@ -509,8 +284,8 @@ Campaign operations: producing creative assets in batches and monitoring returns
         <category>AI &amp; Automation</category>
       </categories>
       <tags>
-        <tag>Automation</tag>
         <tag>Ecommerce</tag>
+        <tag>Automation</tag>
       </tags>
   </entry>
   <entry>
@@ -818,6 +593,84 @@ The original methodology covers jade, jewelry, adult-product categories, factori
       </tags>
   </entry>
   <entry>
+    <title>Geographic Targeting for High-Value Products</title>
+    <url>/en/posts/e5c9f4/</url>
+    <content><![CDATA[
+TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
+
+Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
+Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
+Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
+Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
+For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
+Configure geographic targeting
+Open the campaign’s ad-set settings.
+Find the location controls.
+Use the bulk-location workflow if it is available.
+Select the supported location type and target country.
+Paste the verified locations.
+Review every matched location before adding it.
+
+The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
+Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
+Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
+Examples from the original article
+
+
+Product
+Market
+Area-selection approach
+
+
+
+Jade
+Malaysia
+Research and verify relevant areas
+
+
+Jade
+Singapore
+Check the target area and postal-code match
+
+
+Jade
+Hong Kong
+Use supported named geographic areas
+
+
+Luxury products
+California
+Verify the intended ZIP-code areas
+
+
+Wholesale
+Multiple markets
+Research industrial and commercial centers
+
+
+The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
+Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
+Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
+Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
+A practical test sequence
+Research the market and verify the proposed locations.
+Review the available geographic and interest controls.
+Prepare appropriate product imagery and copy.
+Run a limited test.
+Compare qualified inquiries and orders, then refine the locations.
+
+Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>Geo Targeting</tag>
+        <tag>Jewelry</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
     <url>/en/posts/f6d1a5/</url>
     <content><![CDATA[
@@ -913,9 +766,9 @@ The original Chinese roundup was automatically compiled and published using Open
       </categories>
       <tags>
         <tag>AI Agent</tag>
+        <tag>GitHub</tag>
         <tag>Open Source</tag>
         <tag>AI</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -936,203 +789,6 @@ Keep in touchFind my projects on GitHub, or leave a message in the guestbook. Se
       </categories>
       <tags>
         <tag>Site News</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Geographic Targeting for High-Value Products</title>
-    <url>/en/posts/e5c9f4/</url>
-    <content><![CDATA[
-TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
-
-Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
-Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
-Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
-Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
-For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
-Configure geographic targeting
-Open the campaign’s ad-set settings.
-Find the location controls.
-Use the bulk-location workflow if it is available.
-Select the supported location type and target country.
-Paste the verified locations.
-Review every matched location before adding it.
-
-The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
-Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
-Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
-Examples from the original article
-
-
-Product
-Market
-Area-selection approach
-
-
-
-Jade
-Malaysia
-Research and verify relevant areas
-
-
-Jade
-Singapore
-Check the target area and postal-code match
-
-
-Jade
-Hong Kong
-Use supported named geographic areas
-
-
-Luxury products
-California
-Verify the intended ZIP-code areas
-
-
-Wholesale
-Multiple markets
-Research industrial and commercial centers
-
-
-The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
-Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
-Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
-Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
-A practical test sequence
-Research the market and verify the proposed locations.
-Review the available geographic and interest controls.
-Prepare appropriate product imagery and copy.
-Run a limited test.
-Compare qualified inquiries and orders, then refine the locations.
-
-Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
-]]></content>
-      <categories>
-        <category>Global Growth</category>
-      </categories>
-      <tags>
-        <tag>Meta Ads</tag>
-        <tag>Geo Targeting</tag>
-        <tag>Jewelry</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
-    <url>/en/posts/c9a4d8/</url>
-    <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
-
-
-Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.
-
-LisaHost &#x2F; Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m.
-BandwagonHost &#x2F; IT7: recorded upload rates stayed close to 118 Mbps. The article saw more headroom for high-bitrate streaming or sending streams to multiple platforms.
-
-The original multi-platform example estimates a combined 60–80 Mbps for YouTube, Twitch and Bilibili.
-Evening upload measurementsWindow: 19:30–23:00 China Standard Time (UTC+8).
-Metric: upload throughput in Mbps.
-
-
-
-Time
-LisaHost &#x2F; Cogent
-BandwagonHost &#x2F; IT7
-Ratio
-Original assessment
-
-
-
-19:30
-60.04
-114.28
-1.9×
-Both exceed the working threshold
-
-
-20:00
-40.30
-118.17
-2.9×
-A clear drop on LisaHost
-
-
-21:00
-65.45
-122.79
-1.8×
-More headroom on BandwagonHost
-
-
-22:00
-57.60
-119.43
-2.0×
-BandwagonHost remains stable
-
-
-23:00
-64.40
-119.32
-1.8×
-BandwagonHost remains stable
-
-
-Mean
-57.56
-118.80
-2.06×
-—
-
-
-The article’s interpretation is that BandwagonHost remained close to 120 Mbps, while LisaHost still exceeded its working threshold but varied more.
-Packet loss and jitterThe original article also gives a qualitative comparison involving a standard international Alibaba Cloud route:
-
-
-
-Observation
-LisaHost &#x2F; Cogent
-Alibaba Cloud international, standard route
-BandwagonHost &#x2F; CN2 GIA
-
-
-
-Routing description
-Budget-oriented route
-Standard BGP route
-Premium China Telecom route
-
-
-Reported evening loss
-Occasional loss
-Multiple timeouts in the reported test
-Almost no loss in the reported test
-
-
-Reported jitter
-Noticeable
-Pronounced
-Low
-
-
-Author’s streaming assessment
-Usable with reservations
-Poor in this test
-Preferred in this test
-
-
-The author describes being surprised by the observed timeouts on the tested Alibaba Cloud route and by the comparatively steady CN2 GIA results.
-These observations describe the original test. The article does not supply raw logs or a full reproducible test configuration.
-BandwagonHost purchase page — affiliate link
-]]></content>
-      <categories>
-        <category>Infrastructure</category>
-      </categories>
-      <tags>
-        <tag>BandwagonHost</tag>
-        <tag>CN2 GIA</tag>
-        <tag>Streaming</tag>
-        <tag>LisaHost</tag>
-        <tag>Reviews</tag>
-        <tag>4K Streaming</tag>
       </tags>
   </entry>
   <entry>
@@ -1288,6 +944,350 @@ The article’s central argument is that the relevance of a B2B inquiry can matt
         <tag>ABM</tag>
         <tag>Job Targeting</tag>
         <tag>International Ads</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
+    <url>/en/posts/c9a4d8/</url>
+    <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
+
+
+Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.
+
+LisaHost &#x2F; Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m.
+BandwagonHost &#x2F; IT7: recorded upload rates stayed close to 118 Mbps. The article saw more headroom for high-bitrate streaming or sending streams to multiple platforms.
+
+The original multi-platform example estimates a combined 60–80 Mbps for YouTube, Twitch and Bilibili.
+Evening upload measurementsWindow: 19:30–23:00 China Standard Time (UTC+8).
+Metric: upload throughput in Mbps.
+
+
+
+Time
+LisaHost &#x2F; Cogent
+BandwagonHost &#x2F; IT7
+Ratio
+Original assessment
+
+
+
+19:30
+60.04
+114.28
+1.9×
+Both exceed the working threshold
+
+
+20:00
+40.30
+118.17
+2.9×
+A clear drop on LisaHost
+
+
+21:00
+65.45
+122.79
+1.8×
+More headroom on BandwagonHost
+
+
+22:00
+57.60
+119.43
+2.0×
+BandwagonHost remains stable
+
+
+23:00
+64.40
+119.32
+1.8×
+BandwagonHost remains stable
+
+
+Mean
+57.56
+118.80
+2.06×
+—
+
+
+The article’s interpretation is that BandwagonHost remained close to 120 Mbps, while LisaHost still exceeded its working threshold but varied more.
+Packet loss and jitterThe original article also gives a qualitative comparison involving a standard international Alibaba Cloud route:
+
+
+
+Observation
+LisaHost &#x2F; Cogent
+Alibaba Cloud international, standard route
+BandwagonHost &#x2F; CN2 GIA
+
+
+
+Routing description
+Budget-oriented route
+Standard BGP route
+Premium China Telecom route
+
+
+Reported evening loss
+Occasional loss
+Multiple timeouts in the reported test
+Almost no loss in the reported test
+
+
+Reported jitter
+Noticeable
+Pronounced
+Low
+
+
+Author’s streaming assessment
+Usable with reservations
+Poor in this test
+Preferred in this test
+
+
+The author describes being surprised by the observed timeouts on the tested Alibaba Cloud route and by the comparatively steady CN2 GIA results.
+These observations describe the original test. The article does not supply raw logs or a full reproducible test configuration.
+BandwagonHost purchase page — affiliate link
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Streaming</tag>
+        <tag>LisaHost</tag>
+        <tag>Reviews</tag>
+        <tag>4K Streaming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
+    <url>/en/posts/e6656c2b/</url>
+    <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
+Its proposed architecture combines:
+
+A knowledge foundation: LLM Wiki, Obsidian CLI and optionally Firecrawl.
+Episodic memory: MemPalace for conversations and preferences.
+Scheduling and coordination: GBrain and GStack.
+
+The goal is a personal knowledge assistant that can retain context, maintain information and carry out multi-step work.
+IntroductionThe original May 2026 article describes a shift from an individually operated copilot toward workflows that coordinate tools and tasks.
+It discusses CLI-based coding assistants, local workflows and specialized products for design, spreadsheets and website development. Its emphasis is on the infrastructure behind those experiences: memory, tool selection and orchestration.
+1. A modular tool stackThe original comparison uses a subjective “Hermes fit” score:
+
+5&#x2F;5: a skill or plugin that can act directly as an agent capability.
+3&#x2F;5: an integration requiring an adapter.
+1&#x2F;5: lower-level research or inference code used indirectly.
+
+Star counts and ratings are those recorded in the original article.
+
+
+
+Project
+Recorded stars
+Fit
+Capability described
+
+
+
+anthropics&#x2F;skills
+127.2k+
+5&#x2F;5
+Specifications and templates for reusable skills
+
+
+firecrawl
+114.1k+
+4&#x2F;5
+Search and conversion of web pages into usable text
+
+
+gstack
+88.0k+
+4&#x2F;5
+Role-based engineering workflows
+
+
+mempalace
+50.7k+
+4&#x2F;5
+Long-term episodic memory
+
+
+career-ops
+41.6k+
+4&#x2F;5
+Long, domain-specific operational workflows
+
+
+impeccable
+24.2k+
+5&#x2F;5
+Design vocabulary and UI guidance
+
+
+gbrain
+12.7k+
+5&#x2F;5
+Ingestion, relationships, retrieval and scheduled work
+
+
+llm_wiki
+5.4k+
+3&#x2F;5
+Building and maintaining a structured wiki
+
+
+dflash
+2.5k+
+2&#x2F;5
+Speculative-decoding research
+
+
+turboquant
+1.3k+
+1&#x2F;5
+KV-cache quantization and serving infrastructure
+
+
+The table covers tools at different levels of the stack. They are components to assess, rather than a requirement to install all ten.
+2. Three layers of memory and executionSemantic knowledge: LLM Wiki and ObsidianThe article describes a wiki-building approach associated with Andrej Karpathy: compile incoming material into structured knowledge rather than only storing chunks for later retrieval.
+In this model, an agent reads new documents, compares them with existing material, and creates or updates linked Markdown pages.
+Obsidian provides a local home for the resulting files. Future questions can use that already organized material.
+The intended benefits are:
+
+Information organized and connected at ingestion time.
+Links between related topics.
+A readable knowledge base that remains available outside a conversation.
+
+Episodic memory: MemPalaceA knowledge base does not automatically preserve the details of a conversation.
+The original article assigns MemPalace the task of retaining preferences, earlier decisions and task-specific context. A request such as “use the method from last time” should be able to find the relevant earlier interaction.
+The article describes this as a “memory palace” approach to retrievable conversations and preferences.
+Dynamic relationships and scheduling: GBrainThe third layer handles changing relationships and work over time.
+The original article describes GBrain as maintaining entity relationships and timelines, supporting retrieval and running scheduled tasks. In its example, a background task checks information sources, collects material and initiates updates to the knowledge base.
+The goal is to connect stored knowledge to an observable execution process.
+3. Introduce the system in stagesStage one: the knowledge foundationGoal: produce useful, structured knowledge from a document.
+Components:
+
+LLM Wiki for organizing the information.
+Obsidian CLI for local files.
+Firecrawl for collection, where needed.
+
+Acceptance check: give the system a document and inspect the generated wiki pages and links.
+Stage two: conversational continuityTrigger: long conversations repeatedly lose details or preferences.
+Component: MemPalace.
+Acceptance check: the assistant can retrieve the relevant earlier method or preference and apply it to a subsequent task.
+Stage three: scheduled workflowsTrigger: the work becomes recurring, multi-step and dependent on information from several sources.
+Components:
+
+GBrain for scheduled work and relationships.
+GStack for specialized engineering roles.
+
+Acceptance check: inspect whether the system can check sources, update the knowledge base and complete a multi-step task with useful records of what happened.
+4. Comparison frameworkKnowledge and memoryThe following reflects the original article’s conceptual comparison.
+
+
+
+Dimension
+Conventional RAG
+LLM Wiki
+MemPalace
+GBrain
+
+
+
+Main material
+Documents
+Structured, compiled knowledge
+Conversations and preferences
+Changing relationships
+
+
+Retrieval emphasis
+Find relevant passages
+Read prepared knowledge pages
+Recover an episode
+Traverse context and relationships
+
+
+Updating model
+Re-index inputs
+Rebuild or edit wiki pages
+Record new episodes
+Ingest and revisit sources
+
+
+Intended use
+Document lookup
+Knowledge-base maintenance
+Conversation continuity
+Relationships and recurring tasks
+
+
+Workflow orchestration
+
+
+Tool
+Intended use
+Original article’s strength
+Tradeoff
+
+
+
+GStack
+Software-development workflow
+Specialized roles and review
+Learning curve
+
+
+Career-Ops
+A long workflow in a specific domain
+Monitoring and end-to-end processing
+Domain-specific scope
+
+
+GBrain
+General recurring tasks
+Timelines and relationships
+Configuration complexity
+
+
+5. Practices and pitfallsPractices proposed in the original article
+Start with a working LLM Wiki and Obsidian setup.
+Back up the local knowledge repository.
+Begin with supervised or partly automated operation.
+Keep logs of background work.
+
+Common problems
+Expecting document retrieval alone to solve all long-term memory needs.
+Introducing every component at once.
+Giving a workflow capabilities without appropriate controls.
+Running recurring tasks without monitoring or a way to stop them.
+
+The original article mentions Impeccable as design guidance. System permissions and execution controls also need to be handled by the actual runtime; design guidance is not an access-control mechanism.
+6. Future directions in the original articleThe author anticipates improvements in:
+
+Memory that requires less explicit management.
+Reasoning about relationships and causes.
+Proactive planning and recurring work.
+Collaboration between specialized agents.
+
+These are the original article’s expectations, rather than measured capabilities of every tool in the table.
+Closing perspectiveThe architecture is best approached as an incremental engineering project. First make the knowledge base useful, then add conversational continuity, and finally introduce scheduled workflows where they solve a real problem.
+Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>Open Source</tag>
+        <tag>Automation</tag>
       </tags>
   </entry>
 </search>
