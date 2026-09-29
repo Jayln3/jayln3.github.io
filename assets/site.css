@@ -26,6 +26,7 @@ html[lang="en"] .search-result,
 html[lang="en"] .search-result-title,
 html[lang="en"] .post-title,
 html[lang="en"] .article-title,
+html[lang="en"] #aside-content .title,
 html[lang="en"] .content {
   word-break: normal; overflow-wrap: break-word;
 }

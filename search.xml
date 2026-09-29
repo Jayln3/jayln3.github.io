@@ -684,6 +684,74 @@ GBrain
       </tags>
   </entry>
   <entry>
+    <title>每日 AI 开源速递</title>
+    <url>/posts/a7e2b6/</url>
+    <content><![CDATA[🚀 每日 AI 开源速递（2026-03-23）- 附OpenClaw自动化落地实践心得
+追踪 GitHub 24 小时内最热门的 AI 开源项目 | 基于 OpenClaw 实现运营自动化
+
+📊 今日热门 Top 31️⃣ free-video-downloader
+AI 万能视频下载总结器
+
+Stars: 20 ⭐
+技术栈：Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe
+亮点功能：
+
+🤖 支持 1800+ 平台视频下载
+📝 AI 视频总结摘要
+🧠 思维导图生成
+💳 Stripe 国际支付
+
+🔗 GitHub
+
+2️⃣ opencode-lazy
+OpenCode 插件管理器
+
+Stars: 4 ⭐
+技术栈：TypeScript
+亮点功能：
+
+🔌 插件在线搜索
+⚡ 无缝安装管理
+🎯 会话内即时操作
+
+🔗 GitHub
+
+3️⃣ free-llm-api-keys
+免费 LLM API 密钥集合
+
+Stars: 4 ⭐
+亮点功能：
+
+🔑 免费 API 密钥
+📅 每日高频更新（3-5次）
+🌐 支持主流 LLM：GPT-5.4、Claude、DeepSeek、Gemini、Grok
+💳 无需信用卡
+
+🔗 GitHub
+
+📈 数据洞察今日 AI 开源领域呈现以下趋势：
+
+AI + 视频处理 热度不减，视频下载与 AI 摘要结合成为热点
+开发者效率工具 持续发力，插件管理工具需求旺盛
+API 聚合服务 崛起，开发者对免费 LLM 资源需求强烈
+
+
+📌 数据来源：GitHub Trending（最近 24 小时，topic:ai）
+
+
+持续更新，关注 AI 开源最新动态
+]]></content>
+      <categories>
+        <category>AI 与自动化</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>开源</tag>
+        <tag>AI</tag>
+        <tag>每日速递</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搬瓦工(BandwagonHost) 2026最新评测：CN2 GIA线路依然是跨境电商首选吗？</title>
     <url>/posts/b8f3c7/</url>
     <content><![CDATA[进入2026年，VPS市场的竞争愈发激烈，但提到搬瓦工(BandwagonHost)，老玩家们依然会将其视为稳如老狗的代名词。很多新手朋友会问：搬瓦工怎么样？值不值得买？作为一名长期持有搬瓦工传家宝套餐的用户，今天我就为大家带来这篇深度的CN2 GIA线路测速与购买指南。
@@ -738,24 +806,6 @@ KVM 方案 (入门)：
         <tag>VPS</tag>
         <tag>CN2 GIA</tag>
         <tag>网络</tag>
-        <tag>跨境电商</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>跨境电商运营：从零到一的自动化增长指南</title>
-    <url>/posts/d1b5e9/</url>
-    <content><![CDATA[为什么选择自动化运营？在跨境电商领域，FB广告投放和独立站维护占据了运营人员大量的时间。通过 n8n 这种自动化工具，我们可以实现：
-
-自动采集：定时抓取竞品价格。
-消息推送：订单状态实时同步到手机。
-高效投放：批量生成广告素材并监控回报率。
-
-]]></content>
-      <categories>
-        <category>AI 与自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
         <tag>跨境电商</tag>
       </tags>
   </entry>
@@ -1057,6 +1107,24 @@ Facebook直播不是”开了就能卖”，而是**”投对了才能卖”**�
         <tag>Meta 广告</tag>
         <tag>Facebook 直播</tag>
         <tag>直播带货</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跨境电商运营：从零到一的自动化增长指南</title>
+    <url>/posts/d1b5e9/</url>
+    <content><![CDATA[为什么选择自动化运营？在跨境电商领域，FB广告投放和独立站维护占据了运营人员大量的时间。通过 n8n 这种自动化工具，我们可以实现：
+
+自动采集：定时抓取竞品价格。
+消息推送：订单状态实时同步到手机。
+高效投放：批量生成广告素材并监控回报率。
+
+]]></content>
+      <categories>
+        <category>AI 与自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+        <tag>跨境电商</tag>
       </tags>
   </entry>
   <entry>
@@ -1398,74 +1466,6 @@ B端建专属对接群，C端建福利群，老客复购享折扣
         <tag>WhatsApp</tag>
         <tag>聊单转化</tag>
         <tag>独立站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每日 AI 开源速递</title>
-    <url>/posts/a7e2b6/</url>
-    <content><![CDATA[🚀 每日 AI 开源速递（2026-03-23）- 附OpenClaw自动化落地实践心得
-追踪 GitHub 24 小时内最热门的 AI 开源项目 | 基于 OpenClaw 实现运营自动化
-
-📊 今日热门 Top 31️⃣ free-video-downloader
-AI 万能视频下载总结器
-
-Stars: 20 ⭐
-技术栈：Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe
-亮点功能：
-
-🤖 支持 1800+ 平台视频下载
-📝 AI 视频总结摘要
-🧠 思维导图生成
-💳 Stripe 国际支付
-
-🔗 GitHub
-
-2️⃣ opencode-lazy
-OpenCode 插件管理器
-
-Stars: 4 ⭐
-技术栈：TypeScript
-亮点功能：
-
-🔌 插件在线搜索
-⚡ 无缝安装管理
-🎯 会话内即时操作
-
-🔗 GitHub
-
-3️⃣ free-llm-api-keys
-免费 LLM API 密钥集合
-
-Stars: 4 ⭐
-亮点功能：
-
-🔑 免费 API 密钥
-📅 每日高频更新（3-5次）
-🌐 支持主流 LLM：GPT-5.4、Claude、DeepSeek、Gemini、Grok
-💳 无需信用卡
-
-🔗 GitHub
-
-📈 数据洞察今日 AI 开源领域呈现以下趋势：
-
-AI + 视频处理 热度不减，视频下载与 AI 摘要结合成为热点
-开发者效率工具 持续发力，插件管理工具需求旺盛
-API 聚合服务 崛起，开发者对免费 LLM 资源需求强烈
-
-
-📌 数据来源：GitHub Trending（最近 24 小时，topic:ai）
-
-
-持续更新，关注 AI 开源最新动态
-]]></content>
-      <categories>
-        <category>AI 与自动化</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>开源</tag>
-        <tag>AI</tag>
-        <tag>每日速递</tag>
       </tags>
   </entry>
   <entry>

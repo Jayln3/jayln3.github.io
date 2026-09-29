@@ -208,6 +208,20 @@
   </url>
   
   <url>
+    <loc>https://jayln3.github.io/tags/ai/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.github.io/tags/daily-digest/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayln3.github.io/tags/bandwagonhost/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,20 +321,6 @@
   
   <url>
     <loc>https://jayln3.github.io/tags/online-stores/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/tags/ai/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/tags/daily-digest/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
