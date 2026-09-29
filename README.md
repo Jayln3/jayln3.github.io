@@ -74,7 +74,7 @@ contactEmail 为 contact@jayln3.com。emailEnabled 控制邮箱链接是否启�
 
 knowledgeBase.contactUrl 是用户提供的飞书加好友地址，knowledgeBase 下分别维护中英文引导文案和二维码图片路径。每篇文章正文之后显示一次“付费获取知识库”入口；首页、分类页和关于页不插入此入口。这里只引导咨询内容与购买方式，不包含付款流程。
 
-用户提供的两张飞书二维码原图保存在 static/images/feishu-contact-zh-CN-v1.png 和 feishu-contact-en-v1.png，构建时原样复制到 assets/images/。中文、英文文章分别使用对应图片，点击图片可查看原图，旁边保留添加飞书按钮。更新时替换对应二维码并检查扫码目标。
+用户提供的两张飞书二维码原图保存在 static/images/feishu-contact-zh-CN-v2.png 和 feishu-contact-en-v2.png，构建时原样复制到 assets/images/。中文、英文文章分别使用对应图片，点击图片可查看原图，旁边保留添加飞书按钮。更新时替换对应二维码、递增文件版本号以避免旧缓存，并检查扫码目标。
 
 详细步骤见 [域名与品牌配置](docs/domains.md)。FlowLn 商业项目规划使用 flowln.dev，与个人博客的域名配置分开管理。
 
