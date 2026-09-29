@@ -1,44 +1,32 @@
 ---
-title: 你好世界
-date: 2026-01-05 20:00:00
+title: 你好，我是 Jayln3
+date: 2026-01-05T20:00:00.000Z
 abbrlink: e2c6f0
-tags: [News]
-lang: zh-CN 
-categories: [Announcement]
-description: This is a test post for Chinese users.
+tags:
+  - 站点消息
+lang: zh-CN
+categories:
+  - 站点动态
+description: 欢迎来到 Jayln3 的个人博客：跨境增长、AI 与自动化，以及技术实践的持续记录。
+translation_key: blog-welcome
+author: Jayln3
+cover: /assets/images/blog-welcome-v1-1280.webp
+cover_alt: 打开的笔记本延伸向远方，纸鸟象征个人知识博客的开始。
 ---
-欢迎来到 [Hexo](https://hexo.io/)！这是你的第一篇文章。查看 [文档](https://hexo.io/docs/) 了解更多信息。如果你在使用 Hexo 时遇到问题，可以在 [故障排除](https://hexo.io/docs/troubleshooting.html) 中找到答案，或者可以在 [GitHub](https://github.com/hexojs/hexo/issues) 上向我提问。
 
-## 快速开始
+欢迎来到 Jayln3 的博客。这里记录我在跨境增长、AI 与自动化、技术基础设施方面的实践与思考。
 
-### 创建新文章
+## 你可以在这里读到什么
 
-``` bash
-$ hexo new "My New Post"
-```
+- **跨境增长**：广告投放、B2B 获客、直播与独立站运营。
+- **AI 与自动化**：开源工具、Agent 工作流与运营自动化。
+- **技术基础设施**：网络、VPS 与网站建设。
+- **站点动态**：博客的更新与整理。
 
-更多信息：[写作](https://hexo.io/docs/writing.html)
+## 中文与英文
 
-### 运行服务器
+文章提供中英文版本。页面顶部的语言按钮可以切换到当前文章的对应译文；两种语言分别拥有自己的目录、搜索与订阅。
 
-``` bash
-$ hexo server
-```
+## 保持联系
 
-更多信息：[服务器](https://hexo.io/docs/server.html)
-
-### 生成静态文件
-
-``` bash
-$ hexo generate
-```
-
-更多信息：[生成](https://hexo.io/docs/generating.html)
-
-### 部署到远程网站
-
-``` bash
-$ hexo deploy
-```
-
-更多信息：[一键部署](https://hexo.io/docs/one-command-deployment.html)
+欢迎通过 [GitHub](https://github.com/jayln3) 了解我的项目，或在[留言板](/guestbook/)交流。个人域名与联系方式的启用状态见[关于页面](/about/)。

@@ -1,10 +1,22 @@
 ---
 title: 晚高峰2K/4K直播推流实测：搬瓦工CN2 GIA vs Lisa主机Cogent线路深度对比
-date: 2026-02-04 11:00:00
+date: 2026-02-04T11:00:00.000Z
 abbrlink: c9a4d8
-tags: [搬瓦工, 直播推流, CN2 GIA, Lisa主机, 测评, 4K直播]
-categories: [VPS评测]
-cover: /img/streaming-cover.jpg
+tags:
+  - 搬瓦工
+  - 直播推流
+  - CN2 GIA
+  - Lisa 主机
+  - 测评
+  - 4K 直播
+categories:
+  - 技术基础设施
+cover: /assets/images/streaming-network-v1-1280.webp
+lang: zh-CN
+translation_key: streaming-network
+author: Jayln3
+cover_alt: 摄像机的视频帧沿两条服务器路径传向屏幕的网络测试概念插画。
+description: 对于想要进行海外直播（如 YouTube, Twitch）或者需要稳定上行带宽进行跨境电商直播的用户来说，VPS 的上行稳定性是至关重要的。很多朋友在选择 VPS 时往往只关注下载速度（看视频快不快），却忽略了上行速度（推流稳不稳）。
 ---
 
 对于想要进行海外直播（如 YouTube, Twitch）或者需要稳定上行带宽进行跨境电商直播的用户来说，VPS 的上行稳定性是至关重要的。很多朋友在选择 VPS 时往往只关注下载速度（看视频快不快），却忽略了上行速度（推流稳不稳）。

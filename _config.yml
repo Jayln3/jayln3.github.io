@@ -1,51 +1,39 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: Jaylin的跨境电商运营知识库
-subtitle: '深耕跨境，运营落地，高效增长'
-description: 'Jaylin的跨境电商运营知识库，专注分享FB广告投放、Google广告优化、TK广告实操、WordPress/Shopify独立站基建、Alibaba国际站运营、敦煌网运营技巧，附n8n运营自动化落地实践心得。'
-keywords: '跨境电商运营,FB广告投放,Google广告运营,TK广告投放,WordPress独立站,Shopify建站,Alibaba国际站运营,敦煌网运营,n8n自动化'
-author: Jaylin
-# 确保 language 保持这样的格式，以兼容 i18n 插件
+# Shared Hexo settings. Brand and domains: config/site.json.
+# Build both locales with npm run build.
+title: Jayln3 的博客
+subtitle: 跨境增长 · AI 与自动化 · 技术实践
+description: Jayln3 的个人博客，记录跨境增长、AI 与自动化、技术基础设施的实践与思考。
+keywords: 跨境电商运营,FB广告投放,Google广告运营,TK广告投放,WordPress独立站,Shopify建站,Alibaba国际站运营,敦煌网运营,n8n自动化
+author: Jayln3
 language: zh-CN
 default_language: zh-CN
-timezone: 'Asia/Shanghai'
-
-# URL
-url: https://jaylin03.github.io
+timezone: Asia/Shanghai
+url: https://jayln3.github.io
 root: /
-# 恢复为标准链接格式，去掉了之前插件引入的 :lang 变量，防止报错
 permalink: posts/:abbrlink/
-permalink_defaults:
+permalink_defaults: null
 pretty_urls:
   trailing_index: false
   trailing_html: false
-
-# Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-# i18n_dir: :lang # 已移除：这是之前插件的残留
-skip_render:
-
-# Writing
-new_post_name: :title.md
+skip_render: null
+new_post_name: ':title.md'
 default_layout: post
 titlecase: false
 external_link:
   enable: true
-  field: site
-  exclude: ''
+  field: post
+  exclude: []
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+future: false
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
@@ -57,101 +45,41 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
-
-# Home page setting
-index_generator: 
-  #禁用默认首页生成器，改用i18n版本
+index_generator:
   path: ''
   per_page: 10
-  order_by: -date
-
-# Category & Tag
+  order_by: '-date'
 default_category: uncategorized
 category_map:
-tag_map:
-
-# Metadata elements
+  AI 与自动化: ai-automation
+  跨境增长: global-growth
+  技术基础设施: infrastructure
+  站点动态: site-notes
+tag_map: null
 meta_generator: true
-
-# Date / Time format
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-updated_option: 'mtime'
-
-# Pagination
+updated_option: date
 per_page: 10
 pagination_dir: page
-
-# Include / Exclude file(s)
-include:
-exclude:
-ignore:
-
-# Search configuration
+include: null
+exclude: null
+ignore: null
 search:
   path: search.xml
   field: post
   content: true
-
-# Extensions
 theme: butterfly
-
-# alias:
-  # en/: en/archives/
-
-# --------------------------------------------------------
-# New i18n Index Configuration
-# --------------------------------------------------------
-# index_generator_i18n:
-  # path: :lang/
-  # per_page: 10
-  # order_by: -date
-  # 关键补充：明确告诉插件需要生成哪些语言的首页
-  # languages: [zh-CN, en]
-  # default_language: zh-CN  # 这一行确保根目录 / 显示中文首页
-  # include_others: true
-  # base: /
-  # hide_default_in_url: true
-  # 关键点 1: 必须显式声明 zh-CN 是默认语言
-  # 关键点 2: 告诉插件，默认语言不需要路径前缀
-
-# i18n:
-  # type: [page, post]
-  # 必须包含 index，插件才会根据主页生成器去复制一份英文版
-  # generator: [index, archive, category, tag, guestbook, gallery]
-  # default: zh-CN
-  # path: :lang/
-
-# Deployment
-deploy:
-  type: git
-  repo: git@github.com:jaylin03/jaylin03.github.io.git
-  branch: master
-
-# Sitemap (hexo-generator-sitemap)
 sitemap:
   path: sitemap.xml
   tags: true
   categories: true
-
-# Short permalink generator (hexo-abbrlink)
 abbrlink:
   alg: crc32
   rep: hex
   drafts: false
   force: false
-
-# Static asset minification (hexo-neat)
-neat_enable: true
-neat_html:
-  enable: true
-  exclude:
-neat_css:
-  enable: true
-  exclude:
-neat_js:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude:
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0

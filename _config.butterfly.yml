@@ -1,17 +1,8 @@
-# _config.butterfly.yml
-# --------------------------------------
-# Hexo Butterfly Theme Configuration
-# --------------------------------------
-
-# --------------------------------------
-# Navigation Settings
-# --------------------------------------
 nav:
-  logo:
+  logo: null
   display_title: true
   display_post_title: true
   fixed: false
-
 menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
@@ -20,15 +11,6 @@ menu:
   关于我: /about/ || fas fa-user
   图库: /gallery/ || fas fa-images
   留言板: /guestbook/ || fas fa-comments
-  # 注意：由于删除了 source/en 目录，点击 english 可能会 404
-  # 建议暂时依靠右下角的“繁简转换”或后续手动创建英文分类
-  # languages:
-  #   chinese: / || fas fa-language
-  #   english: /en/ || fas fa-globe
-
-# --------------------------------------
-# Code Blocks Settings
-# --------------------------------------
 code_blocks:
   theme: light
   macStyle: false
@@ -38,54 +20,38 @@ code_blocks:
   language: true
   shrink: false
   fullpage: false
-
-# --------------------------------------
-# Social media links
-# --------------------------------------
 social:
-  fab fa-github: https://github.com/jaylin03 || Github || "#000000"
-  fas fa-envelope: javascript:; || jaylon03.lee[at]gmail.com || "#0078D7"
-  fab fa-telegram: https://t.me/JaylonLee || Telegram || "#0088cc"
-
-# --------------------------------------
-# Image Settings
-# --------------------------------------
-favicon: /img/favicon.png
-
+  fab fa-github: https://github.com/jayln3 || GitHub || "#24292f"
+favicon: /assets/images/favicon.png
 avatar:
-  img: https://cdn.jsdelivr.net/gh/Jaylin03/blog-images@master/logo_ln3_bull_v8.png
+  img: /assets/images/avatar.webp
   effect: false
-
 disable_top_img: false
-default_top_img:
-index_img: https://cdn.jsdelivr.net/gh/Jaylin03/blog-images@master/home-design-5.jpg
-archive_img:
-tag_img:
-tag_per_img:
-category_img:
-category_per_img:
+default_top_img: null
+index_img: /assets/images/home.webp
+archive_img: null
+tag_img: null
+tag_per_img: null
+category_img: null
+category_per_img: null
 footer_img: false
-background:
-
+background: null
 cover:
   index_enable: true
   aside_enable: true
   archives_enable: true
-  default_cover:
-
+  default_cover: null
 error_img:
   flink: /img/friend_404.gif
   post_page: /img/404.jpg
-
 error_404:
-  enable: false
-  subtitle: 'Page Not Found'
+  enable: true
+  subtitle: Page Not Found
   background: /img/error-page.png
-
 post_meta:
   page:
     date_type: created
-    date_format: 'YYYY-MM-DD'
+    date_format: YYYY-MM-DD
     categories: true
     tags: false
     label: true
@@ -96,28 +62,18 @@ post_meta:
     categories: true
     tags: true
     label: true
-
-# --------------------------------------
-# Index page settings
-# --------------------------------------
-index_site_info_top:
-index_top_img_height:
-
+index_site_info_top: null
+index_top_img_height: null
 subtitle:
   enable: false
   effect: true
-  typed_option:
+  typed_option: null
   source: false
-  sub:
-
+  sub: null
 index_layout: 3
 index_post_content:
   method: 3
   length: 500
-
-# --------------------------------------
-# Post Settings
-# --------------------------------------
 toc:
   post: true
   page: false
@@ -125,28 +81,22 @@ toc:
   expand: false
   style_simple: false
   scroll_percent: true
-
 post_copyright:
   enable: true
   decode: false
-  author_href:
+  author_href: null
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
 reward:
   enable: false
-
 post_edit:
   enable: false
-  url:
-
+  url: null
 related_post:
   enable: true
   limit: 6
   date_type: created
-
 post_pagination: 1
-
 noticeOutdate:
   enable: false
   style: flat
@@ -154,52 +104,44 @@ noticeOutdate:
   position: top
   message_prev: It has been
   message_next: days since the last update, the content of the article may be outdated.
-
-# --------------------------------------
-# Footer Settings
-# --------------------------------------
 footer:
-  nav:
+  nav: null
   owner:
     enable: true
     since: 2025
   copyright:
     enable: true
     version: true
-  custom_text:
-
-# --------------------------------------
-# Aside Settings
-# --------------------------------------
+  custom_text: null
 aside:
   enable: true
   hide: false
   button: true
   mobile: true
-  position: right # 你的配置中写的是 left，这里我保留了 right 作为默认，若习惯左侧请改为 left
+  position: right
   display:
     archive: true
     tag: true
     category: true
   card_author:
     enable: true
-    description:
+    description: null
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/jaylin03
+      text: GitHub
+      link: https://github.com/jayln3
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 跨境增长、AI 与自动化、技术实践。
   card_recent_post:
     enable: true
     limit: 5
     sort: date
-    sort_order:
+    sort_order: null
   card_newest_comments:
     enable: false
-    sort_order:
+    sort_order: null
     limit: 6
     storage: 10
     avatar: true
@@ -207,93 +149,73 @@ aside:
     enable: true
     limit: 8
     expand: none
-    sort_order:
+    sort_order: null
   card_tags:
     enable: true
     limit: 40
     color: false
     orderby: random
     order: 1
-    sort_order:
+    sort_order: null
   card_archives:
     enable: true
     type: monthly
     format: MMMM YYYY
     order: -1
     limit: 8
-    sort_order:
+    sort_order: null
   card_post_series:
     enable: true
     series_title: false
-    orderBy: 'date'
+    orderBy: date
     order: -1
   card_webinfo:
     enable: true
     post_count: true
     last_push_date: true
-    sort_order:
-    runtime_date:
-
-rightside_bottom:
-
-# --------------------------------------
-# Translate (繁简转换)
-# --------------------------------------
+    sort_order: null
+    runtime_date: null
+rightside_bottom: null
 translate:
-  enable: true
+  enable: false
   default: 繁
-  # 1: Traditional, 2: Simplified
   defaultEncoding: 2
   translateDelay: 0
-  msgToTraditionalChinese: '繁'
-  msgToSimplifiedChinese: '簡'
-
+  msgToTraditionalChinese: 繁
+  msgToSimplifiedChinese: 簡
 readmode: true
-
 darkmode:
   enable: true
   button: true
   autoChangeMode: false
-  start:
-  end:
-
+  start: null
+  end: null
 rightside_scroll_percent: false
-
 rightside_item_order:
   enable: false
-  hide:
-  show:
-
+  hide: null
+  show: null
 rightside_config_animation: true
-
-# --------------------------------------
-# Global Settings
-# --------------------------------------
 anchor:
   auto_update: false
   click_to_scroll: false
-
 photofigcaption: false
-
 copy:
   enable: true
   copyright:
     enable: false
     limit_count: 150
-
 wordcount:
   enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
-
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
-
 math:
-  use:
+  use: null
   per_page: true
   hide_scrollbar: false
   mathjax:
@@ -301,14 +223,9 @@ math:
     tags: none
   katex:
     copy_tex: false
-
-# --------------------------------------
-# Search System (Local Search)
-# --------------------------------------
 search:
   use: local_search
-  placeholder:
-
+  placeholder: null
   local_search:
     preload: false
     top_n_per_article: 1
@@ -316,64 +233,45 @@ search:
     pagination:
       enable: false
       hitsPerPage: 8
-    CDN:
-
+    CDN: null
 share:
-  use: sharejs
+  use: null
   sharejs:
     sites: facebook,x,wechat,weibo,qq
-
-# --------------------------------------
-# Comments System (Twikoo)
-# --------------------------------------
 comments:
   use: Twikoo
   text: true
   lazyload: true
   count: true
   card_post_count: true
-
 twikoo:
   envId: https://twikoo-new-kappa.vercel.app
-  region:
+  region: null
   visitor: true
-  js: https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js
   option:
-    lang: window.navigator.language
-
-# --------------------------------------
-# Chat & Analytics
-# --------------------------------------
+    lang: zh-CN
 chat:
-  use:
+  use: null
   rightside_button: false
   button_hide_show: false
-
-baidu_analytics:
-google_analytics:
-cloudflare_analytics:
-microsoft_clarity:
+baidu_analytics: null
+google_analytics: null
+cloudflare_analytics: null
+microsoft_clarity: null
 umami_analytics:
   enable: false
 google_tag_manager:
-  tag_id:
-  domain:
-
+  tag_id: null
+  domain: null
 google_adsense:
   enable: false
-
 ad:
-  index:
-  aside:
-  post:
-
-site_verification:
-
-# --------------------------------------
-# Beautify / Effect
-# --------------------------------------
-category_ui:
-tag_ui:
+  index: null
+  aside: null
+  post: null
+site_verification: null
+category_ui: null
+tag_ui: null
 rounded_corners_ui: true
 text_align_justify: false
 mask:
@@ -382,26 +280,26 @@ mask:
 preloader:
   enable: false
   source: 1
-  pace_css_url:
+  pace_css_url: null
 enter_transitions: true
 display_mode: light
 beautify:
   enable: false
   field: post
-  title_prefix_icon:
-  title_prefix_icon_color:
+  title_prefix_icon: null
+  title_prefix_icon_color: null
 font:
-  global_font_size:
-  code_font_size:
-  font_family:
-  code_font_family:
+  global_font_size: null
+  code_font_size: null
+  font_family: null
+  code_font_family: null
 blog_title_font:
-  font_link:
-  font_family:
+  font_link: null
+  font_family: null
 hr_icon:
   enable: true
-  icon:
-  icon_top:
+  icon: null
+  icon_top: null
 activate_power_mode:
   enable: false
   colorful: true
@@ -419,7 +317,7 @@ click_heart:
   enable: false
 clickShowText:
   enable: false
-lightbox:
+lightbox: null
 series:
   enable: false
 abcjs:
@@ -435,7 +333,7 @@ note:
   light_bg_offset: 0
 pjax:
   enable: false
-  exclude:
+  exclude: null
 aplayerInject:
   enable: false
 snackbar:
@@ -443,42 +341,27 @@ snackbar:
 instantpage: false
 lazyload:
   enable: true
-  native: false
+  native: true
   field: site
-  placeholder:
+  placeholder: null
   blur: false
 pwa:
   enable: false
 Open_Graph_meta:
   enable: true
-  option:
+  option: null
 structured_data: true
 css_prefix: true
-
-# --------------------------------------
-# Inject (Your Custom Scripts)
-# --------------------------------------
 inject:
   head:
-    # 自动识别浏览器语言设置繁简
-    - |
-      <script>
-        (function() {
-          const lang = navigator.language || navigator.userLanguage;
-          const targetEncodingCookie = 'translate-chn-cht';
-          const hasUserChoice = localStorage.getItem(targetEncodingCookie);
-          if (!hasUserChoice) {
-            const isTraditional = /^zh-(TW|HK|MO)$/i.test(lang);
-            const defaultEncoding = isTraditional ? 1 : 2;
-            localStorage.setItem(targetEncodingCookie, defaultEncoding);
-          }
-        })();
-      </script>
-  bottom:
-
+    - <link rel="stylesheet" href="/assets/site.css">
+  bottom: []
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
   version: true
-  custom_format:
+  custom_format: null
   option:
+    fontawesome: /assets/vendor/fontawesome/css/all.min.css
+    medium_zoom: /assets/vendor/medium-zoom/medium-zoom.min.js
+    twikoo: /assets/vendor/twikoo/twikoo.all.min.js

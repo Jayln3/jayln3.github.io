@@ -1,14 +1,19 @@
 ---
 title: 2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流
-date: 2026-05-02
+date: 2026-05-02T00:00:00.000Z
 categories:
-- 开源项目
-- AI Agents
+  - AI 与自动化
 tags:
-- AI Agents
-- 开源工具
-- 工作流自动化
+  - AI Agent
+  - 开源
+  - 自动化
 description: 从2025年的"人类操作+AI辅助"全面迈入2026年的"全自动Agent工作流"。本文深度解析10大核心开源工具，涵盖记忆系统、工具调度和工作流编排，助你构建硬核私有Agent架构。
+abbrlink: e6656c2b
+lang: zh-CN
+translation_key: agent-workflow
+author: Jayln3
+cover: /assets/images/agent-workflow-v1-1280.webp
+cover_alt: 由单个助手延伸成多工具协作机器的工作流概念插画。
 ---
 
 ## TL;DR 摘要
@@ -44,7 +49,7 @@ description: 从2025年的"人类操作+AI辅助"全面迈入2026年的"全自�
 > **Hermes适配度标准**：
 > - **5/5** = 原生skills/plugin，可直接当Agent能力模块
 > - **3/5** = 需做一层glue封装
-[> - **1/5** = 偏底层推理/研究代码，仅间接使用
+> - **1/5** = 偏底层推理/研究代码，仅间接使用
 
 | 项目名称 | Stars | GitHub链接 | Hermes适配度 | 主要补全Agent能力 |
 |---------|-------|-----------|------------|----------------|
@@ -203,4 +208,4 @@ Andrej Karpathy提出的LLM Wiki模式是对传统RAG的降维打击。
 
 ---
 
-*本文首发于 [Jaylin的GitHub博客](https://jaylin03.github.io/)，转载请注明出处。*
+*本文首发于 [Jayln3 的博客](/)，转载请注明出处。*

@@ -1,15 +1,19 @@
 ---
 title: Facebook B端精准投流实战：3个技巧锁定海外批发商
-date: 2026-04-02
+date: 2026-04-02T00:00:00.000Z
 abbrlink: a1f3c9
 categories:
- - Facebook-营销
- - 跨境电商
+  - 跨境增长
 tags:
- - Meta广告
- - B2B投流
- - 精准获客
+  - Meta 广告
+  - B2B
+  - 精准获客
 description: 传统B端企业投放Facebook广告时极易陷入C端流量陷阱？本文分享3个实战技巧：关键词必选筛选、起订量过滤、决策者定位，轻松锁定海外批发商、工厂采购等真B端客户。
+lang: zh-CN
+translation_key: b2b-audience-targeting
+author: Jayln3
+cover: /assets/images/b2b-audience-targeting-v1-1280.webp
+cover_alt: 放大镜从全球业务网络中聚焦工厂、批发货物与采购决策者模型。
 ---
 
 > **TL;DR**: B端企业投Facebook广告的核心痛点是"钱花了，询盘全是散户"。解决方案：广告组用"必须符合"筛选B端关键词，文案直接标注起订量，后期用职位定向锁定采购决策人。三招联动，C端流量降70%，B端询盘质量翻倍。

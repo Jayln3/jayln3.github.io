@@ -1,15 +1,19 @@
 ---
 title: Facebook全球直播从零到一：账号搭建与直投实操全攻略
-date: 2026-04-02
+date: 2026-04-02T00:00:00.000Z
 abbrlink: b2e4d1
 categories:
- - Facebook-营销
- - 跨境直播
+  - 跨境增长
 tags:
- - Meta广告
- - Facebook直播
- - 跨境带货
+  - Meta 广告
+  - Facebook 直播
+  - 直播带货
 description: 想通过Facebook直播把产品卖到全球？但不知道从哪开始？本文从工具准备、账号基建、广告直投直播间，手把手拆解全流程，翡翠、珠宝、3C全品类适用。
+lang: zh-CN
+translation_key: global-live-commerce
+author: Jayln3
+cover: /assets/images/global-live-commerce-v1-1280.webp
+cover_alt: 直播设备通过信号路径连接海外店铺与包裹的概念插画。
 ---
 
 > **TL;DR**: Facebook直播带货的核心不是"喊麦做氛围"，而是**精准投流+专业展示+地域选品**。本文涵盖：3件开播必备工具、主页账号基建、5步直投直播间实操、两种转化目标选择。看完就能动手。

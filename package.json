@@ -1,36 +1,44 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "jayln3-blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
+    "build": "node tools/build.mjs",
+    "check": "node tools/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "clean": "node tools/clean.mjs",
+    "server": "node tools/serve.mjs"
   },
   "hexo": {
     "version": "8.1.1"
   },
   "dependencies": {
-    "hexo": "^8.0.0",
-    "hexo-abbrlink": "^2.2.1",
-    "hexo-deployer-git": "^4.0.0",
-    "hexo-generator-archive": "^2.0.0",
-    "hexo-generator-category": "^2.0.0",
-    "hexo-generator-feed": "^4.0.0",
-    "hexo-generator-index": "^4.0.0",
-    "hexo-generator-searchdb": "^1.5.0",
-    "hexo-generator-sitemap": "^3.0.1",
-    "hexo-generator-tag": "^2.0.0",
-    "hexo-neat": "^1.0.9",
-    "hexo-renderer-marked": "^7.0.0",
-    "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^3.0.1",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-butterfly": "^5.3.3",
-    "probe-image-size": "^7.2.3"
+    "hexo": "8.1.1",
+    "hexo-abbrlink": "2.2.1",
+    "hexo-generator-archive": "2.0.0",
+    "hexo-generator-category": "2.0.0",
+    "hexo-generator-feed": "4.0.0",
+    "hexo-generator-index": "4.0.0",
+    "hexo-generator-searchdb": "1.5.0",
+    "hexo-generator-sitemap": "3.0.1",
+    "hexo-generator-tag": "2.0.0",
+    "hexo-renderer-marked": "7.0.1",
+    "hexo-renderer-pug": "3.0.0",
+    "hexo-renderer-stylus": "3.0.1",
+    "hexo-theme-butterfly": "5.3.3",
+    "probe-image-size": "7.2.3"
   },
-  "resolutions": {
-    "strip-ansi": "6.0.1"
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "6.7.2",
+    "@playwright/test": "1.58.2",
+    "cheerio": "1.2.0",
+    "js-yaml": "4.3.2",
+    "medium-zoom": "1.1.0",
+    "sharp": "0.35.5",
+    "twikoo": "1.6.44"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

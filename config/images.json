@@ -1,0 +1,188 @@
+{
+  "repository": "https://github.com/jayln3/blog-images",
+  "commit": "82cf7a3961ec4e89437db818536cc75d6b754840",
+  "assets": [
+    {
+      "id": "agent-memory",
+      "file": "covers/2026/agent-memory-v1.png",
+      "article": "2026-03-26-agent-memory-open-source.md",
+      "abbrlink": "c3a7f2",
+      "alt": {
+        "zh-CN": "透明记忆库连接三个信息孤岛，汇聚知识卡片的概念插画。",
+        "en": "A transparent memory vault connects three information islands and brings knowledge cards together."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2406289,
+      "sha256": "7c8cc2a7200255fbe0295b541d451584c0f59c2def1e3d976bb1536c847fca4a"
+    },
+    {
+      "id": "agent-workflow",
+      "file": "covers/2026/agent-workflow-v1.png",
+      "article": "2026-05-02-ai-agent-evolution-guide-2026.md",
+      "abbrlink": "e6656c2b",
+      "alt": {
+        "zh-CN": "由单个助手延伸成多工具协作机器的工作流概念插画。",
+        "en": "A single assistant grows into a coordinated machine of interconnected workflow tools."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2462291,
+      "sha256": "c8a895f38f61e274a8c9a2b4301fbac3aa8dea47c0b0d4b2f24e983830d52ec1"
+    },
+    {
+      "id": "ai-open-source-daily",
+      "file": "covers/2026/ai-open-source-daily-v1.png",
+      "article": "ai-open-source-daily-2026-03-23.md",
+      "abbrlink": "a7e2b6",
+      "alt": {
+        "zh-CN": "晨光下陈列在托盘中的三个 AI 与自动化工具模型。",
+        "en": "Three AI and automation tool models displayed in a tray in the morning light."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2319668,
+      "sha256": "6425efc8cc80ab5c3f1e1737818c434722c6283459b23d4032f58af5cd55917e"
+    },
+    {
+      "id": "global-vps-network",
+      "file": "covers/2026/global-vps-network-v1.png",
+      "article": "bandwagonhost-promo-2026.md",
+      "abbrlink": "b8f3c7",
+      "alt": {
+        "zh-CN": "两岸服务器通过跨海光缆相连，旁边有航行的货船。",
+        "en": "Servers on distant shores connected by an undersea cable, with cargo ships nearby."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2209910,
+      "sha256": "7e665e9af034ef2ee41e2bc119d5a4e55507bf810d596bc001ab21e0202db8dd"
+    },
+    {
+      "id": "ecommerce-automation",
+      "file": "covers/2026/ecommerce-automation-v1.png",
+      "article": "cross-border-ecommerce-intro.md",
+      "abbrlink": "d1b5e9",
+      "alt": {
+        "zh-CN": "连接店铺、包裹传送带和国际港口的自动化运营循环。",
+        "en": "An automation loop connects a storefront, parcel conveyor and international ports."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2323550,
+      "sha256": "c762a6f9c2ef5c35ea0314ab8530ae399948deb4a9be41a6f2fa1139eca50b12"
+    },
+    {
+      "id": "b2b-audience-targeting",
+      "file": "covers/2026/b2b-audience-targeting-v1.png",
+      "article": "fb-b2b-targeting-tips.md",
+      "abbrlink": "a1f3c9",
+      "alt": {
+        "zh-CN": "放大镜从全球业务网络中聚焦工厂、批发货物与采购决策者模型。",
+        "en": "A magnifying lens focuses on a factory, wholesale cargo and a buyer figure within a global business network."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2047442,
+      "sha256": "e42a56eeaa5ab75e37dae72aef64f9246eea21a5e11a47d34f0f140597fa4706"
+    },
+    {
+      "id": "global-live-commerce",
+      "file": "covers/2026/global-live-commerce-v1.png",
+      "article": "fb-global-live-streaming-guide.md",
+      "abbrlink": "b2e4d1",
+      "alt": {
+        "zh-CN": "直播设备通过信号路径连接海外店铺与包裹的概念插画。",
+        "en": "Live-streaming equipment connects to overseas storefronts and parcels through curved signal paths."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2590460,
+      "sha256": "86d77cd02516c191dee379db0e815f18186cd8b056628f3e7a1d20102eade259"
+    },
+    {
+      "id": "geo-audience",
+      "file": "covers/2026/geo-audience-v1.png",
+      "article": "fb-high-value-audience-postal-code.md",
+      "abbrlink": "e5c9f4",
+      "alt": {
+        "zh-CN": "抽象城市模型中的区域被高亮，定位标记表示地域投放规划。",
+        "en": "Selected areas of an abstract city model are highlighted for geographic campaign planning."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2775382,
+      "sha256": "a977f0e033c4cd6d5a24630213f3c3e7f14f9615b00dec6e3e4cde1f173d8042"
+    },
+    {
+      "id": "chat-vs-store",
+      "file": "covers/2026/chat-vs-store-v1.png",
+      "article": "fb-private-domain-conversion-logic.md",
+      "abbrlink": "d4b8e3",
+      "alt": {
+        "zh-CN": "聊天沟通与独立店铺两条路径汇合到订单包裹的概念插画。",
+        "en": "Two paths, customer conversations and an online store, converge on an order parcel."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2366323,
+      "sha256": "7a27092eac29e112f4c544f6e312b7cf2b987663bc40cfb49230e4d55fb3f009"
+    },
+    {
+      "id": "open-source-toolkit",
+      "file": "covers/2026/open-source-toolkit-v1.png",
+      "article": "github-ai-projects-update.md",
+      "abbrlink": "f6d1a5",
+      "alt": {
+        "zh-CN": "机械臂、知识卡片和模块化工具连接成可组合的开源工具箱。",
+        "en": "A mechanical arm, knowledge cards and modular tools form a connected open-source toolkit."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2544660,
+      "sha256": "e13c7607c1e5eedae8468ad01b47e55a0e7baae67fbfcb7c103acd9f9be925e9"
+    },
+    {
+      "id": "blog-welcome",
+      "file": "covers/2026/blog-welcome-v1.png",
+      "article": "hello-world.md",
+      "abbrlink": "e2c6f0",
+      "alt": {
+        "zh-CN": "打开的笔记本延伸向远方，纸鸟象征个人知识博客的开始。",
+        "en": "An open notebook leads toward a distant horizon, with a paper bird marking the start of a knowledge blog."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2088419,
+      "sha256": "9f8cbf4f120e2ea3f02a95ec69a3e2349d2e68c2cdd2b52c46090dcf5f56a008"
+    },
+    {
+      "id": "linkedin-abm",
+      "file": "covers/2026/linkedin-abm-v1.png",
+      "article": "linkedin-b2b-marketing-guide.md",
+      "abbrlink": "af40aec",
+      "alt": {
+        "zh-CN": "围绕目标工厂连接多个专业角色的 B2B 账号营销概念插画。",
+        "en": "A network of professional figures surrounds a selected factory in an account-based marketing concept."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2525984,
+      "sha256": "faf7ac7b9465f87b5f6154fada8e0789ad8cac33fe16ec5049569cd6644be1d4"
+    },
+    {
+      "id": "streaming-network",
+      "file": "covers/2026/streaming-network-v1.png",
+      "article": "streaming-feasibility-analysis.md",
+      "abbrlink": "c9a4d8",
+      "alt": {
+        "zh-CN": "摄像机的视频帧沿两条服务器路径传向屏幕的网络测试概念插画。",
+        "en": "Video frames travel from a camera through two server routes toward a screen in a network-testing concept."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 2194299,
+      "sha256": "017c20c96fd06376d4b089c855527fc5e9e7002d0912d07e29cdb80d8fbe00f8"
+    }
+  ]
+}

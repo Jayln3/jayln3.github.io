@@ -1,0 +1,38 @@
+{
+  "brand": "Jayln3",
+  "author": "Jayln3",
+  "github": "https://github.com/jayln3",
+  "activeBlogUrl": "https://jayln3.github.io",
+  "planned": {
+    "home": "https://jayln3.com",
+    "blog": "https://blog.jayln3.com",
+    "projects": "https://projects.jayln3.com",
+    "email": "hi@jayln3.com",
+    "alternateEmail": "hello@jayln3.com",
+    "commercial": "https://flowln.dev"
+  },
+  "customDomainEnabled": false,
+  "emailEnabled": false,
+  "locales": {
+    "zh-CN": {
+      "root": "/",
+      "source": "source",
+      "title": "Jayln3 的博客",
+      "subtitle": "跨境增长 · AI 与自动化 · 技术实践",
+      "description": "Jayln3 的个人博客，记录跨境增长、AI 与自动化、技术基础设施的实践与思考。"
+    },
+    "en": {
+      "root": "/en/",
+      "source": "content/en",
+      "title": "Jayln3's Blog",
+      "subtitle": "Global growth · AI & automation · Technology",
+      "description": "Notes by Jayln3 on global growth, AI and automation, and the infrastructure behind them."
+    }
+  },
+  "categories": {
+    "ai-automation": { "zh-CN": "AI 与自动化", "en": "AI & Automation" },
+    "global-growth": { "zh-CN": "跨境增长", "en": "Global Growth" },
+    "infrastructure": { "zh-CN": "技术基础设施", "en": "Infrastructure" },
+    "site-notes": { "zh-CN": "站点动态", "en": "Site Notes" }
+  }
+}

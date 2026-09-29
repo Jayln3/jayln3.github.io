@@ -1,18 +1,23 @@
 ---
 title: 每日 AI 开源速递
-date: 2026-03-23
+date: 2026-03-23T00:00:00.000Z
 abbrlink: a7e2b6
-categories: 
-  - AI 资讯
-  - 开源项目
-tags: 
+categories:
+  - AI 与自动化
+tags:
   - AI
   - GitHub
   - 开源
   - 每日速递
+lang: zh-CN
+translation_key: ai-open-source-daily
+author: Jayln3
+cover: /assets/images/ai-open-source-daily-v1-1280.webp
+cover_alt: 晨光下陈列在托盘中的三个 AI 与自动化工具模型。
+description: 🚀 每日 AI 开源速递（2026-03-23）- 附OpenClaw自动化落地实践心得
 ---
 
-# 🚀 每日 AI 开源速递（2026-03-23）- 附OpenClaw自动化落地实践心得
+## 🚀 每日 AI 开源速递（2026-03-23）- 附OpenClaw自动化落地实践心得
 
 > 追踪 GitHub 24 小时内最热门的 AI 开源项目 | 基于 OpenClaw 实现运营自动化
 

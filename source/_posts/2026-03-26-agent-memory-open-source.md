@@ -1,16 +1,20 @@
 ---
 title: 打破 Agent 记忆孤岛：12 款高 Star 开源记忆系统深度盘点
-date: 2026-03-26 09:21:00+08:00
+date: 2026-03-26T01:21:00.000Z
 abbrlink: c3a7f2
 categories:
- - AI-资讯
- - 开源项目
+  - AI 与自动化
 tags:
- - AI Agent
- - Memory
- - GitHub
- - 开源推荐
+  - AI Agent
+  - Memory
+  - GitHub
+  - 开源
 description: 本文深入剖析长程 Agent 落地面临的核心挑战——任务完成率低、记忆碎片化检索低效、Token 成本激增、跨场景协作困难。围绕四大痛点，深度测评 Mem0 (51k+ Star)、Letta、Cognee、SuperMemory 等 12 款明星开源项目，提供选型建议与技术洞察。
+lang: zh-CN
+translation_key: agent-memory
+author: Jayln3
+cover: /assets/images/agent-memory-v1-1280.webp
+cover_alt: 透明记忆库连接三个信息孤岛，汇聚知识卡片的概念插画。
 ---
 
 > 💡 **TL;DR (太长不看)**
@@ -277,4 +281,4 @@ description: 本文深入剖析长程 Agent 落地面临的核心挑战——任
 
 ---
 
-*本文首发于 [Jaylon's Blog](https://jaylin03.github.io)，如需转载或引用，请注明出处。*
+*本文首发于 [Jayln3 的博客](/)，如需转载或引用，请注明出处。*

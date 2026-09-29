@@ -1,66 +1,41 @@
-name: Hexo Auto Deploy
+name: Build and publish Jayln3 blog
 
-# 关键：授予推送代码到 master 分支的权限（必加，否则令牌无权限）
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+
 permissions:
   contents: write
   pages: write
-  id-token: write
 
-# 仅在 source 分支推送代码时触发（匹配你的源码分支）
-on:
-  push:
-    branches:
-      - source
+concurrency:
+  group: jayln3-pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      # 检出 source 分支的源码（包含主题子模块，保证构建完整）
-      - name: Checkout source code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          submodules: recursive
-
-      # 升级 Node.js 到 LTS 20（16已淘汰，避免兼容报错）
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'  # 缓存 npm 依赖，加速部署
-
-      # 安装依赖（保留你原有 strip-ansi 强制安装逻辑，解决版本冲突）
-      - name: Install dependencies
-        run: |
-          set -e  # 遇到错误立即终止，方便定位问题
-          npm install -g hexo-cli
-          npm install  # 安装基础依赖
-          npm install strip-ansi@6.0.1 --force  # 保留你的强制安装逻辑
-
-      # 构建静态文件（clean 清空旧文件，generate 生成新静态文件）
-      - name: Build Hexo static files
-        run: |
-          set -e
-          hexo clean
-          hexo generate
-
-      # 配置 Git 身份（保证提交记录归属合法）
-      - name: Configure Git user
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-      # 推送静态文件到 master 分支
-      - name: Deploy to master branch
+          node-version: '24'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check article metadata
+        run: npm test
+      - name: Build and validate Chinese and English
+        run: npm run build
+      - name: Install browser for functional tests
+        run: npx playwright install --with-deps chromium
+      - name: Check navigation and search on desktop and mobile
+        run: npm run test:browser
+      - name: Publish and wait for GitHub Pages
         env:
-          # 核心修改：改为使用 GitHub Action 内置的自动 Token
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_URL: https://github.com/Jaylin03/Jaylin03.github.io.git
-        run: |
-          set -e
-          cd public
-          git init
-          git add .
-          git commit -m "Auto deploy: $(date +'%Y-%m-%d %H:%M:%S')"
-          git push --force https://x-access-token:${GH_TOKEN}@github.com/Jaylin03/Jaylin03.github.io.git master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/publish.mjs

@@ -1,17 +1,23 @@
 ---
 title: 最新 GitHub AI与开发开源项目盘点
-date: 2026-03-24
+date: 2026-03-24T00:00:00.000Z
 abbrlink: f6d1a5
 categories:
-  - 开源速递
+  - AI 与自动化
 tags:
   - AI
   - GitHub
-  - Agent
+  - AI Agent
   - 开源
+lang: zh-CN
+translation_key: open-source-toolkit
+author: Jayln3
+cover: /assets/images/open-source-toolkit-v1-1280.webp
+cover_alt: 机械臂、知识卡片和模块化工具连接成可组合的开源工具箱。
+description: 🚀 最新 GitHub AI与开发开源项目盘点（2026-03-24）
 ---
 
-# 🚀 最新 GitHub AI与开发开源项目盘点（2026-03-24）
+## 🚀 最新 GitHub AI与开发开源项目盘点（2026-03-24）
 
 > 精选 9 个值得关注的 AI 与开发者工具开源项目
 
