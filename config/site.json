@@ -13,12 +13,20 @@
     "zh-CN": {
       "title": "付费获取知识库",
       "description": "想继续深入学习？添加我的飞书，了解知识库内容与购买方式。",
-      "button": "添加飞书 · 了解知识库"
+      "button": "添加飞书 · 了解知识库",
+      "qrImage": "/assets/images/feishu-contact-zh-CN-v1.png",
+      "qrAlt": "使用飞书扫描二维码，添加 Jayln3 为联系人",
+      "qrCaption": "飞书扫码添加好友",
+      "qrOpenLabel": "查看飞书二维码原图"
     },
     "en": {
       "title": "Get paid access to the knowledge base",
       "description": "Want to learn more? Connect with me on Feishu to explore the knowledge base and ask about purchasing access.",
-      "button": "Connect on Feishu"
+      "button": "Connect on Feishu",
+      "qrImage": "/assets/images/feishu-contact-en-v1.png",
+      "qrAlt": "Scan this QR code with Feishu to add Jayln3 as a contact",
+      "qrCaption": "Scan with Feishu to connect",
+      "qrOpenLabel": "View the full-size Feishu QR code"
     }
   },
   "activeBlogUrl": "https://jayln3.com",

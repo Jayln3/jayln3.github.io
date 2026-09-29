@@ -68,9 +68,12 @@ export async function finishSite(directory, allPosts) {
       const knowledgeBase = site.knowledgeBase[lang];
       $('#article-container').after('<aside class="knowledge-base-cta" aria-labelledby="knowledge-base-title">' +
         '<div class="knowledge-base-copy"><h2 id="knowledge-base-title"><i class="fas fa-book-open" aria-hidden="true"></i> ' + escapeHTML(knowledgeBase.title) + '</h2>' +
-        '<p>' + escapeHTML(knowledgeBase.description) + '</p></div>' +
+        '<p>' + escapeHTML(knowledgeBase.description) + '</p>' +
         '<a class="knowledge-base-link" href="' + escapeHTML(site.knowledgeBase.contactUrl) + '" target="_blank" rel="noopener noreferrer">' +
-        escapeHTML(knowledgeBase.button) + '<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></aside>');
+        escapeHTML(knowledgeBase.button) + '<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>' +
+        '<figure class="knowledge-base-qr"><a href="' + escapeHTML(knowledgeBase.qrImage) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHTML(knowledgeBase.qrOpenLabel) + '">' +
+        '<img class="no-lightbox" src="' + escapeHTML(knowledgeBase.qrImage) + '" width="686" height="840" loading="lazy" decoding="async" alt="' + escapeHTML(knowledgeBase.qrAlt) + '"></a>' +
+        '<figcaption>' + escapeHTML(knowledgeBase.qrCaption) + '</figcaption></figure></aside>');
       const asset = images.assets.find(a => a.id === post.data.translation_key);
       const src = '/assets/images/' + asset.id + '-v1-1280.webp';
       $('#article-container').prepend('<figure class="article-illustration"><img src="' + src +
