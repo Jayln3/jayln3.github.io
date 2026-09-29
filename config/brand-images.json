@@ -1,10 +1,14 @@
 {
   "logo": {
-    "file": "logo_ln3_bull_v8.png",
-    "sha256": "0d07c55aeb56a1fa0abc21c589a416d089b284de079795afef340d4a61108583"
+    "file": "brand/ln3-logo-v1.jpg",
+    "sha256": "09b45dd7297e2e639b43ddebef4b1b6032d9401be38bd886783e4c8fff3a114c"
   },
   "hero": {
     "file": "home-design-5.jpg",
     "sha256": "3dc9d88da1e93d5cf87c88781a55f7f4724bd0c77b6b802c4b4e8f05bc84dc13"
+  },
+  "favicon": {
+    "file": "brand/ln3-favicon-v1.png",
+    "sha256": "e23010be0fe190290378dd3ea0572ccdad109e70b337d43aeab6b7b3eaa89315"
   }
 }

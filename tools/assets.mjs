@@ -50,9 +50,32 @@ export async function buildAssets(destination) {
   }
   const brandAssets = await readJSON(path.join(ROOT, 'config/brand-images.json'));
   const logo = await original(brandAssets.logo.file, brandAssets.logo.sha256);
-  await sharp(logo).resize(256, 256).webp({ quality: 86 }).toFile(path.join(target, 'images/avatar.webp'));
-  await sharp(logo).resize(48, 48).png().toFile(path.join(target, 'images/favicon.png'));
-  await sharp(logo).resize(180, 180).png().toFile(path.join(target, 'images/apple-touch-icon.png'));
+  await sharp(logo).resize(256, 256, { fit: 'contain', background: '#fff' }).webp({ quality: 90 }).toFile(path.join(target, 'images/ln3-logo-v1.webp'));
+  await sharp(logo).resize(180, 180, { fit: 'contain', background: '#fff' }).png().toFile(path.join(target, 'images/ln3-apple-touch-icon-v1.png'));
+  const favicon = await sharp(await original(brandAssets.favicon.file, brandAssets.favicon.sha256)).trim({ threshold: 10 }).png().toBuffer();
+  const iconSizes = [16, 32, 48];
+  const iconPngs = [];
+  for (const size of iconSizes) {
+    const icon = await sharp(favicon).resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
+    iconPngs.push(icon);
+    await write(path.join(target, 'images', 'ln3-favicon-v1-' + size + '.png'), icon);
+    await sharp(icon).negate({ alpha: false }).png().toFile(path.join(target, 'images', 'ln3-favicon-v1-' + size + '-dark.png'));
+  }
+  // ICO stores all three sizes so browsers can choose the native pixel size.
+  const iconHeader = Buffer.alloc(6 + iconPngs.length * 16);
+  iconHeader.writeUInt16LE(1, 2);
+  iconHeader.writeUInt16LE(iconPngs.length, 4);
+  let iconOffset = iconHeader.length;
+  iconPngs.forEach((png, i) => {
+    const offset = 6 + i * 16;
+    iconHeader[offset] = iconHeader[offset + 1] = iconSizes[i];
+    iconHeader.writeUInt16LE(1, offset + 4);
+    iconHeader.writeUInt16LE(32, offset + 6);
+    iconHeader.writeUInt32LE(png.length, offset + 8);
+    iconHeader.writeUInt32LE(iconOffset, offset + 12);
+    iconOffset += png.length;
+  });
+  await write(path.join(destination, 'favicon.ico'), Buffer.concat([iconHeader, ...iconPngs]));
   const hero = await original(brandAssets.hero.file, brandAssets.hero.sha256);
   await sharp(hero).resize({ width: 1600 }).webp({ quality: 80 }).toFile(path.join(target, 'images/home.webp'));
 

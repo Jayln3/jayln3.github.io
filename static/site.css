@@ -8,6 +8,15 @@
   outline: 3px solid #eaae65; outline-offset: 4px;
 }
 #nav #menus { margin-left: 0; }
+#nav .nav-site-title { display: inline-flex; align-items: center; gap: .55rem; max-width: 100%; }
+#nav #blog-info .site-icon {
+  flex: 0 0 32px; width: 32px; height: 32px; margin-right: 0;
+  object-fit: contain; border-radius: 7px; background: #fff;
+}
+#nav .nav-site-title .site-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.avatar-img { border-radius: 18px; background: #fff; }
+.avatar-img img { object-fit: contain; padding: 4px; box-sizing: border-box; }
+.avatar-img img:hover { transform: none; }
 .translation-note {
   margin: 0 0 1.5rem; padding: .7rem 1rem;
   border-left: 3px solid #238b86; background: rgba(35,139,134,.08);
@@ -34,5 +43,5 @@ html[lang="en"] .content {
   .language-switch { margin-right: .6rem; padding: .15rem .45rem; font-size: .8rem; }
   #nav #blog-info { min-width: 0; flex: 1; }
   #nav .nav-page-title { display: none; }
-  #nav .nav-site-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #nav .nav-site-title { display: flex; overflow: hidden; }
 }

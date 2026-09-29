@@ -67,7 +67,7 @@ for (const [lang, locale] of Object.entries(site.locales)) {
     ? '<a href="/en/about/">About Jayln3</a> · <a href="/en/atom.xml">RSS</a>'
     : '<a href="/about/">关于 Jayln3</a> · <a href="/atom.xml">RSS</a>';
   localizedTheme.inject = {
-    head: ['<link rel="stylesheet" href="/assets/site.css">', '<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">'],
+    head: ['<link rel="stylesheet" href="/assets/site.css">', '<link rel="apple-touch-icon" href="/assets/images/ln3-apple-touch-icon-v1.png">'],
     bottom: []
   };
   await write(path.join(context, '_config.yml'), yaml.dump(localeConfig, { lineWidth: -1 }));

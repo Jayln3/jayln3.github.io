@@ -1,5 +1,5 @@
 nav:
-  logo: null
+  logo: /assets/images/ln3-logo-v1.webp
   display_title: true
   display_post_title: true
   fixed: false
@@ -22,9 +22,9 @@ code_blocks:
   fullpage: false
 social:
   fab fa-github: https://github.com/jayln3 || GitHub || "#24292f"
-favicon: /assets/images/favicon.png
+favicon: /assets/images/ln3-favicon-v1-32.png
 avatar:
-  img: /assets/images/avatar.webp
+  img: /assets/images/ln3-logo-v1.webp
   effect: false
 disable_top_img: false
 default_top_img: null

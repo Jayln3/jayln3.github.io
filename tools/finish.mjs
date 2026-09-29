@@ -25,6 +25,14 @@ export async function finishSite(directory, allPosts) {
     const counterpart = paired ? proposed : isEnglish ? '/' : '/en/';
     const $ = load(await fs.readFile(file, 'utf8'));
     $('html').attr('lang', lang);
+    $('link[rel="icon"]').remove();
+    $('head').append('<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=ln3-v1">');
+    for (const size of [16, 32, 48]) {
+      for (const scheme of ['light', 'dark']) {
+        const suffix = scheme === 'dark' ? '-dark' : '';
+        $('head').append('<link rel="icon" type="image/png" sizes="' + size + 'x' + size + '" media="(prefers-color-scheme: ' + scheme + ')" href="/assets/images/ln3-favicon-v1-' + size + suffix + '.png">');
+      }
+    }
     if (current.endsWith('/404.html')) {
       $('h1').slice(1).each((_, el) => { el.tagName = 'h2'; });
     }
@@ -56,6 +64,9 @@ export async function finishSite(directory, allPosts) {
     $('img').each((_, el) => {
       const img = $(el);
       const src = img.attr('src') || '';
+      if (src.endsWith('/ln3-logo-v1.webp')) {
+        img.attr('alt', 'ln3 Logo').attr('width', '256').attr('height', '256');
+      }
       const match = src.match(/\/assets\/images\/(.+)-v1-1280\.webp$/);
       if (match) {
         img.attr('srcset', '/assets/images/' + match[1] + '-v1-640.webp 640w, /assets/images/' + match[1] + '-v1-1280.webp 1280w');
