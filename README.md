@@ -70,7 +70,7 @@ Hexo 8 + Butterfly，单一源码仓库，分别构建中文和英文后合并�
 
 config/site.json 统一维护联系方式。作者卡片保留蓝色 GitHub 按钮，下面显示邮箱、Facebook、X、LinkedIn。X 和 LinkedIn 的地址留空时显示不可点击的待开通图标；注册后填写 social.x / social.linkedin 并重新发布即可。
 
-contactEmail 为 contact@jayln3.com。emailEnabled 控制邮箱链接是否启用；当前 Dynadot 免费邮箱已创建并设为主邮箱，网站已启用邮箱链接。邮箱内的 QQ 转发已保存，等待收件方完成验证，详见 docs/domains.md。
+contactEmail 为 contact@jayln3.com。emailEnabled 控制邮箱链接是否启用；当前 Dynadot 免费邮箱已创建并设为主邮箱，网站已启用邮箱链接。邮箱内的 QQ 转发已通过收件方验证，并保留 Dynadot 收件箱副本，详见 docs/domains.md。
 
 knowledgeBase.contactUrl 是用户提供的飞书加好友地址，knowledgeBase 下分别维护中英文引导文案和二维码图片路径。每篇文章正文之后显示一次“付费获取知识库”入口；首页、分类页和关于页不插入此入口。这里只引导咨询内容与购买方式，不包含付款流程。
 
