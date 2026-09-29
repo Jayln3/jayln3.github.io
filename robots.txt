@@ -1,20 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /archives/
-Allow: /categories/
-Allow: /tags/
-Allow: /llms.txt
-Sitemap: https://jaylin03.github.io/sitemap.xml
-
-# GEO: allow major AI crawlers to read public content
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
+Sitemap: https://jayln3.github.io/sitemap.xml

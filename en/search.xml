@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
+    <url>/en/posts/c3a7f2/</url>
+    <content><![CDATA[
+TL;DR
+
+Long-running agents face lost context, weak retrieval, growing token costs and fragmented information across sessions.
+The original review highlights Mem0, Letta, Cognee and SuperMemory, alongside eight related projects.
+Its selection framework starts with the use case: a prototype, a stateful production agent, relationship-heavy reasoning or multi-agent collaboration.
+
+
+Project descriptions and star counts below are from the original March 26, 2026 article.
+1. Four obstacles for long-running agentsTask completionA model’s context window is limited. As a conversation grows, earlier constraints may be lost or displaced, making long, multi-step tasks harder to complete consistently.
+Fragmented memory and weak retrievalStoring every conversation as a flat list in a vector database does not guarantee that the right detail will be retrieved.
+For example, “the parameters of that Python script we used last time” may need to resolve to a record about a named file and its configuration. Similarity between words is only part of that task.
+Token costsOne response to lost context is to include more history in every prompt. That increases the amount of material processed and the cost of repeated requests.
+The original article uses long GPT-4o contexts as an example of this problem. The general design question is how to supply useful context without repeatedly sending the entire history.
+Information split across servicesA user may discuss a task in one channel and expect an agent in another channel to continue it. Separate conversation stores make that difficult, especially when the agent also needs CRM data, documents and team messages.
+Poor memory can therefore lead to larger prompts, greater cost and a harder deployment process.
+2. Twelve approaches1. Mem0 — approximately 51,334 starsPositioning in the original review: a general-purpose memory layer for AI agents.
+The review highlights extraction, consolidation and retrieval to maintain continuity; compression and prioritization to reduce context size; and a common API for memory across sessions.
+It describes recent, important and long-term memory, with retention based on time and relevance, and emphasizes self-hosting.
+Suggested use: prototypes, assistants that remember preferences, and customer-service agents that need consistency across conversations.
+2. Letta — approximately 21,785 starsPositioning: a platform for stateful agents.
+The review focuses on persistent agent state, memory management, summaries and information sharing between agents. It also describes integration with commonly used agent frameworks.
+Suggested use: long-lived assistants, enterprise support and applications that need continuity across sessions.
+3. Cognee — approximately 14,717 starsPositioning: a knowledge engine that turns documents into a network of related information.
+The article emphasizes the combination of vector retrieval and knowledge graphs. The aim is to retrieve relationships between entities as well as semantically similar text.
+It also describes extracting knowledge from different input formats, returning structured context, and inspecting the resulting graph through a local interface.
+Suggested use: relationship-heavy document tasks, research assistants and knowledge bases built from unstructured material.
+4. SuperMemory — approximately 20,076 starsPositioning: a fast, scalable memory API.
+The original review emphasizes retrieval latency, compression, hybrid vector and keyword search, and a straightforward integration interface.
+Suggested use: interactive agents and applications sensitive to response time.
+5. MemVid — approximately 13,642 starsPositioning: a memory approach based on video-encoded storage.
+The article describes encoding stored information into video, with retrieval and replay as alternatives to a more elaborate retrieval pipeline.
+Suggested use in the original review: long-term archives and large histories where storage and context costs are a concern.
+6. Memori — approximately 12,781 starsPositioning: a SQL-native memory layer for language models and agents.
+The review emphasizes relational queries, a shared SQL store and integration with an existing enterprise stack.
+Suggested use: organizations already using SQL and applications requiring structured memory queries.
+7. DeepLake — approximately 9,053 starsPositioning: an AI data runtime and multimodal data layer.
+The article describes support for vectors, text, images and video, with indexing designed around AI workloads and options intended to reduce operational work.
+Suggested use: multimodal agents and large-scale data retrieval or training.
+8. MemOS — approximately 7,910 starsPositioning: a memory operating system for models and agents.
+The review focuses on persistent skills, reuse across tasks and knowledge sharing among agents. It describes compatibility with agent ecosystems such as OpenClaw and MoleBot.
+Suggested use: systems in which multiple agents accumulate and reuse skills.
+9. OpenViking — approximately 19,650 starsPositioning: a context database designed for AI agents such as OpenClaw.
+The article describes a filesystem-like hierarchy for memory, resources and skills, with context delivered at different levels of detail.
+Suggested use: OpenClaw-related systems and applications with complex context-management needs.
+10. 12-factor-agents — approximately 18,957 starsPositioning: principles and practices for production agents.
+This is a different kind of resource from a memory-storage engine. The review presents it as guidance for moving from a prototype to production, including memory, safety and monitoring.
+Suggested use: teams designing and deploying production systems.
+11. PraisonAI — approximately 57,742 starsPositioning: a low-code platform for multi-agent automation.
+The article highlights built-in memory and retrieval support, handoffs and guardrails, support for many models, and integrations with services such as Telegram, Discord and WhatsApp.
+Suggested use: business automation and workflows that coordinate several specialized agents.
+12. MemMachine — roughly 5,000 stars in the original comparison tablePositioning: a general-purpose memory layer.
+The review focuses on a common memory interface, support for different storage backends, and simplifying the state-management work of a larger agent system.
+Suggested use: systems that need a consistent abstraction over storage and retrieval.
+3. ComparisonThe strengths and suitability below summarize the original author’s assessments.
+
+
+
+Project
+Main emphasis
+Suggested use
+
+
+
+Mem0
+General-purpose memory and accessible integration
+Prototypes and memory across sessions
+
+
+Letta
+Persistent agent state
+Long-lived assistants and support
+
+
+Cognee
+Graph and vector retrieval
+Relationship-heavy knowledge tasks
+
+
+SuperMemory
+Fast retrieval
+Interactive, low-latency applications
+
+
+MemVid
+Video-based memory storage
+Archival and long histories
+
+
+Memori
+SQL-based memory
+Existing relational-data stacks
+
+
+DeepLake
+Multimodal data
+Large and varied datasets
+
+
+MemOS
+Reusable skills and shared memory
+Multi-agent collaboration
+
+
+OpenViking
+Hierarchical context
+Complex context management
+
+
+12-factor-agents
+Production design principles
+Architecture and deployment
+
+
+PraisonAI
+Low-code multi-agent workflows
+Business automation
+
+
+MemMachine
+A common memory abstraction
+Complex agent systems
+
+
+4. Direction and selectionThe original article sees agent memory as a rapidly expanding area. It identifies three development directions:
+
+Compression: representing more useful information with less context.
+Temporal reasoning: distinguishing an old preference from the current one.
+Multimodal memory: incorporating information from images, audio and video.
+
+Its practical starting points are:
+
+Prototype: evaluate Mem0 or SuperMemory.
+Production architecture: investigate Letta alongside the principles in 12-factor-agents.
+Relationships and context: investigate Cognee or OpenViking.
+Multiple agents: investigate PraisonAI or MemOS.
+Archival experiments: investigate MemVid.
+
+These are the original review’s selection suggestions; they are starting points for evaluating a workload, rather than a substitute for testing it.
+Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>Memory</tag>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
+    <url>/en/posts/e6656c2b/</url>
+    <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
+Its proposed architecture combines:
+
+A knowledge foundation: LLM Wiki, Obsidian CLI and optionally Firecrawl.
+Episodic memory: MemPalace for conversations and preferences.
+Scheduling and coordination: GBrain and GStack.
+
+The goal is a personal knowledge assistant that can retain context, maintain information and carry out multi-step work.
+IntroductionThe original May 2026 article describes a shift from an individually operated copilot toward workflows that coordinate tools and tasks.
+It discusses CLI-based coding assistants, local workflows and specialized products for design, spreadsheets and website development. Its emphasis is on the infrastructure behind those experiences: memory, tool selection and orchestration.
+1. A modular tool stackThe original comparison uses a subjective “Hermes fit” score:
+
+5&#x2F;5: a skill or plugin that can act directly as an agent capability.
+3&#x2F;5: an integration requiring an adapter.
+1&#x2F;5: lower-level research or inference code used indirectly.
+
+Star counts and ratings are those recorded in the original article.
+
+
+
+Project
+Recorded stars
+Fit
+Capability described
+
+
+
+anthropics&#x2F;skills
+127.2k+
+5&#x2F;5
+Specifications and templates for reusable skills
+
+
+firecrawl
+114.1k+
+4&#x2F;5
+Search and conversion of web pages into usable text
+
+
+gstack
+88.0k+
+4&#x2F;5
+Role-based engineering workflows
+
+
+mempalace
+50.7k+
+4&#x2F;5
+Long-term episodic memory
+
+
+career-ops
+41.6k+
+4&#x2F;5
+Long, domain-specific operational workflows
+
+
+impeccable
+24.2k+
+5&#x2F;5
+Design vocabulary and UI guidance
+
+
+gbrain
+12.7k+
+5&#x2F;5
+Ingestion, relationships, retrieval and scheduled work
+
+
+llm_wiki
+5.4k+
+3&#x2F;5
+Building and maintaining a structured wiki
+
+
+dflash
+2.5k+
+2&#x2F;5
+Speculative-decoding research
+
+
+turboquant
+1.3k+
+1&#x2F;5
+KV-cache quantization and serving infrastructure
+
+
+The table covers tools at different levels of the stack. They are components to assess, rather than a requirement to install all ten.
+2. Three layers of memory and executionSemantic knowledge: LLM Wiki and ObsidianThe article describes a wiki-building approach associated with Andrej Karpathy: compile incoming material into structured knowledge rather than only storing chunks for later retrieval.
+In this model, an agent reads new documents, compares them with existing material, and creates or updates linked Markdown pages.
+Obsidian provides a local home for the resulting files. Future questions can use that already organized material.
+The intended benefits are:
+
+Information organized and connected at ingestion time.
+Links between related topics.
+A readable knowledge base that remains available outside a conversation.
+
+Episodic memory: MemPalaceA knowledge base does not automatically preserve the details of a conversation.
+The original article assigns MemPalace the task of retaining preferences, earlier decisions and task-specific context. A request such as “use the method from last time” should be able to find the relevant earlier interaction.
+The article describes this as a “memory palace” approach to retrievable conversations and preferences.
+Dynamic relationships and scheduling: GBrainThe third layer handles changing relationships and work over time.
+The original article describes GBrain as maintaining entity relationships and timelines, supporting retrieval and running scheduled tasks. In its example, a background task checks information sources, collects material and initiates updates to the knowledge base.
+The goal is to connect stored knowledge to an observable execution process.
+3. Introduce the system in stagesStage one: the knowledge foundationGoal: produce useful, structured knowledge from a document.
+Components:
+
+LLM Wiki for organizing the information.
+Obsidian CLI for local files.
+Firecrawl for collection, where needed.
+
+Acceptance check: give the system a document and inspect the generated wiki pages and links.
+Stage two: conversational continuityTrigger: long conversations repeatedly lose details or preferences.
+Component: MemPalace.
+Acceptance check: the assistant can retrieve the relevant earlier method or preference and apply it to a subsequent task.
+Stage three: scheduled workflowsTrigger: the work becomes recurring, multi-step and dependent on information from several sources.
+Components:
+
+GBrain for scheduled work and relationships.
+GStack for specialized engineering roles.
+
+Acceptance check: inspect whether the system can check sources, update the knowledge base and complete a multi-step task with useful records of what happened.
+4. Comparison frameworkKnowledge and memoryThe following reflects the original article’s conceptual comparison.
+
+
+
+Dimension
+Conventional RAG
+LLM Wiki
+MemPalace
+GBrain
+
+
+
+Main material
+Documents
+Structured, compiled knowledge
+Conversations and preferences
+Changing relationships
+
+
+Retrieval emphasis
+Find relevant passages
+Read prepared knowledge pages
+Recover an episode
+Traverse context and relationships
+
+
+Updating model
+Re-index inputs
+Rebuild or edit wiki pages
+Record new episodes
+Ingest and revisit sources
+
+
+Intended use
+Document lookup
+Knowledge-base maintenance
+Conversation continuity
+Relationships and recurring tasks
+
+
+Workflow orchestration
+
+
+Tool
+Intended use
+Original article’s strength
+Tradeoff
+
+
+
+GStack
+Software-development workflow
+Specialized roles and review
+Learning curve
+
+
+Career-Ops
+A long workflow in a specific domain
+Monitoring and end-to-end processing
+Domain-specific scope
+
+
+GBrain
+General recurring tasks
+Timelines and relationships
+Configuration complexity
+
+
+5. Practices and pitfallsPractices proposed in the original article
+Start with a working LLM Wiki and Obsidian setup.
+Back up the local knowledge repository.
+Begin with supervised or partly automated operation.
+Keep logs of background work.
+
+Common problems
+Expecting document retrieval alone to solve all long-term memory needs.
+Introducing every component at once.
+Giving a workflow capabilities without appropriate controls.
+Running recurring tasks without monitoring or a way to stop them.
+
+The original article mentions Impeccable as design guidance. System permissions and execution controls also need to be handled by the actual runtime; design guidance is not an access-control mechanism.
+6. Future directions in the original articleThe author anticipates improvements in:
+
+Memory that requires less explicit management.
+Reasoning about relationships and causes.
+Proactive planning and recurring work.
+Collaboration between specialized agents.
+
+These are the original article’s expectations, rather than measured capabilities of every tool in the table.
+Closing perspectiveThe architecture is best approached as an incremental engineering project. First make the knowledge base useful, then add conversational continuity, and finally introduce scheduled workflows where they solve a real problem.
+Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>Open Source</tag>
+        <tag>Automation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Daily AI Open-Source Digest — March 23, 2026</title>
+    <url>/en/posts/a7e2b6/</url>
+    <content><![CDATA[
+Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+
+Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
+Stars recorded in the original roundup: 20.
+Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
+Features highlighted in the original article:
+
+Video downloads from more than 1,800 platforms.
+AI-generated video summaries.
+Mind-map generation.
+International payments through Stripe.
+
+GitHub
+2. opencode-lazyA plugin manager for OpenCode.
+Stars recorded: 4. Stack: TypeScript.
+
+Search for plugins online.
+Install and manage plugins.
+Work with plugins directly inside a session.
+
+GitHub
+3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
+Stars recorded: 4.
+The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
+GitHub
+ObservationsThe original roundup identified three themes:
+
+AI and video processing: combining downloads with AI summaries.
+Developer productivity: demand for plugin-management tools.
+API aggregation: interest in free LLM resources.
+
+The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+        <tag>Daily Digest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
+    <url>/en/posts/b8f3c7/</url>
+    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
+It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
+BandwagonHost purchase page — affiliate link
+
+
+Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
+The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
+Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
+Location notes
+Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
+Osaka CN2 GIA: presented as an option for lower latency.
+Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
+
+Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
+
+
+
+Plan example
+CPU &#x2F; RAM
+Storage
+Transfer
+Port
+Recorded annual price
+
+
+
+CN2 GIA-E
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+2.5 Gbps
+$169.90
+
+
+Entry KVM
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+1 Gbps
+$49.90
+
+
+Hong Kong CN2 GIA
+2 cores &#x2F; 2 GB
+40 GB SSD
+500 GB
+1 Gbps
+$899.90
+
+
+The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
+View plans on BandwagonHost — affiliate link
+Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
+Current plan specifications, availability and coupon validity should be checked on the purchase page.
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>VPS</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Networking</tag>
+        <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cross-Border Ecommerce Operations — A Guide to Automation</title>
+    <url>/en/posts/d1b5e9/</url>
+    <content><![CDATA[Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:
+
+Data collection: checking competitors’ prices on a schedule.
+Notifications: sending order-status updates to your phone.
+Campaign operations: producing creative assets in batches and monitoring returns.
+
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>Automation</tag>
+        <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Facebook Live Commerce — From Account Setup to Campaign Operations</title>
+    <url>/en/posts/b2e4d1/</url>
+    <content><![CDATA[
+TL;DR: The original article organizes Facebook live commerce around targeted promotion, professional product demonstrations and products suited to the market. It covers account preparation, a five-step campaign workflow and two conversion approaches.
+
+What makes a live-commerce session work?The article argues that product quality, supply-chain credibility and the opportunity to speak to a real person matter especially for jade, jewelry and other expensive products.
+Its operating model is:
+Targeted promotion + professional demonstration + market-specific product selection → orders.
+1. Prepare the operating toolsPage-management accountsThe original setup assigns streaming, customer support and backup responsibilities to two or three page administrators. Personal accounts manage the business page; the page is the public destination.
+A dedicated business pageCommunicate the offer clearly:
+
+A focused position, such as factory-direct jade or premium wholesale supply.
+The product category, markets served and supply advantages.
+A contact route through WhatsApp or the relevant business messaging service.
+
+An advertising accountThe original workflow calls for a business advertising account connected to Business Manager and the page, with a stable network connection.
+2. Set up the accountsBuild the page
+Open page management.
+Set the name, category and business description.
+Add a call-to-action button for customer contact.
+Assign the people responsible for streaming and support.
+
+Configure page managementThe original checklist covers posting permissions, geographic restrictions and comment filters.
+Connect the advertising accountLink the advertising account to the page, check the connection and test the campaign workflow before the live session.
+3. Promote the live sessionTwo conversion approaches
+
+
+Approach in the original workflow
+Reach
+Inquiry quality
+Intended use
+
+
+
+Ad-driven page traffic
+Higher
+More varied
+Initial reach and viewership
+
+
+Messaging applications
+Lower
+More qualified
+Conversations and conversion
+
+
+The article gives a 70&#x2F;30 allocation as an example of combining the approaches.
+Five-step workflow
+Create a campaign. Use a name such as “Live demo — product category.” The original article suggests testing an engagement objective before scaling.
+Configure the ad set. The described workflow selects the ad destination and a goal of maximizing Facebook page visits.
+Choose geography and language. Match the product to the intended market. The jade example includes Southeast Asia, Hong Kong, Taiwan and overseas Chinese audiences, with appropriate Chinese and English creative.
+Define the audience. The article starts with relevant audience interests and moves to customer-based custom and lookalike audiences after conversions accumulate. Its age-range examples are 28–65 for jade and 20–45 for apparel.
+Select creative and publish. Use an existing preview post, prepare the reply that directs people to the live session, then publish the campaign.
+
+4. Adjust the budget by stageRehearsal stageThe original article suggests $50–100 per day as an example budget for practicing the process and presentation, without expecting immediate conversion.
+Established operation
+Start warming up the page three to five days before a session.
+Combine direct promotion and messaging on the day.
+Increase spending according to conversion results.
+
+Monitor views, click-through rate, viewing duration and cost during the stream. Pause or adjust ad sets that perform poorly.
+5. Produce differentiated creativeThe proposed structure is:
+Clear product footage + knowledgeable presentation + a specific offer.
+An example preview shows a presenter explaining a jade bangle’s material and workmanship, with the session time, a limited offer and shipping information.
+The original article also suggests factory and inventory footage, customer feedback with personal details obscured, and discussion of the product’s collection value.
+Operating checklist
+Assign page managers and support responsibilities.
+Prepare the business page.
+Configure the advertising account.
+Test network stability.
+Set permissions and moderation controls.
+Publish a preview post.
+Configure the live-session campaign.
+Monitor campaign and session data while streaming.
+
+The core lesson is that a live session needs coordinated promotion, presentation and customer follow-up.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>Facebook Live</tag>
+        <tag>Live Commerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Geographic Targeting for High-Value Products</title>
+    <url>/en/posts/e5c9f4/</url>
+    <content><![CDATA[
+TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
+
+Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
+Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
+Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
+Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
+For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
+Configure geographic targeting
+Open the campaign’s ad-set settings.
+Find the location controls.
+Use the bulk-location workflow if it is available.
+Select the supported location type and target country.
+Paste the verified locations.
+Review every matched location before adding it.
+
+The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
+Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
+Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
+Examples from the original article
+
+
+Product
+Market
+Area-selection approach
+
+
+
+Jade
+Malaysia
+Research and verify relevant areas
+
+
+Jade
+Singapore
+Check the target area and postal-code match
+
+
+Jade
+Hong Kong
+Use supported named geographic areas
+
+
+Luxury products
+California
+Verify the intended ZIP-code areas
+
+
+Wholesale
+Multiple markets
+Research industrial and commercial centers
+
+
+The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
+Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
+Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
+Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
+A practical test sequence
+Research the market and verify the proposed locations.
+Review the available geographic and interest controls.
+Prepare appropriate product imagery and copy.
+Run a limited test.
+Compare qualified inquiries and orders, then refine the locations.
+
+Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>Geo Targeting</tag>
+        <tag>Jewelry</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello, I&#39;m Jayln3</title>
+    <url>/en/posts/e2c6f0/</url>
+    <content><![CDATA[Welcome to my blog. This is where I record what I learn about global growth, AI and automation, and technical infrastructure.
+What you will find here
+Global Growth: advertising, B2B lead generation, live commerce and online stores.
+AI &amp; Automation: open-source tools, agent workflows and operational automation.
+Infrastructure: networking, VPS hosting and website development.
+Site Notes: updates and changes to the blog.
+
+Chinese and EnglishArticles have Chinese and English editions. Use the language button at the top of the page to open the corresponding translation. Each language has its own index, search and subscription feed.
+Keep in touchFind my projects on GitHub, or leave a message in the guestbook. See the about page for the status of my personal domain and contact addresses.
+]]></content>
+      <categories>
+        <category>Site Notes</category>
+      </categories>
+      <tags>
+        <tag>Site News</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers</title>
+    <url>/en/posts/a1f3c9/</url>
+    <content><![CDATA[
+TL;DR: A common B2B advertising problem is paying for inquiries from individual shoppers. The original article proposes three filters: B2B audience criteria, visible minimum-order quantities, and job-title targeting.
+
+The problem: consumer traffic absorbs the budgetCross-border suppliers may receive plenty of inquiries from people who want one item or are simply comparing prices, while reaching few people with purchasing authority.
+The original article argues that broad consumer-oriented audiences need additional qualification for B2B campaigns. The following techniques are its proposed filters.
+1. Combine interests with B2B criteriaSetupIn the ad set’s detailed-targeting controls, the original workflow uses a “must also match” field:
+
+Add industry interests, such as jade wholesale or jewelry supply chains.
+Add qualifying terms such as wholesale, supply-chain management, corporate purchasing and B2B.
+
+The intended logic is to reach people who show both industry interest and a business-related attribute.
+Results reported in the original article
+
+
+Audience setup
+Consumer-traffic share
+Cost per B2B inquiry
+
+
+
+Interests only
+About 65%
+$28–35
+
+
+Interests plus additional criteria
+About 15%
+$12–18
+
+
+The original article attributes these figures to factory campaigns and notes that results vary by category.
+2. Put minimum-order quantities in the copyState the wholesale threshold directly:
+
+“Jade bangles: minimum order of 50 pieces, with private-label customization.”
+“Factory-direct apparel: minimum order of 500 pieces, with cross-border logistics.”
+
+An individual shopper can immediately see whether the offer fits. A wholesale buyer sees a signal that the seller can handle supply and production.
+This can also improve qualification: a buyer who submits an inquiry after reading the threshold already understands a key commercial condition.
+3. Focus on purchasing decision-makersThis approach becomes more useful once a campaign has a base of converted customers:
+
+Upload the customer list to create a custom audience.
+Build a lookalike audience from it.
+In the targeting workflow described by the original article, add relevant job titles:
+Purchasing Manager
+Production Manager
+CEO, Founder or Owner
+Supply Chain Manager
+
+
+
+Interest alone does not establish purchasing authority. The purpose of the job-title layer is to focus on people involved in purchase decisions.
+Combine the three techniquesThe proposed conversion path is:
+
+Ad set: industry interests, qualifying B2B criteria and job roles.
+Creative: minimum-order quantity, factory capabilities and an offer for business buyers.
+Destination: the business page, WhatsApp replies and a quotation guide.
+
+
+
+
+Technique
+Purpose
+Difficulty
+
+
+
+Additional audience criteria
+Qualify incoming traffic
+Low
+
+
+Minimum-order copy
+Qualify buyers and communicate the offer
+Low
+
+
+Job-title targeting
+Reach decision-makers
+Moderate
+
+
+The central idea is to combine audience selection with clear commercial information. The original article describes examples from jade, jewelry, apparel and consumer-electronics suppliers.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>B2B</tag>
+        <tag>Lead Generation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LinkedIn B2B Marketing — From Account Setup to ABM</title>
+    <url>/en/posts/af40aec/</url>
+    <content><![CDATA[
+TL;DR: For B2B hardware, more traffic does not necessarily mean better inquiries. The original article focuses on LinkedIn’s professional targeting and account-based marketing: choosing target companies, then reaching the people involved in their purchasing decisions.
+
+1. Why consider LinkedIn?Smart-parking systems, access-control equipment and other infrastructure products are purchased by organizations. Their buying process may involve procurement, facilities and operations, with a long decision cycle and a substantial contract value.
+The original article compares channels as follows. CPC ranges are its recorded examples, not current price quotations.
+
+
+
+Platform
+Audience orientation
+Original CPC example
+
+
+
+Meta &#x2F; Facebook &#x2F; Instagram
+Broad consumer audiences
+$0.50–2
+
+
+TikTok
+Entertainment and discovery
+$0.30–1
+
+
+Google
+Active search intent
+$2–8
+
+
+LinkedIn
+Professional roles and companies
+$5–15
+
+
+LinkedIn’s attraction in this context is the ability to work with professional attributes, such as procurement and facilities-management roles.
+2. Three parts of the platformTalent SolutionsThe original article identifies recruitment as a major part of LinkedIn’s business. For a marketer, a company’s hiring activity may also provide context about its operations.
+Marketing SolutionsCampaign Manager is the advertising interface. The article discusses:
+
+Sponsored Content in the feed.
+Sponsored Messaging.
+Text Ads.
+Video Ads.
+
+Premium and Sales NavigatorSales Navigator supports research by company, job role and industry, helping a team identify accounts and relevant people.
+The proposed combination is to research companies and decision-makers, then coordinate the advertising approach around that account list.
+3. Account-based marketingABM is a strategy, not a separate advertising system.
+The broad-reach approach starts with a large audience and qualifies the resulting leads. The ABM approach starts with a list of target companies and works toward relevant people within those accounts.
+Prepare the account listThe original workflow uses Matched Audiences in Campaign Manager with company-domain lists or customer-email lists.
+Define the relevant rolesCombine the company list with the intended roles and industries:
+
+Procurement managers.
+Facilities directors.
+Operations managers.
+Senior executives.
+Relevant sectors, such as property management, commercial real estate and manufacturing.
+
+Match creative to the buying taskThe original examples emphasize company-specific problems, minimum orders, customization and project references. The proposed destination is a case-study page and inquiry form.
+Figures in the original article
+
+
+Metric
+Broad campaign example
+ABM example
+
+
+
+Impressions
+More than 100,000
+5,000–20,000
+
+
+Click-through rate
+0.3–0.8%
+1.5–3%
+
+
+Inquiry quality
+Mixed
+More relevant business inquiries
+
+
+Cost per acquisition
+$50–150
+$80–200
+
+
+The original article argues that a higher initial acquisition cost can still be worthwhile if lead quality and downstream conversion improve. It does not link a dataset for these figures.
+4. Account setup and agency arrangementsDirect operationThe original checklist includes a personal LinkedIn account, Campaign Manager access and a suitable payment method.
+The article raises a separate operational issue for a China-based business: how advertising payments and supporting documents are handled by its finance team.
+Working with an agencyThe article describes account setup, funding, campaign support and invoicing as possible agency services. It gives a 5–15% service-fee range as an example from the original publication.
+Before agreeing terms, clarify:
+
+The fee and how it is calculated.
+Rebate conditions and timing.
+Reporting frequency.
+Whether campaign management and creative production are included.
+Minimum funding requirements.
+Which invoices and supporting documents will be supplied.
+
+These are commercial questions to settle with the provider and the business’s finance team.
+5. Choose channels around the purchaseThe original article positions Meta and TikTok primarily for broad consumer reach, Google for active search demand, and LinkedIn for professional and company-level targeting.
+Its illustrative decision framework is:
+
+Consumer products: consider Meta or TikTok.
+Lower-value B2B offers: test Google Ads alongside LinkedIn.
+B2B orders around $1,000–10,000: investigate LinkedIn ABM.
+Large or project-based contracts: combine ABM with deeper account research.
+
+Illustrative budget allocation
+
+
+Stage
+LinkedIn
+Meta
+
+
+
+Initial testing
+70%
+30%
+
+
+Scaling
+50%
+50%
+
+
+Established brand and acquisition activity
+40%
+60%
+
+
+These percentages are the original article’s example allocation for international B2B hardware marketing.
+6. Execution priorities
+Define the intended companies, industries and roles.
+Build and maintain a target-account list.
+Match creative and landing pages to the purchasing problem.
+Agree operational and reporting responsibilities.
+Coordinate advertising with account research and follow-up.
+
+The article’s central argument is that the relevance of a B2B inquiry can matter more than the raw number of clicks.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>B2B</tag>
+        <tag>ABM</tag>
+        <tag>Job Targeting</tag>
+        <tag>International Ads</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
+    <url>/en/posts/c9a4d8/</url>
+    <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
+
+
+Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.
+
+LisaHost &#x2F; Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m.
+BandwagonHost &#x2F; IT7: recorded upload rates stayed close to 118 Mbps. The article saw more headroom for high-bitrate streaming or sending streams to multiple platforms.
+
+The original multi-platform example estimates a combined 60–80 Mbps for YouTube, Twitch and Bilibili.
+Evening upload measurementsWindow: 19:30–23:00 China Standard Time (UTC+8).
+Metric: upload throughput in Mbps.
+
+
+
+Time
+LisaHost &#x2F; Cogent
+BandwagonHost &#x2F; IT7
+Ratio
+Original assessment
+
+
+
+19:30
+60.04
+114.28
+1.9×
+Both exceed the working threshold
+
+
+20:00
+40.30
+118.17
+2.9×
+A clear drop on LisaHost
+
+
+21:00
+65.45
+122.79
+1.8×
+More headroom on BandwagonHost
+
+
+22:00
+57.60
+119.43
+2.0×
+BandwagonHost remains stable
+
+
+23:00
+64.40
+119.32
+1.8×
+BandwagonHost remains stable
+
+
+Mean
+57.56
+118.80
+2.06×
+—
+
+
+The article’s interpretation is that BandwagonHost remained close to 120 Mbps, while LisaHost still exceeded its working threshold but varied more.
+Packet loss and jitterThe original article also gives a qualitative comparison involving a standard international Alibaba Cloud route:
+
+
+
+Observation
+LisaHost &#x2F; Cogent
+Alibaba Cloud international, standard route
+BandwagonHost &#x2F; CN2 GIA
+
+
+
+Routing description
+Budget-oriented route
+Standard BGP route
+Premium China Telecom route
+
+
+Reported evening loss
+Occasional loss
+Multiple timeouts in the reported test
+Almost no loss in the reported test
+
+
+Reported jitter
+Noticeable
+Pronounced
+Low
+
+
+Author’s streaming assessment
+Usable with reservations
+Poor in this test
+Preferred in this test
+
+
+The author describes being surprised by the observed timeouts on the tested Alibaba Cloud route and by the comparatively steady CN2 GIA results.
+These observations describe the original test. The article does not supply raw logs or a full reproducible test configuration.
+BandwagonHost purchase page — affiliate link
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Streaming</tag>
+        <tag>LisaHost</tag>
+        <tag>Reviews</tag>
+        <tag>4K Streaming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Conversational Commerce or an Online Store?</title>
+    <url>/en/posts/d4b8e3/</url>
+    <content><![CDATA[
+TL;DR: Chat-led conversion suits purchases that require explanation, trust or negotiation. A self-service store suits standardized products and shorter decisions. Choose the model around the product and customer.
+
+How the models differNeither approach is inherently more professional. They rely on different ways of helping a customer decide.
+
+
+
+Dimension
+Chat-led conversion
+Online-store conversion
+
+
+
+Main mechanism
+Build trust through conversation
+Explain and persuade through the page
+
+
+Typical products
+High-value, B2B or customized items
+Standardized, easily understood items
+
+
+Path
+Ad → WhatsApp&#x2F;Messenger → conversation → order
+Ad → landing page → checkout
+
+
+Core capability
+Expertise, communication and response speed
+Page design, payments and conversion flow
+
+
+1. Products suited to conversationsAdult-product categoriesThe original article identifies privacy, product-specific questions and the need for one-to-one communication as reasons customers may prefer a private conversation.
+Its workflow describes informational page content, contextual creative, a page or Messenger destination and a WhatsApp business account.
+Jade, jewelry and luxury productsThese products can require explanation of material, color, workmanship and customization. The proposed approach combines professional presentation, clear photographs, certificates and individual support.
+Factories and wholesale suppliersBusiness buyers need to discuss price, customization, lead times and payment terms. They also want evidence of production capability.
+The original workflow uses real factory footage, samples of bulk orders and customer cases to support those discussions.
+2. Run a useful sales conversationRetail and personal customizationStart with the need. Ask about the intended occasion, features and specifications instead of simply asking what the customer wants to buy.
+Narrow the choice. Recommend two or three relevant options, each with a clear selling point and actual product photographs.
+Explain price and terms. The original example starts with the base price, then describes quantity discounts, shipping and availability.
+Explain after-sales service. Make delivery tracking, returns and damage-replacement arrangements clear.
+Wholesale, private-label and customized orders
+Identify the buyer and requirement. Establish whether they are a wholesaler, retailer or trading company, then discuss quantity, minimum order, customization and timing.
+Demonstrate capability. Share factory and bulk-order evidence, production capacity and relevant export capabilities before presenting the quotation.
+Quote in tiers. The original example gives prices for 50 and 100 units, with private-label terms discussed at 500 units.
+Confirm the agreement in writing. Record quantity, unit price, production time, payment, logistics and after-sales terms before collecting a deposit.
+
+Practices shared by both
+
+
+Practice
+What to prepare
+
+
+
+Response time
+Coverage during the customer’s working hours
+
+
+Quick replies
+Answers about price, delivery, after-sales service and minimum orders
+
+
+Follow-up
+Relevant updates for customers still considering the offer
+
+
+Existing customers
+A clear contact channel and repeat-order arrangements
+
+
+The original article suggests following up after three to five days, with relevant new arrivals or an offer.
+3. Products suited to an online storeStandardized apparel, beauty products, accessories, bags and watches can be easier to sell through a clear product page and self-service checkout.
+The proposed process is:
+
+Use a sales campaign objective.
+Measure the path with a pixel and conversion API.
+Move from creative to landing page to checkout.
+
+Poor images, an unclear page or a cumbersome payment flow can stop the process. Product information, relevant credentials and a smooth checkout support confidence.
+4. Choose the modelThe original article uses the following decision prompts:
+
+Is the order value at least $500? Consider whether personal discussion is needed.
+Is the product standardized, with a clear SKU? A store may be suitable.
+Is the buyer a business with a long purchasing process? Conversation is likely to matter.
+Does the customer need to speak with a real person to feel comfortable? Provide that route.
+
+These prompts are a framework for evaluating the purchase, rather than a claim that one model always wins.
+
+
+
+Model
+Suitable characteristics
+Main skills
+
+
+
+Chat-led
+High value, B2B, customization and trust-building
+Product expertise, communication and support
+
+
+Store-led
+Standardization and a short decision process
+Creative, page design and checkout
+
+
+The original methodology covers jade, jewelry, adult-product categories, factories and other cross-border businesses.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>WhatsApp</tag>
+        <tag>Conversational Commerce</tag>
+        <tag>Online Stores</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
+    <url>/en/posts/f6d1a5/</url>
+    <content><![CDATA[
+Nine AI and developer tools from the original March 24, 2026 roundup. Star counts are the figures recorded at publication.
+
+Project directory
+
+
+Project
+Recorded stars
+Language
+Main focus
+
+
+
+agency-agents
+61,076
+Shell
+Collaboration among specialist AI agents
+
+
+gstack
+43,412
+TypeScript
+Claude Code workflow tools
+
+
+deer-flow
+41,036
+Python
+Open-source SuperAgent framework
+
+
+autoresearch
+53,034
+Python
+Automated AI research experiments
+
+
+lightpanda-io&#x2F;browser
+24,330
+Zig
+Headless browsing for automation
+
+
+CLI-Anything
+22,214
+Python
+Agent-oriented command-line interfaces
+
+
+vibe-coding-cn
+17,515
+Python
+Chinese-language vibe-coding guide
+
+
+cognee
+14,556
+Python
+Agent memory and knowledge management
+
+
+openclaw-mission-control
+3,012
+TypeScript
+Dashboard for agent orchestration
+
+
+Project details1. agency-agentsA collaboration platform in which agents take on specialist roles, such as frontend development, Reddit operations and creative work. Each role has a personality, a process and verifiable deliverables.
+GitHub
+2. gstackGarry Tan’s opinionated toolset for Claude Code. The original roundup describes 15 tools, with roles such as CEO, designer, engineering manager and release manager, covering the development lifecycle.
+GitHub
+3. deer-flowAn open-source SuperAgent framework combining research, coding and content creation. It supports sandboxes, memory, tools, skills and subagents, with tasks ranging from minutes to hours.
+GitHub
+4. autoresearchA tool for automated research and single-GPU nanochat training experiments. It aims to simplify the cycle of running and evaluating AI-training experiments.
+GitHub
+5. lightpanda-io&#x2F;browserA lightweight, high-performance headless browser written in Zig, designed for AI and automation workloads.
+GitHub
+6. CLI-AnythingA tool for making software accessible to agents through standardized command-line interfaces.
+GitHub
+7. vibe-coding-cnA Chinese-language guide to vibe coding, introducing an intuitive approach to programming for Chinese-speaking developers.
+GitHub
+8. cogneeAn agent memory engine presented in the original roundup as requiring six lines of code to get started. Its focus is straightforward integration and efficient knowledge management.
+GitHub
+9. openclaw-mission-controlA dashboard for orchestrating OpenClaw agents, assigning tasks and coordinating multiple agents through the OpenClaw Gateway.
+GitHub
+TrendsThe original roundup highlighted multi-agent collaboration, automation tools, developer productivity, and memory and context management as areas of growing interest.
+The original Chinese roundup was automatically compiled and published using OpenClaw.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+</search>
