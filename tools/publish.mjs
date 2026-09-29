@@ -7,6 +7,12 @@ import { ROOT, output, site, baseUrl } from './lib.mjs';
 if (!process.env.GITHUB_ACTIONS || !process.env.GITHUB_TOKEN || !process.env.GITHUB_REPOSITORY) {
   throw new Error('Publish through the GitHub Actions workflow on the source branch.');
 }
+// Surface the failure in the run summary even when full job logs are unavailable.
+// Monitoring preserves Node's normal failure behavior and nonzero exit status.
+process.on('uncaughtExceptionMonitor', error => {
+  const message = String(error.message).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
+  console.error('::error title=GitHub Pages publication::' + message);
+});
 function run(command, args, cwd = ROOT) {
   const child = spawnSync(command, args, { cwd, stdio: 'inherit' });
   if (child.status !== 0) throw new Error(command + ' failed');
