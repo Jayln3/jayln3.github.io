@@ -380,53 +380,6 @@ Originally published on Jayln3’s Blog. Please credit the source when quoting o
       </tags>
   </entry>
   <entry>
-    <title>Daily AI Open-Source Digest — March 23, 2026</title>
-    <url>/en/posts/a7e2b6/</url>
-    <content><![CDATA[
-Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
-
-Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
-Stars recorded in the original roundup: 20.
-Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
-Features highlighted in the original article:
-
-Video downloads from more than 1,800 platforms.
-AI-generated video summaries.
-Mind-map generation.
-International payments through Stripe.
-
-GitHub
-2. opencode-lazyA plugin manager for OpenCode.
-Stars recorded: 4. Stack: TypeScript.
-
-Search for plugins online.
-Install and manage plugins.
-Work with plugins directly inside a session.
-
-GitHub
-3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
-Stars recorded: 4.
-The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
-GitHub
-ObservationsThe original roundup identified three themes:
-
-AI and video processing: combining downloads with AI summaries.
-Developer productivity: demand for plugin-management tools.
-API aggregation: interest in free LLM resources.
-
-The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-        <tag>AI</tag>
-        <tag>Daily Digest</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
     <url>/en/posts/b8f3c7/</url>
     <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
@@ -493,6 +446,71 @@ Current plan specifications, availability and coupon validity should be checked 
         <tag>CN2 GIA</tag>
         <tag>Networking</tag>
         <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cross-Border Ecommerce Operations — A Guide to Automation</title>
+    <url>/en/posts/d1b5e9/</url>
+    <content><![CDATA[Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:
+
+Data collection: checking competitors’ prices on a schedule.
+Notifications: sending order-status updates to your phone.
+Campaign operations: producing creative assets in batches and monitoring returns.
+
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>Automation</tag>
+        <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Daily AI Open-Source Digest — March 23, 2026</title>
+    <url>/en/posts/a7e2b6/</url>
+    <content><![CDATA[
+Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+
+Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
+Stars recorded in the original roundup: 20.
+Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
+Features highlighted in the original article:
+
+Video downloads from more than 1,800 platforms.
+AI-generated video summaries.
+Mind-map generation.
+International payments through Stripe.
+
+GitHub
+2. opencode-lazyA plugin manager for OpenCode.
+Stars recorded: 4. Stack: TypeScript.
+
+Search for plugins online.
+Install and manage plugins.
+Work with plugins directly inside a session.
+
+GitHub
+3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
+Stars recorded: 4.
+The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
+GitHub
+ObservationsThe original roundup identified three themes:
+
+AI and video processing: combining downloads with AI summaries.
+Developer productivity: demand for plugin-management tools.
+API aggregation: interest in free LLM resources.
+
+The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+        <tag>Daily Digest</tag>
       </tags>
   </entry>
   <entry>
@@ -591,21 +609,81 @@ The central idea is to combine audience selection with clear commercial informat
       </tags>
   </entry>
   <entry>
-    <title>Cross-Border Ecommerce Operations — A Guide to Automation</title>
-    <url>/en/posts/d1b5e9/</url>
-    <content><![CDATA[Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:
+    <title>Geographic Targeting for High-Value Products</title>
+    <url>/en/posts/e5c9f4/</url>
+    <content><![CDATA[
+TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
 
-Data collection: checking competitors’ prices on a schedule.
-Notifications: sending order-status updates to your phone.
-Campaign operations: producing creative assets in batches and monitoring returns.
+Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
+Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
+Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
+Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
+For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
+Configure geographic targeting
+Open the campaign’s ad-set settings.
+Find the location controls.
+Use the bulk-location workflow if it is available.
+Select the supported location type and target country.
+Paste the verified locations.
+Review every matched location before adding it.
 
+The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
+Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
+Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
+Examples from the original article
+
+
+Product
+Market
+Area-selection approach
+
+
+
+Jade
+Malaysia
+Research and verify relevant areas
+
+
+Jade
+Singapore
+Check the target area and postal-code match
+
+
+Jade
+Hong Kong
+Use supported named geographic areas
+
+
+Luxury products
+California
+Verify the intended ZIP-code areas
+
+
+Wholesale
+Multiple markets
+Research industrial and commercial centers
+
+
+The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
+Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
+Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
+Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
+A practical test sequence
+Research the market and verify the proposed locations.
+Review the available geographic and interest controls.
+Prepare appropriate product imagery and copy.
+Run a limited test.
+Compare qualified inquiries and orders, then refine the locations.
+
+Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
 ]]></content>
       <categories>
-        <category>AI &amp; Automation</category>
+        <category>Global Growth</category>
       </categories>
       <tags>
-        <tag>Automation</tag>
-        <tag>Ecommerce</tag>
+        <tag>Meta Ads</tag>
+        <tag>Geo Targeting</tag>
+        <tag>Jewelry</tag>
       </tags>
   </entry>
   <entry>
@@ -693,84 +771,6 @@ The core lesson is that a live session needs coordinated promotion, presentation
         <tag>Meta Ads</tag>
         <tag>Facebook Live</tag>
         <tag>Live Commerce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Geographic Targeting for High-Value Products</title>
-    <url>/en/posts/e5c9f4/</url>
-    <content><![CDATA[
-TL;DR: The original article proposes narrowing geographic targeting when selling expensive products. The workflow is to research relevant areas, validate their postal codes where applicable, and test them in the advertising platform.
-
-Why geography mattersJade, jewelry, luxury goods and customized products can attract many inquiries that do not become orders. The original article suggests investigating whether the selected areas match the intended market.
-Purchasing patterns differ within a country or city. Geographic segmentation is one way to test a market hypothesis, alongside the product, offer and creative.
-Research and validate the locationsThe original workflow starts with searches for relevant residential or commercial areas in the target market, then organizes the results for import.
-Correction to the original example: Hong Kong does not use a postcode system. For Hong Kong, research named districts or other geographic options supported by the advertising platform; do not ask an AI tool to invent local postal codes. UPU Addressing and Postcode Manual, Hong Kong case study
-For markets that use postal codes, check the code against the local postal service and confirm what the advertising platform actually matches. A search or AI-generated list is a starting point for verification.
-Configure geographic targeting
-Open the campaign’s ad-set settings.
-Find the location controls.
-Use the bulk-location workflow if it is available.
-Select the supported location type and target country.
-Paste the verified locations.
-Review every matched location before adding it.
-
-The original article’s Kuala Lumpur code list is not reproduced as a verified location mapping. Confirm each area’s code and platform match before using it.
-Combine geography with other signalsThe original article proposes combining geographic tests with product-related interests, shopping behavior and location exclusions.
-Examples of product interests in the article include jade, jewelry, collecting, auctions, art and gifts. Available targeting controls need to be checked in the account in use.
-Examples from the original article
-
-
-Product
-Market
-Area-selection approach
-
-
-
-Jade
-Malaysia
-Research and verify relevant areas
-
-
-Jade
-Singapore
-Check the target area and postal-code match
-
-
-Jade
-Hong Kong
-Use supported named geographic areas
-
-
-Luxury products
-California
-Verify the intended ZIP-code areas
-
-
-Wholesale
-Multiple markets
-Research industrial and commercial centers
-
-
-The original article reported campaign-improvement percentages without a linked dataset. They are not reproduced here as verified benchmarks.
-Common mistakesTreating a whole city as one audienceA city-level audience may combine very different markets. Smaller geographic tests can help distinguish their performance.
-Combining dissimilar markets in one ad setThe article advises separating markets such as the United States, Malaysia and Singapore when their costs, language and demand differ.
-Ignoring languageMatch the creative to the intended audience: for example, Traditional Chinese for an appropriate Hong Kong audience, or Chinese and English variants where relevant.
-A practical test sequence
-Research the market and verify the proposed locations.
-Review the available geographic and interest controls.
-Prepare appropriate product imagery and copy.
-Run a limited test.
-Compare qualified inquiries and orders, then refine the locations.
-
-Geography is a segment to test; it does not establish an individual person’s budget or intention to buy.
-]]></content>
-      <categories>
-        <category>Global Growth</category>
-      </categories>
-      <tags>
-        <tag>Meta Ads</tag>
-        <tag>Geo Targeting</tag>
-        <tag>Jewelry</tag>
       </tags>
   </entry>
   <entry>
@@ -913,6 +913,107 @@ Keep in touchFind my projects on GitHub, or leave a message in the guestbook. Se
       </categories>
       <tags>
         <tag>Site News</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
+    <url>/en/posts/f6d1a5/</url>
+    <content><![CDATA[
+Nine AI and developer tools from the original March 24, 2026 roundup. Star counts are the figures recorded at publication.
+
+Project directory
+
+
+Project
+Recorded stars
+Language
+Main focus
+
+
+
+agency-agents
+61,076
+Shell
+Collaboration among specialist AI agents
+
+
+gstack
+43,412
+TypeScript
+Claude Code workflow tools
+
+
+deer-flow
+41,036
+Python
+Open-source SuperAgent framework
+
+
+autoresearch
+53,034
+Python
+Automated AI research experiments
+
+
+lightpanda-io&#x2F;browser
+24,330
+Zig
+Headless browsing for automation
+
+
+CLI-Anything
+22,214
+Python
+Agent-oriented command-line interfaces
+
+
+vibe-coding-cn
+17,515
+Python
+Chinese-language vibe-coding guide
+
+
+cognee
+14,556
+Python
+Agent memory and knowledge management
+
+
+openclaw-mission-control
+3,012
+TypeScript
+Dashboard for agent orchestration
+
+
+Project details1. agency-agentsA collaboration platform in which agents take on specialist roles, such as frontend development, Reddit operations and creative work. Each role has a personality, a process and verifiable deliverables.
+GitHub
+2. gstackGarry Tan’s opinionated toolset for Claude Code. The original roundup describes 15 tools, with roles such as CEO, designer, engineering manager and release manager, covering the development lifecycle.
+GitHub
+3. deer-flowAn open-source SuperAgent framework combining research, coding and content creation. It supports sandboxes, memory, tools, skills and subagents, with tasks ranging from minutes to hours.
+GitHub
+4. autoresearchA tool for automated research and single-GPU nanochat training experiments. It aims to simplify the cycle of running and evaluating AI-training experiments.
+GitHub
+5. lightpanda-io&#x2F;browserA lightweight, high-performance headless browser written in Zig, designed for AI and automation workloads.
+GitHub
+6. CLI-AnythingA tool for making software accessible to agents through standardized command-line interfaces.
+GitHub
+7. vibe-coding-cnA Chinese-language guide to vibe coding, introducing an intuitive approach to programming for Chinese-speaking developers.
+GitHub
+8. cogneeAn agent memory engine presented in the original roundup as requiring six lines of code to get started. Its focus is straightforward integration and efficient knowledge management.
+GitHub
+9. openclaw-mission-controlA dashboard for orchestrating OpenClaw agents, assigning tasks and coordinating multiple agents through the OpenClaw Gateway.
+GitHub
+TrendsThe original roundup highlighted multi-agent collaboration, automation tools, developer productivity, and memory and context management as areas of growing interest.
+The original Chinese roundup was automatically compiled and published using OpenClaw.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
@@ -1187,107 +1288,6 @@ BandwagonHost purchase page — affiliate link
         <tag>LisaHost</tag>
         <tag>Reviews</tag>
         <tag>4K Streaming</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
-    <url>/en/posts/f6d1a5/</url>
-    <content><![CDATA[
-Nine AI and developer tools from the original March 24, 2026 roundup. Star counts are the figures recorded at publication.
-
-Project directory
-
-
-Project
-Recorded stars
-Language
-Main focus
-
-
-
-agency-agents
-61,076
-Shell
-Collaboration among specialist AI agents
-
-
-gstack
-43,412
-TypeScript
-Claude Code workflow tools
-
-
-deer-flow
-41,036
-Python
-Open-source SuperAgent framework
-
-
-autoresearch
-53,034
-Python
-Automated AI research experiments
-
-
-lightpanda-io&#x2F;browser
-24,330
-Zig
-Headless browsing for automation
-
-
-CLI-Anything
-22,214
-Python
-Agent-oriented command-line interfaces
-
-
-vibe-coding-cn
-17,515
-Python
-Chinese-language vibe-coding guide
-
-
-cognee
-14,556
-Python
-Agent memory and knowledge management
-
-
-openclaw-mission-control
-3,012
-TypeScript
-Dashboard for agent orchestration
-
-
-Project details1. agency-agentsA collaboration platform in which agents take on specialist roles, such as frontend development, Reddit operations and creative work. Each role has a personality, a process and verifiable deliverables.
-GitHub
-2. gstackGarry Tan’s opinionated toolset for Claude Code. The original roundup describes 15 tools, with roles such as CEO, designer, engineering manager and release manager, covering the development lifecycle.
-GitHub
-3. deer-flowAn open-source SuperAgent framework combining research, coding and content creation. It supports sandboxes, memory, tools, skills and subagents, with tasks ranging from minutes to hours.
-GitHub
-4. autoresearchA tool for automated research and single-GPU nanochat training experiments. It aims to simplify the cycle of running and evaluating AI-training experiments.
-GitHub
-5. lightpanda-io&#x2F;browserA lightweight, high-performance headless browser written in Zig, designed for AI and automation workloads.
-GitHub
-6. CLI-AnythingA tool for making software accessible to agents through standardized command-line interfaces.
-GitHub
-7. vibe-coding-cnA Chinese-language guide to vibe coding, introducing an intuitive approach to programming for Chinese-speaking developers.
-GitHub
-8. cogneeAn agent memory engine presented in the original roundup as requiring six lines of code to get started. Its focus is straightforward integration and efficient knowledge management.
-GitHub
-9. openclaw-mission-controlA dashboard for orchestrating OpenClaw agents, assigning tasks and coordinating multiple agents through the OpenClaw Gateway.
-GitHub
-TrendsThe original roundup highlighted multi-agent collaboration, automation tools, developer productivity, and memory and context management as areas of growing interest.
-The original Chinese roundup was automatically compiled and published using OpenClaw.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-        <tag>AI</tag>
       </tags>
   </entry>
 </search>

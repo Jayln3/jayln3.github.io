@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/en/posts/b2e4d1/</loc>
+    <loc>https://jayln3.com/en/posts/e5c9f4/</loc>
     
     <lastmod>2026-04-01</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/en/posts/e5c9f4/</loc>
+    <loc>https://jayln3.com/en/posts/b2e4d1/</loc>
     
     <lastmod>2026-04-01</lastmod>
     
@@ -208,20 +208,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/en/tags/ai/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/en/tags/daily-digest/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.com/en/tags/bandwagonhost/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -257,6 +243,20 @@
   </url>
   
   <url>
+    <loc>https://jayln3.com/en/tags/ai/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/en/tags/daily-digest/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayln3.com/en/tags/meta-ads/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -278,20 +278,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.com/en/tags/facebook-live/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.com/en/tags/live-commerce/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.com/en/tags/geo-targeting/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -300,6 +286,20 @@
   
   <url>
     <loc>https://jayln3.com/en/tags/jewelry/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/en/tags/facebook-live/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.com/en/tags/live-commerce/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
