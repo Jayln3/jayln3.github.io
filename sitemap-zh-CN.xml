@@ -65,6 +65,15 @@
   </url>
   
   <url>
+    <loc>https://jayln3.github.io/posts/a1f3c9/</loc>
+    
+    <lastmod>2026-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jayln3.github.io/posts/b2e4d1/</loc>
     
     <lastmod>2026-04-01</lastmod>
@@ -84,15 +93,6 @@
   
   <url>
     <loc>https://jayln3.github.io/posts/d4b8e3/</loc>
-    
-    <lastmod>2026-04-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/posts/a1f3c9/</loc>
     
     <lastmod>2026-04-01</lastmod>
     
@@ -208,20 +208,6 @@
   </url>
   
   <url>
-    <loc>https://jayln3.github.io/tags/ai/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/tags/daily-digest/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayln3.github.io/tags/bandwagonhost/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -258,6 +244,20 @@
   
   <url>
     <loc>https://jayln3.github.io/tags/meta-ads/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.github.io/tags/b2b/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.github.io/tags/lead-generation/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -313,7 +313,21 @@
   </url>
   
   <url>
-    <loc>https://jayln3.github.io/tags/b2b/</loc>
+    <loc>https://jayln3.github.io/tags/ai/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.github.io/tags/daily-digest/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayln3.github.io/tags/news/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -335,20 +349,6 @@
   
   <url>
     <loc>https://jayln3.github.io/tags/international-ads/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/tags/news/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayln3.github.io/tags/lead-generation/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
