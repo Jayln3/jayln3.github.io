@@ -11,6 +11,7 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [每日 AI 开源速递](https://jayln3.com/posts/a7e2b6/)
 - [搬瓦工(BandwagonHost) 2026最新评测：CN2 GIA线路依然是跨境电商首选吗？](https://jayln3.com/posts/b8f3c7/)
 - [跨境电商运营：从零到一的自动化增长指南](https://jayln3.com/posts/d1b5e9/)
+- [我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑](https://jayln3.com/posts/d9a729/)
 - [Facebook B端精准投流实战：3个技巧锁定海外批发商](https://jayln3.com/posts/a1f3c9/)
 - [Facebook全球直播从零到一：账号搭建与直投实操全攻略](https://jayln3.com/posts/b2e4d1/)
 - [Facebook高价值人群精准投放：邮编定位法实操指南](https://jayln3.com/posts/e5c9f4/)

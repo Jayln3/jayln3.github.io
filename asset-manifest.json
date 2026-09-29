@@ -1,5 +1,5 @@
 {
-  "imageCommit": "13176e10aa8560823a4e779e41bae7c09e1dc885",
+  "imageCommit": "195cea9d4e3512375ed404ef8c829d856fe7c3ec",
   "assets": [
     {
       "file": "/assets/images/agent-memory-v1-640.webp",
@@ -130,6 +130,36 @@
       "file": "/assets/images/streaming-network-v1-1280.webp",
       "bytes": 91674,
       "sha256": "b364c02a4ae8752a6afe390fbaa3bfd927b91bcc0f4e88a9ee1da8ce2a1fa2da"
+    },
+    {
+      "file": "/assets/images/dynadot-domain-email-v1-640.webp",
+      "bytes": 13518,
+      "sha256": "b9ca124a81f057ceb7668596e37e57426a0678afb2ec15a45043d4b56ba11873"
+    },
+    {
+      "file": "/assets/images/dynadot-domain-email-v1-1280.webp",
+      "bytes": 38176,
+      "sha256": "6d034b2f7990db164a4ba69aaca8eb4617d74654bf79b89a8a925c555c4231e8"
+    },
+    {
+      "file": "/assets/images/dynadot-mailbox-setup-v1-640.webp",
+      "bytes": 8448,
+      "sha256": "173a5969673fbdf26db7de97972f02942e028ccec9fcf6a66f683a8a1c3ffc00"
+    },
+    {
+      "file": "/assets/images/dynadot-mailbox-setup-v1-1280.webp",
+      "bytes": 25362,
+      "sha256": "878efe4fd9858c4841adfb58fbb0a995f3e0004fbb98ca164869f492eb8813d2"
+    },
+    {
+      "file": "/assets/images/dynadot-github-pages-v1-640.webp",
+      "bytes": 20418,
+      "sha256": "6ee1ce227b33bfe8bfdcbd826c02464a2d58a59af93a0232ed226dcff7b5ded5"
+    },
+    {
+      "file": "/assets/images/dynadot-github-pages-v1-1280.webp",
+      "bytes": 66232,
+      "sha256": "22fc1366ea03eae75c32744ea6b6ba249f7d9125fe9d5ae6c7735f84b3dec72f"
     }
   ]
 }
