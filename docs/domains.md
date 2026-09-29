@@ -41,7 +41,7 @@
 
 当前指定使用 Dynadot 免费邮箱，联系地址为 contact@jayln3.com，并转发到用户指定的 QQ 邮箱。转发目标仅保存于账户配置和本地操作记录，不发布到博客源码或网页。
 
-2026-09-29：通过 Dynadot 生产 API 创建了免费邮箱（1 GB），并添加下表邮件 DNS 记录，保留了全部 A、AAAA 和 www CNAME 网站记录。收件服务器对 contact@jayln3.com 返回 SMTP RCPT 250，emailEnabled 已设为 true。此检查仅确认服务器接受该收件地址，没有发送测试邮件，也尚未完成 QQ 转发和实际投递验证。
+2026-09-29：通过 Dynadot 生产 API 创建了免费邮箱（1 GB），并添加下表邮件 DNS 记录，保留了全部 A、AAAA 和 www CNAME 网站记录。收件服务器对 contact@jayln3.com 返回 SMTP RCPT 250，emailEnabled 已设为 true。随后在网页邮箱中将 contact@jayln3.com 设为免费方案主邮箱，启用 QQ 转发并保留收件箱投递，已触发 Dynadot 验证邮件。当前等待收件方点击确认链接；尚未发送测试邮件或完成实际转发投递验证。
 
 | 主机 | 类型 | 值 |
 | --- | --- | --- |
@@ -50,7 +50,7 @@
 | default._domainkey | CNAME | clients._domainkey.webhost.dynadot.com |
 | _dmarc | TXT | v=DMARC1; p=none; |
 
-API 支持创建邮箱服务，但没有提供邮箱内部的 Delivery Options 接口。QQ 转发目前待进入网页邮箱完成设置；需要在 Dynadot → My Emails → jayln3.com → Sign in 打开专属入口，保存转发地址并完成收件方验证。邮箱密码和 API 密钥均不保存在此仓库。
+API 支持创建邮箱服务，但没有提供邮箱内部的 Delivery Options 接口。QQ 转发已通过已登录的网页邮箱保存，待完成收件方验证。维护时在 Dynadot → My Emails → jayln3.com → Sign in 进入，或在已登录状态下访问 https://webmail.dynadot.com/mailbox/settings.html 。邮箱密码和 API 密钥均不保存在此仓库。
 
 独立免费邮箱和域名邮件转发是两种不同方式。独立邮箱应在 My Emails 中打开邮箱，在 General Settings → Delivery Options 配置 Forwarding，并在目标邮箱完成 Dynadot 要求的验证。直接在域名 Email Settings 配置 Forwarding Email 会断开独立 Email Hosting，不要将两种方式混用。
 
