@@ -39,7 +39,7 @@
     "commercial": "https://flowln.dev"
   },
   "customDomainEnabled": true,
-  "emailEnabled": false,
+  "emailEnabled": true,
   "locales": {
     "zh-CN": {
       "root": "/",
