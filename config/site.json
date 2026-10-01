@@ -21,12 +21,12 @@
     },
     "en": {
       "title": "Get paid access to the knowledge base",
-      "description": "Want to learn more? Connect with me on Feishu to explore the knowledge base and ask about purchasing access.",
-      "button": "Connect on Feishu",
+      "description": "Want to learn more? Connect with me on Lark to explore the knowledge base and ask about purchasing access.",
+      "button": "Connect on Lark",
       "qrImage": "/assets/images/feishu-contact-en-v2.png",
-      "qrAlt": "Scan this QR code with Feishu to add Jayln3 as a contact",
-      "qrCaption": "Scan with Feishu to connect",
-      "qrOpenLabel": "View the full-size Feishu QR code"
+      "qrAlt": "Scan this QR code with Lark to add Jayln3 as a contact",
+      "qrCaption": "Scan with Lark to connect",
+      "qrOpenLabel": "View the full-size Lark QR code"
     }
   },
   "activeBlogUrl": "https://jayln3.com",
