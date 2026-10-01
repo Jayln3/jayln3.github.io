@@ -1,5 +1,5 @@
 {
-  "imageCommit": "195cea9d4e3512375ed404ef8c829d856fe7c3ec",
+  "imageCommit": "658e4fc5469fe3ccb4f6b460556cd866ba7c1060",
   "assets": [
     {
       "file": "/assets/images/agent-memory-v1-640.webp",
@@ -160,6 +160,46 @@
       "file": "/assets/images/dynadot-github-pages-v1-1280.webp",
       "bytes": 66232,
       "sha256": "22fc1366ea03eae75c32744ea6b6ba249f7d9125fe9d5ae6c7735f84b3dec72f"
+    },
+    {
+      "file": "/assets/images/lisahost-vps-experience-v1-640.webp",
+      "bytes": 8818,
+      "sha256": "5a4d0eb3d47a31ad853b5758b462abdec1d12a48e90513cdbbee4f502a395100"
+    },
+    {
+      "file": "/assets/images/lisahost-vps-experience-v1-1280.webp",
+      "bytes": 25866,
+      "sha256": "8f2a35f274c5154075c0348edbe4404fa83328976227489e61e538afd239475d"
+    },
+    {
+      "file": "/assets/images/lisahost-instance-v1-640.webp",
+      "bytes": 7070,
+      "sha256": "106a57fae67233911f8099855f53e987a694f29b29e47efc2be7a763aa07fe89"
+    },
+    {
+      "file": "/assets/images/lisahost-instance-v1-1280.webp",
+      "bytes": 21652,
+      "sha256": "4b65527f4f25d74e8e70c0304766d63299313ef375fdac850bf9f503e3173bc3"
+    },
+    {
+      "file": "/assets/images/ake-vless-retest-v1-640.webp",
+      "bytes": 16588,
+      "sha256": "adf54b3e99d05769cae6f1596af68521b4f49aff7b5d6a1b6a4935c0be4a5fb1"
+    },
+    {
+      "file": "/assets/images/ake-vless-retest-v1-1280.webp",
+      "bytes": 37456,
+      "sha256": "821bce0a1e9e31d19f8b1abcf9f13d92d324fdd88cf43d37e346ed7320981015"
+    },
+    {
+      "file": "/assets/images/ake-hy2-test-v1-640.webp",
+      "bytes": 16824,
+      "sha256": "5f4f7c16056c0f631d2eadf008c6c2ed347140c6f8cee4315ffaa592db999614"
+    },
+    {
+      "file": "/assets/images/ake-hy2-test-v1-1280.webp",
+      "bytes": 35396,
+      "sha256": "d37205c6b5ca16a49f15c0d5294d4250533e578e16540d247deaf7cf330b5f24"
     }
   ]
 }

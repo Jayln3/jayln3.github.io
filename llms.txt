@@ -19,6 +19,7 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [最新 GitHub AI与开发开源项目盘点](https://jayln3.com/posts/f6d1a5/)
 - [你好，我是 Jayln3](https://jayln3.com/posts/e2c6f0/)
 - [LinkedIn B2B营销实战：从开户到ABM精准获客全攻略](https://jayln3.com/posts/af40aec/)
+- [LisaHost 使用体验与 VPS 配置实录](https://jayln3.com/posts/a6e102/)
 - [晚高峰2K/4K直播推流实测：搬瓦工CN2 GIA vs Lisa主机Cogent线路深度对比](https://jayln3.com/posts/c9a4d8/)
 
 ## English articles
@@ -28,6 +29,7 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [Daily AI Open-Source Digest — March 23, 2026](https://jayln3.com/en/posts/a7e2b6/)
 - [BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations](https://jayln3.com/en/posts/b8f3c7/)
 - [Cross-Border Ecommerce Operations — A Guide to Automation](https://jayln3.com/en/posts/d1b5e9/)
+- [Why I chose Dynadot for my domain and free business email](https://jayln3.com/en/posts/d9a729/)
 - [Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers](https://jayln3.com/en/posts/a1f3c9/)
 - [Facebook Live Commerce — From Account Setup to Campaign Operations](https://jayln3.com/en/posts/b2e4d1/)
 - [Geographic Targeting for High-Value Products](https://jayln3.com/en/posts/e5c9f4/)
@@ -35,4 +37,5 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [Nine AI and Developer Projects on GitHub — March 24, 2026](https://jayln3.com/en/posts/f6d1a5/)
 - [Hello, I'm Jayln3](https://jayln3.com/en/posts/e2c6f0/)
 - [LinkedIn B2B Marketing — From Account Setup to ABM](https://jayln3.com/en/posts/af40aec/)
+- [My LisaHost experience and VPS setup notes](https://jayln3.com/en/posts/a6e102/)
 - [Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent](https://jayln3.com/en/posts/c9a4d8/)

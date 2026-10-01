@@ -155,53 +155,6 @@ Originally published on Jayln3’s Blog. Please credit the source when quoting o
       </tags>
   </entry>
   <entry>
-    <title>Daily AI Open-Source Digest — March 23, 2026</title>
-    <url>/en/posts/a7e2b6/</url>
-    <content><![CDATA[
-Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
-
-Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
-Stars recorded in the original roundup: 20.
-Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
-Features highlighted in the original article:
-
-Video downloads from more than 1,800 platforms.
-AI-generated video summaries.
-Mind-map generation.
-International payments through Stripe.
-
-GitHub
-2. opencode-lazyA plugin manager for OpenCode.
-Stars recorded: 4. Stack: TypeScript.
-
-Search for plugins online.
-Install and manage plugins.
-Work with plugins directly inside a session.
-
-GitHub
-3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
-Stars recorded: 4.
-The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
-GitHub
-ObservationsThe original roundup identified three themes:
-
-AI and video processing: combining downloads with AI summaries.
-Developer productivity: demand for plugin-management tools.
-API aggregation: interest in free LLM resources.
-
-The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-        <tag>AI</tag>
-        <tag>Daily Digest</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
     <url>/en/posts/e6656c2b/</url>
     <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
@@ -427,6 +380,71 @@ Originally published on Jayln3’s Blog. Please credit the source when quoting o
       </tags>
   </entry>
   <entry>
+    <title>Daily AI Open-Source Digest — March 23, 2026</title>
+    <url>/en/posts/a7e2b6/</url>
+    <content><![CDATA[
+Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+
+Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
+Stars recorded in the original roundup: 20.
+Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
+Features highlighted in the original article:
+
+Video downloads from more than 1,800 platforms.
+AI-generated video summaries.
+Mind-map generation.
+International payments through Stripe.
+
+GitHub
+2. opencode-lazyA plugin manager for OpenCode.
+Stars recorded: 4. Stack: TypeScript.
+
+Search for plugins online.
+Install and manage plugins.
+Work with plugins directly inside a session.
+
+GitHub
+3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
+Stars recorded: 4.
+The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
+GitHub
+ObservationsThe original roundup identified three themes:
+
+AI and video processing: combining downloads with AI summaries.
+Developer productivity: demand for plugin-management tools.
+API aggregation: interest in free LLM resources.
+
+The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+        <tag>Daily Digest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cross-Border Ecommerce Operations — A Guide to Automation</title>
+    <url>/en/posts/d1b5e9/</url>
+    <content><![CDATA[Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:
+
+Data collection: checking competitors’ prices on a schedule.
+Notifications: sending order-status updates to your phone.
+Campaign operations: producing creative assets in batches and monitoring returns.
+
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>Automation</tag>
+        <tag>Ecommerce</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers</title>
     <url>/en/posts/a1f3c9/</url>
     <content><![CDATA[
@@ -522,90 +540,199 @@ The central idea is to combine audience selection with clear commercial informat
       </tags>
   </entry>
   <entry>
-    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
-    <url>/en/posts/b8f3c7/</url>
-    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
-It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
-BandwagonHost purchase page — affiliate link
+    <title>Why I chose Dynadot for my domain and free business email</title>
+    <url>/en/posts/d9a729/</url>
+    <content><![CDATA[When I set up jayln3.com for this blog, I expected to register the name, add a few DNS records and move on. Payment, email setup, forwarding and HTTPS each needed more attention than I had expected.
+I chose Dynadot for domain registration and its included free email hosting. The reasons were practical: I could pay with Alipay in Chinese yuan, use an address on my own domain, and manage parts of the setup through an API.
+The email limits matter: one email address, 1GB of storage and up to 25 outgoing messages per day on the free plan. That suits a personal site’s modest contact needs; larger mailboxes and teams need a different plan. See the official email plans.
 
-
-Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
-The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
-Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
-Location notes
-Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
-Osaka CN2 GIA: presented as an option for lower latency.
-Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
-
-Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
+Referral disclosure: This article includes my Dynadot referral link and code. A qualifying new customer and I may receive account credit under the program’s rules. This English edition follows my Chinese setup record from September 29, 2026. Historical quotes and screenshots are not promises of today’s prices.
 
 
 
-Plan example
-CPU &#x2F; RAM
+The free feature I actually useMy blog’s contact address is contact@jayln3.com. It matches the site and gives me a consistent address to put on project pages and introductions.
+Here, “business email” simply means email using my own domain. An individual can use it too, but the free allowance is small:
+
+
+
+Item
+Free plan allowance
+
+
+
+Email addresses
+One address for the domain
+
+
 Storage
-Transfer
-Port
-Recorded annual price
+1GB
+
+
+Outgoing mail
+Up to 25 messages per day
+
+
+My choice
+Use the allowance for contact@jayln3.com
+
+
+These limits come from Dynadot’s email product page. A single free address does not give me separate free mailboxes for contact@, sales@ and support@.
+For a personal site, I can start with the address I need and upgrade if actual usage justifies it. Frequent large attachments or long-term mail archives would make me reconsider the storage allowance. Domain registration and renewal still cost money.
+
+  
+  My mailbox during setup. The DNS and primary-address notices disappeared after the remaining configuration was completed.
+
+
+Three email setup details worth checkingSet the primary address after creating the mailboxThe mailbox interface already showed contact@jayln3.com, but it still asked me to select a primary email address.
+Seeing the address in a list was not the last step. We explicitly assigned it as the free plan’s primary address, and the notice disappeared. With one free address available, I wanted to confirm that the allowance was attached to the address I intended to keep.
+Mailbox forwarding and domain forwarding are separate settingsI wanted incoming messages forwarded to my usual QQ mailbox while keeping a copy in Dynadot. For that, we used the forwarding setting inside the mailbox:
+My Emails → Sign in → select the mailbox → General Settings → Delivery Options → Forwarding.
+After saving the destination, we sent the verification email and confirmed it in the receiving mailbox. The interface then showed Verified, with Deliver Email to Inbox still enabled. The free mailbox plan supports one forwarding destination. See Dynadot’s mailbox forwarding instructions.
+The domain management area also has an Email Settings → Forwarding Email option. That is a separate domain forwarding service. Dynadot warns that switching to it disconnects the domain from existing Dynadot Email Hosting. If you already use the hosted mailbox, configure forwarding from inside it. Domain forwarding documentation
+At the time of this record, we had verified that the settings persisted and the forwarding address was confirmed. We had not yet completed a separate end-to-end test of actual sending, receiving and forwarding. This is a setup account, not a long-term deliverability review.
+Preserve the website’s DNS records when adding emailThe website already pointed to GitHub Pages. While adding the email records—MX, SPF, DKIM and DMARC—we kept the existing website A, AAAA and www CNAME records.
+If I move DNS to Cloudflare later, the website and email records will need to move together. Dynadot’s nameserver instructions also explain that services such as email need the appropriate records at the new DNS provider.
+Cloudflare supports UnionPay but my card payment failedI considered Cloudflare while choosing a registrar. Its official payment documentation lists UnionPay, so describing it as unsupported would be inaccurate.
+My own UnionPay card did not complete the payment in that attempt. I did not establish the cause, and this says nothing about whether another person’s card will work.
+Dynadot’s payment options explicitly include Alipay and UnionPay with payment in Chinese yuan. For someone who normally pays with Alipay, that was a convenient route.
 
 
 
-CN2 GIA-E
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-2.5 Gbps
-$169.90
+Payment question
+Dynadot
+Cloudflare
 
 
-Entry KVM
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-1 Gbps
-$49.90
+
+Alipay
+Listed, with payment in CNY
+Not listed in the payment documentation reviewed for this article
 
 
-Hong Kong CN2 GIA
-2 cores &#x2F; 2 GB
-40 GB SSD
-500 GB
-1 Gbps
-$899.90
+UnionPay
+Listed
+Listed, although my attempt failed
 
 
-The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
-View plans on BandwagonHost — affiliate link
-Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
-Current plan specifications, availability and coupon validity should be checked on the purchase page.
+Practical decision
+Check the payment method you can actually use
+Still worth comparing if you have a working card or PayPal account
+
+
+The table combines the providers’ published options with my particular experience. It is not a compatibility test across cards and regions.
+What the cart’s add-on entries actually includeThe image at the top came from a shopping cart for jayln3mall.com. It is a different name from the jayln3.com domain configured in this article. The screenshot shows feature and upgrade entries, not evidence that every advanced feature was activated for free.
+
+
+
+Add-on
+What I would use it for and where the limits are
+
+
+
+Domain privacy
+Hides some public WHOIS contact details for eligible extensions; registry rules differ.
+
+
+Website builder
+The free plan supports a single page with 500MB storage and Dynadot footer branding. More advanced features require an upgrade.
+
+
+Email
+The one-address, 1GB allowance discussed above.
+
+
+Logo tool
+The free plan allows one logo and PNG export; capabilities such as SVG export are part of Pro.
+
+
+Registry Lock
+A paid security upgrade, rather than a free registry-level lock included just because it appears in the cart.
+
+
+Plan references: domain privacy and security, website builder, email and logo tool.
+Email was the included service I put to use first. The website continued to run on my existing blog system, so I did not need to activate every add-on.
+Compare the bundle price with the renewals you will keepThese were the first-year quotes I recorded while shopping on September 29, 2026:
+
+
+
+Combination
+Historical first-year quote
+
+
+
+jayln3.com alone
+CNY 73.80
+
+
+jayln3.com + jayln3.online
+About CNY 67
+
+
+jayln3.com + jayln3.my
+CNY 60.30
+
+
+In that comparison, the .com + .my bundle was CNY 13.50 less than the .com alone. These are historical quotes, not current offers.
+Dynadot explains that bundled domains can later be renewed, transferred or allowed to expire separately. If I do not need an extra extension long term, I should check its auto-renewal setting and renewal cost. Domain bundle and renewal information
+Cloudflare Registrar is also worth comparing: it describes its registration, transfer and renewal pricing as being at cost, without an added markup. Cloudflare domain pricing
+My comparison is the initial bill plus the future renewals for names I will actually keep. A promotional first-year bundle alone cannot settle the long-term choice.
+Both registrars offer APIsDynadot’s domain API covers operations such as domain checks, registration, renewal and DNS changes. Its documentation also provides REST API and MCP entry points. During my setup, we used APIs to configure DNS, create the free email hosting service and add the required mail records.
+The mailbox’s forwarding and primary-address settings were still completed in the web interface. API availability does not imply that every setting is exposed through an endpoint.
+Cloudflare also provides a DNS API. Its Registrar API documentation describes domain search, availability and pricing checks, and registration, and labels the service Beta. Both providers can fit an automated workflow; the relevant operations and permissions need to be checked separately.
+My website stack and the HTTPS setupAt the time of this record, the site used:
+
+
+
+Part
+Service
+
+
+
+Domain registration and renewal
+Dynadot
+
+
+DNS
+Dynadot DNS
+
+
+Blog and hosting
+Hexo + GitHub Pages
+
+
+HTTPS certificate
+Issued and managed through GitHub Pages
+
+
+Domain email
+Dynadot’s free mailbox at contact@jayln3.com
+
+
+After connecting the custom domain, I encountered an HTTPS certificate problem. We saved jayln3.com again in the repository’s Settings → Pages, waited for domain validation and certificate provisioning, then enabled Enforce HTTPS.
+
+  
+  My GitHub Pages settings after DNS validation and enabling HTTPS. The site's HTTP label at the top reflects that screenshot's state; HTTPS and redirects were verified separately afterward.
+
+
+DNS resolution, certificate issuance and HTTPS enforcement are separate states to verify. We subsequently confirmed HTTPS access and redirects from HTTP and www to the main site. GitHub’s HTTPS documentation also explains that certificate provisioning can require a wait after configuring a custom domain.
+Another possible combination is Dynadot for registration, Cloudflare for DNS, and a hosting provider of my choice. Dynadot permits third-party nameservers, while domains registered with Cloudflare Registrar must use Cloudflare nameservers. Dynadot nameserver settings, Cloudflare Registrar requirements
+My referral link and the conditionsFor a personal blog, portfolio or small project site, Dynadot is worth comparing if you want a convenient Alipay payment route and a modest mailbox on your own domain. Keep the free email allowance in mind: one address, 1GB and 25 outgoing messages per day.
+Visit Dynadot through my referral link to check current domain prices
+Referral code: 7r6S8u7S9X817e8s. It can also be entered in the referral field when creating an account.
+Under the Refer-a-Friend rules, a new customer must register through the referral link or code and place a first order of at least US$9.99. The referrer must have spent at least US$1.99 in the preceding 365 days. If the requirements are met, each person may receive US$5 in account credit, which can take up to 15 days to appear.
+This is account credit earned after qualifying, rather than US$5 immediately deducted at checkout. A low-price CNY bundle should not automatically be assumed to meet the USD first-order threshold. Choose the domains you need and consider the referral benefit only if the order qualifies.
+The useful result for me was getting jayln3.com and contact@jayln3.com working together. Understanding the payment options, mailbox allowance, DNS and certificate setup leaves more time for writing and building projects.
 ]]></content>
       <categories>
         <category>Infrastructure</category>
       </categories>
       <tags>
-        <tag>BandwagonHost</tag>
-        <tag>VPS</tag>
-        <tag>CN2 GIA</tag>
-        <tag>Networking</tag>
-        <tag>Ecommerce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cross-Border Ecommerce Operations — A Guide to Automation</title>
-    <url>/en/posts/d1b5e9/</url>
-    <content><![CDATA[Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:
-
-Data collection: checking competitors’ prices on a schedule.
-Notifications: sending order-status updates to your phone.
-Campaign operations: producing creative assets in batches and monitoring returns.
-
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
         <tag>Automation</tag>
-        <tag>Ecommerce</tag>
+        <tag>Dynadot</tag>
+        <tag>Cloudflare</tag>
+        <tag>Domains</tag>
+        <tag>Business Email</tag>
+        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>
@@ -774,6 +901,196 @@ Geography is a segment to test; it does not establish an individual person’s b
       </tags>
   </entry>
   <entry>
+    <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
+    <url>/en/posts/f6d1a5/</url>
+    <content><![CDATA[
+Nine AI and developer tools from the original March 24, 2026 roundup. Star counts are the figures recorded at publication.
+
+Project directory
+
+
+Project
+Recorded stars
+Language
+Main focus
+
+
+
+agency-agents
+61,076
+Shell
+Collaboration among specialist AI agents
+
+
+gstack
+43,412
+TypeScript
+Claude Code workflow tools
+
+
+deer-flow
+41,036
+Python
+Open-source SuperAgent framework
+
+
+autoresearch
+53,034
+Python
+Automated AI research experiments
+
+
+lightpanda-io&#x2F;browser
+24,330
+Zig
+Headless browsing for automation
+
+
+CLI-Anything
+22,214
+Python
+Agent-oriented command-line interfaces
+
+
+vibe-coding-cn
+17,515
+Python
+Chinese-language vibe-coding guide
+
+
+cognee
+14,556
+Python
+Agent memory and knowledge management
+
+
+openclaw-mission-control
+3,012
+TypeScript
+Dashboard for agent orchestration
+
+
+Project details1. agency-agentsA collaboration platform in which agents take on specialist roles, such as frontend development, Reddit operations and creative work. Each role has a personality, a process and verifiable deliverables.
+GitHub
+2. gstackGarry Tan’s opinionated toolset for Claude Code. The original roundup describes 15 tools, with roles such as CEO, designer, engineering manager and release manager, covering the development lifecycle.
+GitHub
+3. deer-flowAn open-source SuperAgent framework combining research, coding and content creation. It supports sandboxes, memory, tools, skills and subagents, with tasks ranging from minutes to hours.
+GitHub
+4. autoresearchA tool for automated research and single-GPU nanochat training experiments. It aims to simplify the cycle of running and evaluating AI-training experiments.
+GitHub
+5. lightpanda-io&#x2F;browserA lightweight, high-performance headless browser written in Zig, designed for AI and automation workloads.
+GitHub
+6. CLI-AnythingA tool for making software accessible to agents through standardized command-line interfaces.
+GitHub
+7. vibe-coding-cnA Chinese-language guide to vibe coding, introducing an intuitive approach to programming for Chinese-speaking developers.
+GitHub
+8. cogneeAn agent memory engine presented in the original roundup as requiring six lines of code to get started. Its focus is straightforward integration and efficient knowledge management.
+GitHub
+9. openclaw-mission-controlA dashboard for orchestrating OpenClaw agents, assigning tasks and coordinating multiple agents through the OpenClaw Gateway.
+GitHub
+TrendsThe original roundup highlighted multi-agent collaboration, automation tools, developer productivity, and memory and context management as areas of growing interest.
+The original Chinese roundup was automatically compiled and published using OpenClaw.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>GitHub</tag>
+        <tag>Open Source</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
+    <url>/en/posts/b8f3c7/</url>
+    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
+It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
+BandwagonHost purchase page — affiliate link
+
+
+Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
+The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
+Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
+Location notes
+Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
+Osaka CN2 GIA: presented as an option for lower latency.
+Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
+
+Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
+
+
+
+Plan example
+CPU &#x2F; RAM
+Storage
+Transfer
+Port
+Recorded annual price
+
+
+
+CN2 GIA-E
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+2.5 Gbps
+$169.90
+
+
+Entry KVM
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+1 Gbps
+$49.90
+
+
+Hong Kong CN2 GIA
+2 cores &#x2F; 2 GB
+40 GB SSD
+500 GB
+1 Gbps
+$899.90
+
+
+The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
+View plans on BandwagonHost — affiliate link
+Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
+Current plan specifications, availability and coupon validity should be checked on the purchase page.
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>Ecommerce</tag>
+        <tag>BandwagonHost</tag>
+        <tag>VPS</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Networking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello, I&#39;m Jayln3</title>
+    <url>/en/posts/e2c6f0/</url>
+    <content><![CDATA[Welcome to my blog. This is where I record what I learn about global growth, AI and automation, and technical infrastructure.
+What you will find here
+Global Growth: advertising, B2B lead generation, live commerce and online stores.
+AI &amp; Automation: open-source tools, agent workflows and operational automation.
+Infrastructure: networking, VPS hosting and website development.
+Site Notes: updates and changes to the blog.
+
+Chinese and EnglishArticles have Chinese and English editions. Use the language button at the top of the page to open the corresponding translation. Each language has its own index, search and subscription feed.
+Keep in touchFind my projects on GitHub, or leave a message in the guestbook. See the about page for the status of my personal domain and contact addresses.
+]]></content>
+      <categories>
+        <category>Site Notes</category>
+      </categories>
+      <tags>
+        <tag>Site News</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Conversational Commerce or an Online Store?</title>
     <url>/en/posts/d4b8e3/</url>
     <content><![CDATA[
@@ -893,127 +1210,6 @@ The original methodology covers jade, jewelry, adult-product categories, factori
         <tag>WhatsApp</tag>
         <tag>Conversational Commerce</tag>
         <tag>Online Stores</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nine AI and Developer Projects on GitHub — March 24, 2026</title>
-    <url>/en/posts/f6d1a5/</url>
-    <content><![CDATA[
-Nine AI and developer tools from the original March 24, 2026 roundup. Star counts are the figures recorded at publication.
-
-Project directory
-
-
-Project
-Recorded stars
-Language
-Main focus
-
-
-
-agency-agents
-61,076
-Shell
-Collaboration among specialist AI agents
-
-
-gstack
-43,412
-TypeScript
-Claude Code workflow tools
-
-
-deer-flow
-41,036
-Python
-Open-source SuperAgent framework
-
-
-autoresearch
-53,034
-Python
-Automated AI research experiments
-
-
-lightpanda-io&#x2F;browser
-24,330
-Zig
-Headless browsing for automation
-
-
-CLI-Anything
-22,214
-Python
-Agent-oriented command-line interfaces
-
-
-vibe-coding-cn
-17,515
-Python
-Chinese-language vibe-coding guide
-
-
-cognee
-14,556
-Python
-Agent memory and knowledge management
-
-
-openclaw-mission-control
-3,012
-TypeScript
-Dashboard for agent orchestration
-
-
-Project details1. agency-agentsA collaboration platform in which agents take on specialist roles, such as frontend development, Reddit operations and creative work. Each role has a personality, a process and verifiable deliverables.
-GitHub
-2. gstackGarry Tan’s opinionated toolset for Claude Code. The original roundup describes 15 tools, with roles such as CEO, designer, engineering manager and release manager, covering the development lifecycle.
-GitHub
-3. deer-flowAn open-source SuperAgent framework combining research, coding and content creation. It supports sandboxes, memory, tools, skills and subagents, with tasks ranging from minutes to hours.
-GitHub
-4. autoresearchA tool for automated research and single-GPU nanochat training experiments. It aims to simplify the cycle of running and evaluating AI-training experiments.
-GitHub
-5. lightpanda-io&#x2F;browserA lightweight, high-performance headless browser written in Zig, designed for AI and automation workloads.
-GitHub
-6. CLI-AnythingA tool for making software accessible to agents through standardized command-line interfaces.
-GitHub
-7. vibe-coding-cnA Chinese-language guide to vibe coding, introducing an intuitive approach to programming for Chinese-speaking developers.
-GitHub
-8. cogneeAn agent memory engine presented in the original roundup as requiring six lines of code to get started. Its focus is straightforward integration and efficient knowledge management.
-GitHub
-9. openclaw-mission-controlA dashboard for orchestrating OpenClaw agents, assigning tasks and coordinating multiple agents through the OpenClaw Gateway.
-GitHub
-TrendsThe original roundup highlighted multi-agent collaboration, automation tools, developer productivity, and memory and context management as areas of growing interest.
-The original Chinese roundup was automatically compiled and published using OpenClaw.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello, I&#39;m Jayln3</title>
-    <url>/en/posts/e2c6f0/</url>
-    <content><![CDATA[Welcome to my blog. This is where I record what I learn about global growth, AI and automation, and technical infrastructure.
-What you will find here
-Global Growth: advertising, B2B lead generation, live commerce and online stores.
-AI &amp; Automation: open-source tools, agent workflows and operational automation.
-Infrastructure: networking, VPS hosting and website development.
-Site Notes: updates and changes to the blog.
-
-Chinese and EnglishArticles have Chinese and English editions. Use the language button at the top of the page to open the corresponding translation. Each language has its own index, search and subscription feed.
-Keep in touchFind my projects on GitHub, or leave a message in the guestbook. See the about page for the status of my personal domain and contact addresses.
-]]></content>
-      <categories>
-        <category>Site Notes</category>
-      </categories>
-      <tags>
-        <tag>Site News</tag>
       </tags>
   </entry>
   <entry>
@@ -1172,6 +1368,125 @@ The article’s central argument is that the relevance of a B2B inquiry can matt
       </tags>
   </entry>
   <entry>
+    <title>My LisaHost experience and VPS setup notes</title>
+    <url>/en/posts/a6e102/</url>
+    <content><![CDATA[I previously used a LisaHost US 9929 VPS with one CPU core, 1GB of memory and advertised bandwidth of 60Mbps in each direction. While setting up another VPS recently, I worked through the panel, subscriptions and phone and desktop clients again. Two problems were particularly easy to misread: a node could report latency while failing to load a webpage, and VLESS and HY2 could show very different speeds on the same computer.
+This article starts with the LisaHost plan I used, then follows the setup and troubleshooting process on the new server. If you are choosing a VPS, the first section gives a concrete example. If you already have one, the later sections explain what I checked when the connection did not behave as expected.
+
+This article contains my LisaHost affiliate link. I may receive a commission if you buy through it. The old LisaHost instance and the later tests on my new VPS, named AKE, are labeled separately throughout.
+
+
+
+The LisaHost plan I usedThe old instance’s dashboard showed the following:
+
+
+
+Item
+My previous instance
+
+
+
+Network
+US, Los Angeles, 9929
+
+
+Resources
+One CPU core, 1GB RAM, 20GB storage
+
+
+Operating system
+Ubuntu 22.04
+
+
+Advertised bandwidth
+60Mbps upload and 60Mbps download
+
+
+Traffic allowance
+2000GB shown in the dashboard
+
+
+Historical renewal price
+CNY 118.80 per quarter, equivalent to CNY 39.60 per month
+
+
+
+  
+  My previous LisaHost instance, which I have decided not to renew. These specifications and prices describe that historical instance.
+
+
+What appealed to me was having a small machine I could manage myself: install the services I need, keep my configuration and adjust it to the job. A personal site, a lightweight Docker service, scheduled tasks, a bot or automation that calls an external API can provide a useful starting project.
+LisaHost is worth including in a VPS comparison. Its official catalog lists locations including the US, Hong Kong, Japan and Singapore, with options marketed as optimized for mainland China’s three major carriers and products using 9929 routes. Check the exact plan’s location, bandwidth and traffic allowance, then test it from your own ISP connection.
+How I organized the setup for desktop and phone testingThe new server is called AKE in my records. I wanted to use v2rayN on Windows and Shadowrocket on iPhone, while keeping account management in one place. The arrangement was:
+VPS → 3x-ui panel → VLESS + REALITY and HY2 → one subscription → client apps.
+I divided the work into three parts.
+Establish the management layer. Confirm access to the server and panel, keep a configuration backup, then use the 3x-ui API to manage accounts, connection settings and subscriptions. This gives me one place to maintain the setup and a server configuration to compare with exported client settings.
+Prepare two connection methods. I configured VLESS + REALITY and kept HY2, or Hysteria 2, as another option. Each method needs its own connectivity check before being included in a subscription. Several VLESS accounts had different names but shared the same server and entry point.
+Check the phone and desktop separately. After importing the subscription, choose one node and load real websites and services before measuring upload and download. A working desktop connection does not establish compatibility on the phone.
+This public article covers the process without listing installation commands or complete settings. You can contact me through the Lark section below to discuss panel deployment, API use and subscription organization.
+A latency result did not mean websites would loadThe first symptom was clear: HY2 worked, while the VLESS accounts reported latency but failed to provide normal browsing. The phone was running an older Shadowrocket version.
+We first checked that the account, subscription and server settings agreed, then compared the handshake behavior of different client and server versions. The controlled tests showed a compatibility difference. With a compatible server version, real HTTPS requests passed for the accounts we tested.
+We also examined the REALITY target’s handshake. The low number reported by the panel measured the VPS-to-target connection. It did not measure my phone or computer’s complete path to the VPS, and could not establish throughput.
+For this kind of symptom, I now separate account configuration from version compatibility, and verify an actual request. A green latency result in a list is only one part of the evidence.
+Why five accounts all appeared slowNext, the Windows client showed a puzzling difference. On the same computer and local network, several AKE VLESS accounts measured roughly 1MB&#x2F;s, while HY2 was around 8MB&#x2F;s. I wondered whether a speed cap had been configured.
+The configuration check found no account rate cap. VLESS had Vision enabled and Mux disabled. We then found that v2rayN’s mixed-test concurrency was set to five: the five VLESS accounts started together, while HY2 was tested separately afterward.
+Five account names did not represent five independent routes. Simultaneous tests shared the available bandwidth, so the individual figures were not a fair measure of a single account tested alone. That version’s v2rayN implementation distinguishes sequential speed testing from concurrent mixed testing.
+I subsequently retested and confirmed that desktop speeds were satisfactory. Concurrency was a significant complication in interpreting the batch test; it does not, by itself, establish why an earlier browser test showed lower upload speed.
+The retest results and how I compare speeds nowThese saved results are from the new AKE VPS, using v2rayN on the same computer and local network.
+
+
+
+Test
+Download
+Upload
+
+
+
+Later VLESS + REALITY retest
+69.98 Mbps
+52.35 Mbps
+
+
+Earlier HY2 test
+61.87 Mbps
+71.02 Mbps
+
+
+
+  
+  The AKE VLESS retest used Nitel in Los Angeles. I confirmed that the connection speed was satisfactory after this test.
+
+
+
+  
+  The AKE HY2 test used Hotwire Fision in Los Angeles.
+
+
+The tests used different servers at different times. They are records of what I observed, rather than a controlled ranking of protocols or performance data for the earlier LisaHost plan.
+For comparisons now, I keep the computer, network and test server consistent and test one node at a time. I also check the units: v2rayN’s MB&#x2F;s differs from a browser speed test’s Mbps. Afterward, I return to my usual sites and services to assess the experience.
+My LisaHost link and couponIf you are choosing a VPS, you can use my link to check LisaHost’s current plans:
+Check current LisaHost networks and plans
+Coupon: TS-CBP205DQJE.
+In my saved checkout screenshot, an annual higher-tier plan fell from CNY 720 to CNY 648, a saving of CNY 72. The page identified it as a 10% renewal discount. This was a different plan from the quarterly basic instance described above.
+
+  
+  My saved 10% discount example. Current eligibility, prices and renewal discounts depend on the actual checkout page.
+
+
+Choose the location, plan and billing period, enter and validate the coupon, then confirm the adjusted total before paying. This GitHub reference also documents the code. LisaHost advertises a 48-hour refund arrangement, but some trial products exclude refunds, so check the selected product’s terms.
+If you already have a server and want to discuss 3x-ui, subscriptions, Shadowrocket or v2rayN configuration, add me through the Lark contact section below and mention “VPS setup.” Include your client version, ISP and the symptoms so we can start with a concrete problem.
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>Automation</tag>
+        <tag>VPS</tag>
+        <tag>Networking</tag>
+        <tag>LisaHost</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</title>
     <url>/en/posts/c9a4d8/</url>
     <content><![CDATA[For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost &#x2F; IT7 CN2 GIA with LisaHost &#x2F; Cogent during evening hours.
@@ -1284,8 +1599,8 @@ BandwagonHost purchase page — affiliate link
       <tags>
         <tag>BandwagonHost</tag>
         <tag>CN2 GIA</tag>
-        <tag>Streaming</tag>
         <tag>LisaHost</tag>
+        <tag>Streaming</tag>
         <tag>Reviews</tag>
         <tag>4K Streaming</tag>
       </tags>

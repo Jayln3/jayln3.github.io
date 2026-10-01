@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>My LisaHost experience and VPS setup notes | Jayln3's Blog</title><meta name="author" content="Jayln3,contact@jayln3.com"><meta name="copyright" content="Jayln3"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="The LisaHost US 9929 VPS I used, my 3x-ui subscription setup, and the troubleshooting behind VLESS and HY2 connectivity and speed tests. Includes original screenshots, a coupon and a Lark contact link">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My LisaHost experience and VPS setup notes">
+<meta property="og:url" content="https://jayln3.com/en/posts/a6e102/">
+<meta property="og:site_name" content="Jayln3's Blog">
+<meta property="og:description" content="The LisaHost US 9929 VPS I used, my 3x-ui subscription setup, and the troubleshooting behind VLESS and HY2 connectivity and speed tests. Includes original screenshots, a coupon and a Lark contact link">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:published_time" content="2026-10-01T08:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-01T09:06:28.000Z">
+<meta property="article:author" content="Jayln3">
+<meta property="article:tag" content="Automation">
+<meta property="article:tag" content="LisaHost">
+<meta property="article:tag" content="Networking">
+<meta property="article:tag" content="VPS">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My LisaHost experience and VPS setup notes",
+  "url": "https://jayln3.com/en/posts/a6e102/",
+  "image": "https://jayln3.com/assets/images/lisahost-vps-experience-v1-1280.webp",
+  "datePublished": "2026-10-01T08:00:00.000Z",
+  "dateModified": "2026-10-01T09:06:28.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jayln3",
+      "url": "https://jayln3.com/en/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/assets/images/ln3-favicon-v1-32.png"><link rel="canonical" href="https://jayln3.com/en/posts/a6e102/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/en/css/index.css?v=5.3.3"><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'My LisaHost experience and VPS setup notes',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/assets/site.css"><link rel="apple-touch-icon" href="/assets/images/ln3-apple-touch-icon-v1.png"><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/en/atom.xml" title="Jayln3's Blog" type="application/atom+xml">
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=ln3-v1"><link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-16.png"><link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-16-dark.png"><link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-32.png"><link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-32-dark.png"><link rel="icon" type="image/png" sizes="48x48" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-48.png"><link rel="icon" type="image/png" sizes="48x48" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-48-dark.png"><link rel="alternate" hreflang="zh-CN" href="https://jayln3.com/posts/a6e102/"><link rel="alternate" hreflang="en" href="https://jayln3.com/en/posts/a6e102/"><link rel="alternate" hreflang="x-default" href="https://jayln3.com/posts/a6e102/"><meta property="og:image" content="https://jayln3.com/assets/images/lisahost-vps-experience-v1-1280.webp"><meta name="twitter:image" content="https://jayln3.com/assets/images/lisahost-vps-experience-v1-1280.webp"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/assets/images/ln3-logo-v1.webp" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="ln3 Logo" loading="lazy" width="256" height="256"></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">35</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/en/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/en/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/en/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/en/guestbook/"><i class="fa-fw fas fa-comments"></i><span> Guestbook</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><img class="site-icon" src="/assets/images/ln3-logo-v1.webp" alt="ln3 Logo" loading="lazy" width="256" height="256"><span class="site-name">Jayln3's Blog</span></a><a class="nav-page-title" href="/en/"><span class="site-name">My LisaHost experience and VPS setup notes</span></a></span><a class="language-switch" href="/posts/a6e102/" hreflang="zh-CN" lang="zh-CN" aria-label="Read in Chinese">中文</a><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/en/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/en/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/en/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/en/guestbook/"><i class="fa-fw fas fa-comments"></i><span> Guestbook</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">My LisaHost experience and VPS setup notes</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-10-01T08:00:00.000Z" title="Created 2026-10-01 16:00:00">2026-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-10-01T09:06:28.000Z" title="Updated 2026-10-01 17:06:28">2026-10-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/en/categories/infrastructure/">Infrastructure</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><aside class="translation-note">English edition, translated and edited from the Chinese article. Figures and product details refer to the original publication date. <a href="/posts/a6e102/" hreflang="zh-CN">中文原文</a></aside><p>I previously used a LisaHost US 9929 VPS with <strong>one CPU core, 1GB of memory and advertised bandwidth of 60Mbps in each direction</strong>. While setting up another VPS recently, I worked through the panel, subscriptions and phone and desktop clients again. Two problems were particularly easy to misread: a node could report latency while failing to load a webpage, and VLESS and HY2 could show very different speeds on the same computer.</p>
+<p>This article starts with the LisaHost plan I used, then follows the setup and troubleshooting process on the new server. If you are choosing a VPS, the first section gives a concrete example. If you already have one, the later sections explain what I checked when the connection did not behave as expected.</p>
+<blockquote>
+<p>This article contains my LisaHost affiliate link. I may receive a commission if you buy through it. The old LisaHost instance and the later tests on my new VPS, named AKE, are labeled separately throughout.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="The-LisaHost-plan-I-used"><a href="#The-LisaHost-plan-I-used" class="headerlink" title="The LisaHost plan I used"></a>The LisaHost plan I used</h2><p>The old instance’s dashboard showed the following:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>My previous instance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Network</td>
+<td>US, Los Angeles, 9929</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>One CPU core, 1GB RAM, 20GB storage</td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>Ubuntu 22.04</td>
+</tr>
+<tr>
+<td>Advertised bandwidth</td>
+<td>60Mbps upload and 60Mbps download</td>
+</tr>
+<tr>
+<td>Traffic allowance</td>
+<td>2000GB shown in the dashboard</td>
+</tr>
+<tr>
+<td>Historical renewal price</td>
+<td>CNY 118.80 per quarter, equivalent to CNY 39.60 per month</td>
+</tr>
+</tbody></table>
+<figure class="article-screenshot">
+  <img src="/assets/images/lisahost-instance-v1-1280.webp" alt="My previous LisaHost US 9929 instance, showing its resources, 60Mbps bandwidth and CNY 118.80 quarterly renewal price." loading="lazy" decoding="async" srcset="/assets/images/lisahost-instance-v1-640.webp 640w, /assets/images/lisahost-instance-v1-1280.webp 1280w" sizes="(max-width: 900px) 94vw, 850px" width="1280" height="653">
+  <figcaption>My previous LisaHost instance, which I have decided not to renew. These specifications and prices describe that historical instance.</figcaption>
+</figure>
+
+<p>What appealed to me was having a small machine I could manage myself: install the services I need, keep my configuration and adjust it to the job. A personal site, a lightweight Docker service, scheduled tasks, a bot or automation that calls an external API can provide a useful starting project.</p>
+<p>LisaHost is worth including in a VPS comparison. Its <a target="_blank" rel="noopener" href="https://lisahost.com/cart.php?gid=23">official catalog</a> lists locations including the US, Hong Kong, Japan and Singapore, with options marketed as optimized for mainland China’s three major carriers and products using 9929 routes. Check the exact plan’s location, bandwidth and traffic allowance, then test it from your own ISP connection.</p>
+<h2 id="How-I-organized-the-setup-for-desktop-and-phone-testing"><a href="#How-I-organized-the-setup-for-desktop-and-phone-testing" class="headerlink" title="How I organized the setup for desktop and phone testing"></a>How I organized the setup for desktop and phone testing</h2><p>The new server is called <strong>AKE</strong> in my records. I wanted to use <strong>v2rayN on Windows</strong> and <strong>Shadowrocket on iPhone</strong>, while keeping account management in one place. The arrangement was:</p>
+<p><strong>VPS → 3x-ui panel → VLESS + REALITY and HY2 → one subscription → client apps.</strong></p>
+<p>I divided the work into three parts.</p>
+<p><strong>Establish the management layer.</strong> Confirm access to the server and panel, keep a configuration backup, then use the 3x-ui API to manage accounts, connection settings and subscriptions. This gives me one place to maintain the setup and a server configuration to compare with exported client settings.</p>
+<p><strong>Prepare two connection methods.</strong> I configured VLESS + REALITY and kept HY2, or Hysteria 2, as another option. Each method needs its own connectivity check before being included in a subscription. Several VLESS accounts had different names but shared the same server and entry point.</p>
+<p><strong>Check the phone and desktop separately.</strong> After importing the subscription, choose one node and load real websites and services before measuring upload and download. A working desktop connection does not establish compatibility on the phone.</p>
+<p>This public article covers the process without listing installation commands or complete settings. You can contact me through the Lark section below to discuss panel deployment, API use and subscription organization.</p>
+<h2 id="A-latency-result-did-not-mean-websites-would-load"><a href="#A-latency-result-did-not-mean-websites-would-load" class="headerlink" title="A latency result did not mean websites would load"></a>A latency result did not mean websites would load</h2><p>The first symptom was clear: <strong>HY2 worked, while the VLESS accounts reported latency but failed to provide normal browsing</strong>. The phone was running an older Shadowrocket version.</p>
+<p>We first checked that the account, subscription and server settings agreed, then compared the handshake behavior of different client and server versions. The controlled tests showed a compatibility difference. With a compatible server version, real HTTPS requests passed for the accounts we tested.</p>
+<p>We also examined the REALITY target’s handshake. The low number reported by the panel measured <strong>the VPS-to-target connection</strong>. It did not measure my phone or computer’s complete path to the VPS, and could not establish throughput.</p>
+<p>For this kind of symptom, I now separate account configuration from version compatibility, and verify an actual request. A green latency result in a list is only one part of the evidence.</p>
+<h2 id="Why-five-accounts-all-appeared-slow"><a href="#Why-five-accounts-all-appeared-slow" class="headerlink" title="Why five accounts all appeared slow"></a>Why five accounts all appeared slow</h2><p>Next, the Windows client showed a puzzling difference. On the same computer and local network, several AKE VLESS accounts measured roughly <strong>1MB/s</strong>, while HY2 was around <strong>8MB/s</strong>. I wondered whether a speed cap had been configured.</p>
+<p>The configuration check found no account rate cap. VLESS had Vision enabled and Mux disabled. We then found that <strong>v2rayN’s mixed-test concurrency was set to five: the five VLESS accounts started together, while HY2 was tested separately afterward</strong>.</p>
+<p>Five account names did not represent five independent routes. Simultaneous tests shared the available bandwidth, so the individual figures were not a fair measure of a single account tested alone. That version’s <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/blob/af0eb9ed14638fa877d11c235e491442ec7ba215/v2rayN/ServiceLib/Services/SpeedtestService.cs">v2rayN implementation</a> distinguishes sequential speed testing from concurrent mixed testing.</p>
+<p>I subsequently retested and confirmed that desktop speeds were satisfactory. Concurrency was a significant complication in interpreting the batch test; it does not, by itself, establish why an earlier browser test showed lower upload speed.</p>
+<h2 id="The-retest-results-and-how-I-compare-speeds-now"><a href="#The-retest-results-and-how-I-compare-speeds-now" class="headerlink" title="The retest results and how I compare speeds now"></a>The retest results and how I compare speeds now</h2><p>These saved results are from the <strong>new AKE VPS</strong>, using v2rayN on the same computer and local network.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th align="right">Download</th>
+<th align="right">Upload</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Later VLESS + REALITY retest</td>
+<td align="right">69.98 Mbps</td>
+<td align="right">52.35 Mbps</td>
+</tr>
+<tr>
+<td>Earlier HY2 test</td>
+<td align="right">61.87 Mbps</td>
+<td align="right">71.02 Mbps</td>
+</tr>
+</tbody></table>
+<figure class="article-screenshot">
+  <img src="/assets/images/ake-vless-retest-v1-1280.webp" alt="AKE VLESS + REALITY retest showing 69.98 Mbps download and 52.35 Mbps upload." loading="lazy" decoding="async" srcset="/assets/images/ake-vless-retest-v1-640.webp 640w, /assets/images/ake-vless-retest-v1-1280.webp 1200w" sizes="(max-width: 900px) 94vw, 850px" width="1200" height="732">
+  <figcaption>The AKE VLESS retest used Nitel in Los Angeles. I confirmed that the connection speed was satisfactory after this test.</figcaption>
+</figure>
+
+<figure class="article-screenshot">
+  <img src="/assets/images/ake-hy2-test-v1-1280.webp" alt="AKE HY2 test showing 61.87 Mbps download and 71.02 Mbps upload." loading="lazy" decoding="async" srcset="/assets/images/ake-hy2-test-v1-640.webp 640w, /assets/images/ake-hy2-test-v1-1280.webp 1158w" sizes="(max-width: 900px) 94vw, 850px" width="1158" height="693">
+  <figcaption>The AKE HY2 test used Hotwire Fision in Los Angeles.</figcaption>
+</figure>
+
+<p>The tests used different servers at different times. They are records of what I observed, rather than a controlled ranking of protocols or performance data for the earlier LisaHost plan.</p>
+<p>For comparisons now, I keep the computer, network and test server consistent and test one node at a time. I also check the units: v2rayN’s <strong>MB/s</strong> differs from a browser speed test’s <strong>Mbps</strong>. Afterward, I return to my usual sites and services to assess the experience.</p>
+<h2 id="My-LisaHost-link-and-coupon"><a href="#My-LisaHost-link-and-coupon" class="headerlink" title="My LisaHost link and coupon"></a>My LisaHost link and coupon</h2><p>If you are choosing a VPS, you can use my link to check LisaHost’s current plans:</p>
+<p><strong><a href="https://lisahost.com/aff.php?aff=8140" rel="sponsored nofollow noopener" target="_blank">Check current LisaHost networks and plans</a></strong></p>
+<p>Coupon: <strong><code>TS-CBP205DQJE</code></strong>.</p>
+<p>In my saved checkout screenshot, an annual higher-tier plan fell from <strong>CNY 720 to CNY 648</strong>, a saving of <strong>CNY 72</strong>. The page identified it as a 10% renewal discount. This was a different plan from the quarterly basic instance described above.</p>
+<figure class="article-screenshot">
+  <img src="/assets/images/lisahost-vps-experience-v1-1280.webp" alt="LisaHost checkout with coupon TS-CBP205DQJE applied, reducing an annual plan from CNY 720 to CNY 648." loading="lazy" decoding="async" srcset="/assets/images/lisahost-vps-experience-v1-640.webp 640w, /assets/images/lisahost-vps-experience-v1-1280.webp 1280w" sizes="(max-width: 900px) 94vw, 850px" width="1280" height="669">
+  <figcaption>My saved 10% discount example. Current eligibility, prices and renewal discounts depend on the actual checkout page.</figcaption>
+</figure>
+
+<p>Choose the location, plan and billing period, enter and validate the coupon, then confirm the adjusted total before paying. This <a target="_blank" rel="noopener" href="https://github.com/lisahost-coupon-codes">GitHub reference</a> also documents the code. LisaHost advertises a <a target="_blank" rel="noopener" href="https://lisahost.com/">48-hour refund arrangement</a>, but <a target="_blank" rel="noopener" href="https://lisahost.com/cart.php?gid=32">some trial products exclude refunds</a>, so check the selected product’s terms.</p>
+<p>If you already have a server and want to discuss <strong>3x-ui, subscriptions, Shadowrocket or v2rayN configuration</strong>, add me through the Lark contact section below and mention <strong>“VPS setup.”</strong> Include your client version, ISP and the symptoms so we can start with a concrete problem.</p>
+</article><aside class="knowledge-base-cta" aria-labelledby="knowledge-base-title"><div class="knowledge-base-copy"><h2 id="knowledge-base-title"><i class="fas fa-book-open" aria-hidden="true"></i> Get paid access to the knowledge base</h2><p>Want to learn more? Connect with me on Lark to explore the knowledge base and ask about purchasing access.</p><a class="knowledge-base-link" href="https://www.feishu.cn/invitation/page/add_contact/?token=018r68b1-5512-4be2-86cf-1dbe82ec7107&amp;unique_id=vo5XLAOhJ7xXJdzq8lMsvQ==" target="_blank" rel="noopener noreferrer">Connect on Lark<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div><figure class="knowledge-base-qr"><a href="/assets/images/feishu-contact-en-v2.png" target="_blank" rel="noopener noreferrer" aria-label="View the full-size Lark QR code"><img class="no-lightbox" src="/assets/images/feishu-contact-en-v2.png" width="686" height="840" loading="lazy" decoding="async" alt="Scan this QR code with Lark to add Jayln3 as a contact"></a><figcaption>Scan with Lark to connect</figcaption></figure></aside><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://jayln3.com/en">Jayln3</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://jayln3.com/en/posts/a6e102/">https://jayln3.com/en/posts/a6e102/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/en/tags/automation/">Automation</a><a class="post-meta__tags" href="/en/tags/vps/">VPS</a><a class="post-meta__tags" href="/en/tags/networking/">Networking</a><a class="post-meta__tags" href="/en/tags/lisahost/">LisaHost</a></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/en/posts/d9a729/" title="Why I chose Dynadot for my domain and free business email"><img class="cover" src="/assets/images/dynadot-domain-email-v1-1280.webp" onerror="onerror=null;src='/en/img/404.jpg'" alt="cover of previous post" loading="lazy" srcset="/assets/images/dynadot-domain-email-v1-640.webp 640w, /assets/images/dynadot-domain-email-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="702"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Why I chose Dynadot for my domain and free business email</div></div><div class="info-2"><div class="info-item-1">When I set up jayln3.com for this blog, I expected to register the name, add a few DNS records and move on. Payment, email setup, forwarding and HTTPS each needed more attention than I had expected. I chose Dynadot for domain registration and its included free email hosting. The reasons were practical: I could pay with Alipay in Chinese yuan, use an address on my own domain, and manage parts of the setup through an API. The email limits matter: one email address, 1GB of storage and up to 25...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/en/posts/b8f3c7/" title="BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations"><img class="cover" src="/assets/images/global-vps-network-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/global-vps-network-v1-640.webp 640w, /assets/images/global-vps-network-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-04</div><div class="info-item-2">BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</div></div><div class="info-2"><div class="info-item-1">The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability. It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article. BandwagonHost purchase page — affiliate link   Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA,...</div></div></div></a><a class="pagination-related" href="/en/posts/e6656c2b/" title="The 2026 Agent Workflow Guide — Memory, Tools and Orchestration"><img class="cover" src="/assets/images/agent-workflow-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/agent-workflow-v1-640.webp 640w, /assets/images/agent-workflow-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-02</div><div class="info-item-2">The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</div></div><div class="info-2"><div class="info-item-1">TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge. Its proposed architecture combines:  A knowledge foundation: LLM Wiki, Obsidian CLI and optionally Firecrawl. Episodic memory: MemPalace for conversations and preferences. Scheduling and coordination: GBrain and GStack.  The goal is a personal knowledge assistant that can retain context, maintain information and carry out multi-step...</div></div></div></a><a class="pagination-related" href="/en/posts/d1b5e9/" title="Cross-Border Ecommerce Operations — A Guide to Automation"><img class="cover" src="/assets/images/ecommerce-automation-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/ecommerce-automation-v1-640.webp 640w, /assets/images/ecommerce-automation-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-05</div><div class="info-item-2">Cross-Border Ecommerce Operations — A Guide to Automation</div></div><div class="info-2"><div class="info-item-1">Why automate operations?Running Facebook campaigns and maintaining an online store take up a significant share of an ecommerce operator’s time. Automation tools such as n8n can help with:  Data collection: checking competitors’ prices on a schedule. Notifications: sending order-status updates to your phone. Campaign operations: producing creative assets in batches and monitoring returns.  </div></div></div></a><a class="pagination-related" href="/en/posts/d9a729/" title="Why I chose Dynadot for my domain and free business email"><img class="cover" src="/assets/images/dynadot-domain-email-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/dynadot-domain-email-v1-640.webp 640w, /assets/images/dynadot-domain-email-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="702"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-29</div><div class="info-item-2">Why I chose Dynadot for my domain and free business email</div></div><div class="info-2"><div class="info-item-1">When I set up jayln3.com for this blog, I expected to register the name, add a few DNS records and move on. Payment, email setup, forwarding and HTTPS each needed more attention than I had expected. I chose Dynadot for domain registration and its included free email hosting. The reasons were practical: I could pay with Alipay in Chinese yuan, use an address on my own domain, and manage parts of the setup through an API. The email limits matter: one email address, 1GB of storage and up to 25...</div></div></div></a><a class="pagination-related" href="/en/posts/c9a4d8/" title="Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent"><img class="cover" src="/assets/images/streaming-network-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/streaming-network-v1-640.webp 640w, /assets/images/streaming-network-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-04</div><div class="info-item-2">Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent</div></div><div class="info-2"><div class="info-item-1">For a live stream, stable upload capacity matters as much as download speed. The original article compares BandwagonHost / IT7 CN2 GIA with LisaHost / Cogent during evening hours.   Streaming capacity in the original testThe article uses 20 Mbps as its working threshold for a 2K stream.  LisaHost / Cogent: the lowest recorded upload rate was about 40 Mbps. The article regarded this as adequate for a single stream, while noting the drop at 8 p.m. BandwagonHost / IT7:...</div></div></div></a></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/assets/images/ln3-logo-v1.webp" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="ln3 Logo" loading="lazy" width="256" height="256"></div><div class="author-info-name">Jayln3</div><div class="author-info-description">Notes by Jayln3 on global growth, AI and automation, and the infrastructure behind them.</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">35</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="https://github.com/jayln3" target="_blank" rel="noopener noreferrer" aria-label="GitHub · Jayln3"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons"><a class="social-icon contact-icon contact-icon-email" title="Email: contact@jayln3.com" aria-label="Email: contact@jayln3.com" href="mailto:contact@jayln3.com"><i class="fas fa-envelope" aria-hidden="true"></i></a><a class="social-icon contact-icon contact-icon-facebook" title="Facebook · Jayln3mall" aria-label="Facebook · Jayln3mall" href="https://www.facebook.com/Jayln3mall" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><span class="social-icon contact-icon contact-icon-x" title="X — coming soon" aria-label="X — coming soon" role="link" aria-disabled="true"><i class="fab fa-x-twitter" aria-hidden="true"></i></span><span class="social-icon contact-icon contact-icon-linkedin" title="LinkedIn — coming soon" aria-label="LinkedIn — coming soon" role="link" aria-disabled="true"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Notes on global growth, AI and technology. Use the language button to read the corresponding translation.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-LisaHost-plan-I-used"><span class="toc-number">1.</span> <span class="toc-text">The LisaHost plan I used</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-I-organized-the-setup-for-desktop-and-phone-testing"><span class="toc-number">2.</span> <span class="toc-text">How I organized the setup for desktop and phone testing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-latency-result-did-not-mean-websites-would-load"><span class="toc-number">3.</span> <span class="toc-text">A latency result did not mean websites would load</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-five-accounts-all-appeared-slow"><span class="toc-number">4.</span> <span class="toc-text">Why five accounts all appeared slow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-retest-results-and-how-I-compare-speeds-now"><span class="toc-number">5.</span> <span class="toc-text">The retest results and how I compare speeds now</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-LisaHost-link-and-coupon"><span class="toc-number">6.</span> <span class="toc-text">My LisaHost link and coupon</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/en/posts/a6e102/" title="My LisaHost experience and VPS setup notes"><img src="/assets/images/lisahost-vps-experience-v1-1280.webp" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="My LisaHost experience and VPS setup notes" loading="lazy" srcset="/assets/images/lisahost-vps-experience-v1-640.webp 640w, /assets/images/lisahost-vps-experience-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="669"></a><div class="content"><a class="title" href="/en/posts/a6e102/" title="My LisaHost experience and VPS setup notes">My LisaHost experience and VPS setup notes</a><time datetime="2026-10-01T08:00:00.000Z" title="Created 2026-10-01 16:00:00">2026-10-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/posts/d9a729/" title="Why I chose Dynadot for my domain and free business email"><img src="/assets/images/dynadot-domain-email-v1-1280.webp" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Why I chose Dynadot for my domain and free business email" loading="lazy" srcset="/assets/images/dynadot-domain-email-v1-640.webp 640w, /assets/images/dynadot-domain-email-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="702"></a><div class="content"><a class="title" href="/en/posts/d9a729/" title="Why I chose Dynadot for my domain and free business email">Why I chose Dynadot for my domain and free business email</a><time datetime="2026-09-29T04:25:00.000Z" title="Created 2026-09-29 12:25:00">2026-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/posts/e6656c2b/" title="The 2026 Agent Workflow Guide — Memory, Tools and Orchestration"><img src="/assets/images/agent-workflow-v1-1280.webp" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="The 2026 Agent Workflow Guide — Memory, Tools and Orchestration" loading="lazy" srcset="/assets/images/agent-workflow-v1-640.webp 640w, /assets/images/agent-workflow-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/en/posts/e6656c2b/" title="The 2026 Agent Workflow Guide — Memory, Tools and Orchestration">The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</a><time datetime="2026-05-01T16:00:00.000Z" title="Created 2026-05-02 00:00:00">2026-05-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/posts/af40aec/" title="LinkedIn B2B Marketing — From Account Setup to ABM"><img src="/assets/images/linkedin-abm-v1-1280.webp" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="LinkedIn B2B Marketing — From Account Setup to ABM" loading="lazy" srcset="/assets/images/linkedin-abm-v1-640.webp 640w, /assets/images/linkedin-abm-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/en/posts/af40aec/" title="LinkedIn B2B Marketing — From Account Setup to ABM">LinkedIn B2B Marketing — From Account Setup to ABM</a><time datetime="2026-04-18T16:00:00.000Z" title="Created 2026-04-19 00:00:00">2026-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/posts/a1f3c9/" title="Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers"><img src="/assets/images/b2b-audience-targeting-v1-1280.webp" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers" loading="lazy" srcset="/assets/images/b2b-audience-targeting-v1-640.webp 640w, /assets/images/b2b-audience-targeting-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/en/posts/a1f3c9/" title="Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers">Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers</a><time datetime="2026-04-01T16:00:00.000Z" title="Created 2026-04-02 00:00:00">2026-04-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2025 - 2026 By Jayln3</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text"><a href="/en/about/">About Jayln3</a> · <a href="/en/atom.xml">RSS</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js?v=5.3.3"></script><script src="/en/js/main.js?v=5.3.3"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"lang":"en"}
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-new-kappa.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-new-kappa.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('/assets/vendor/twikoo/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/en/js/search/local-search.js?v=5.3.3"></script></div></div></body></html>
