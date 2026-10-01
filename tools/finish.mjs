@@ -77,9 +77,11 @@ export async function finishSite(directory, allPosts) {
       const asset = images.assets.find(a => a.id === post.data.translation_key);
       const src = '/assets/images/' + asset.id + '-v1-1280.webp';
       const caption = asset.caption?.[lang] || (isEnglish ? 'AI-generated conceptual illustration.' : 'AI 生成的概念插画。');
-      $('#article-container').prepend('<figure class="article-illustration"><img src="' + src +
-        '" width="1280" height="720" alt="' + escapeHTML(asset.alt[lang]) + '" decoding="async" loading="eager"><figcaption>' +
-        escapeHTML(caption) + '</figcaption></figure>');
+      if (post.data.cover_in_body !== false) {
+        $('#article-container').prepend('<figure class="article-illustration"><img src="' + src +
+          '" width="1280" height="720" alt="' + escapeHTML(asset.alt[lang]) + '" decoding="async" loading="eager"><figcaption>' +
+          escapeHTML(caption) + '</figcaption></figure>');
+      }
       if (paired) $('#article-container').prepend('<aside class="translation-note">' +
         (isEnglish ? 'English edition, translated and edited from the Chinese article. Figures and product details refer to the original publication date. ' : '本文提供英文译编版。') +
         '<a href="' + counterpart + '" hreflang="' + otherLang + '">' + (isEnglish ? '中文原文' : 'Read in English') + '</a></aside>');
@@ -96,9 +98,11 @@ export async function finishSite(directory, allPosts) {
       const match = src.match(/\/assets\/images\/(.+)-v1-1280\.webp$/);
       if (match) {
         const asset = images.assets.find(a => a.id === match[1]);
-        img.attr('srcset', '/assets/images/' + match[1] + '-v1-640.webp 640w, /assets/images/' + match[1] + '-v1-1280.webp 1280w');
+        const fullWidth = Math.min(1280, asset?.width || 1280);
+        const thumbWidth = Math.min(640, asset?.width || 640);
+        img.attr('srcset', '/assets/images/' + match[1] + '-v1-640.webp ' + thumbWidth + 'w, /assets/images/' + match[1] + '-v1-1280.webp ' + fullWidth + 'w');
         img.attr('sizes', img.closest('#article-container').length ? '(max-width: 900px) 94vw, 850px' : '(max-width: 768px) 90vw, 480px');
-        img.attr('width', '1280').attr('height', asset ? String(Math.round(1280 * asset.height / asset.width)) : '720');
+        img.attr('width', String(fullWidth)).attr('height', asset ? String(Math.round(fullWidth * asset.height / asset.width)) : '720');
       }
       if (!img.attr('alt')) img.attr('alt', src.includes('avatar') ? 'Jayln3' : '');
       if (!img.attr('loading')) img.attr('loading', 'lazy');

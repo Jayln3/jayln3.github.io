@@ -46,8 +46,10 @@ export async function checkSite(directory = output) {
     });
     const article = posts.find(p => p.url === current);
     if (article) {
-      assert.equal($('.article-illustration img').length, 1, 'Article illustration: ' + current);
-      assert($('.article-illustration img').attr('alt')?.length > 5, 'Descriptive illustration alt: ' + current);
+      assert.equal($('.article-illustration img').length, article.data.cover_in_body === false ? 0 : 1, 'Article cover placement: ' + current);
+      $('#article-container img').each((_, el) => {
+        assert($(el).attr('alt')?.length > 5, 'Descriptive article image alt: ' + current);
+      });
       assert.equal($('meta[name="author"]').attr('content').split(',')[0], 'Jayln3');
       const other = pairs[article.data.translation_key][en ? 'zh-CN' : 'en'];
       if (other) {
@@ -85,7 +87,7 @@ export async function checkSite(directory = output) {
     const file = path.join(directory, 'assets/images', asset.id + '-v1-1280.webp');
     const meta = await sharp(file).metadata();
     assert.equal(meta.format, 'webp');
-    assert.equal(meta.width, 1280);
+    assert.equal(meta.width, Math.min(1280, asset.width), 'Image keeps its original width when smaller than 1280px: ' + file);
     assert((await fs.stat(file)).size < 350_000, 'Cover exceeds 350 KB budget: ' + file);
   }
   const xmlFiles = entries.filter(f => /\.(xml|txt|json)$/.test(f) && !f.includes('/vendor/'));

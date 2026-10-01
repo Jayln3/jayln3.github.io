@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/jayln3/blog-images",
-  "commit": "195cea9d4e3512375ed404ef8c829d856fe7c3ec",
+  "commit": "658e4fc5469fe3ccb4f6b460556cd866ba7c1060",
   "assets": [
     {
       "id": "agent-memory",
@@ -241,6 +241,86 @@
       "height": 1206,
       "bytes": 197581,
       "sha256": "110f13c189e5547076064b0537e3c7adc29f24abdfe3c42004c597e2e61db110",
+      "kind": "user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "lisahost-vps-experience",
+      "file": "posts/lisahost-vps-experience/lisahost-coupon-v1.png",
+      "article": "lisahost-vps-experience.md",
+      "abbrlink": "a6e102",
+      "alt": {
+        "zh-CN": "LisaHost 历史结算截图，优惠码生效后图中年付套餐由 720 元减为 648 元。",
+        "en": "Historical LisaHost checkout showing an annual plan reduced from CNY 720 to CNY 648 after a coupon."
+      },
+      "caption": {
+        "zh-CN": "历史结算示例，适用范围、当前价格和续费规则以实际结账页为准。",
+        "en": "Historical checkout example; current eligibility, prices and renewal terms depend on the checkout page."
+      },
+      "width": 1947,
+      "height": 1017,
+      "bytes": 104364,
+      "sha256": "563676fb0553ad232e9b720b40cabd2c44c489ef13a9308b3efb5c862af9dc1a",
+      "kind": "user-screenshot",
+      "role": "cover"
+    },
+    {
+      "id": "lisahost-instance",
+      "file": "posts/lisahost-vps-experience/lisahost-instance-v1.png",
+      "article": "lisahost-vps-experience.md",
+      "abbrlink": "a6e102",
+      "alt": {
+        "zh-CN": "作者提供的 LisaHost 旧实例管理界面，显示系统、配置、带宽与到期信息。",
+        "en": "The author’s previous LisaHost instance dashboard with system, specifications, bandwidth and expiry details."
+      },
+      "caption": {
+        "zh-CN": "旧实例历史截图；作者说明不再续订，并明确授权原样使用此图。",
+        "en": "Historical instance screenshot; the author states it will not be renewed and explicitly authorizes its unaltered use."
+      },
+      "width": 2560,
+      "height": 1305,
+      "bytes": 167520,
+      "sha256": "d18b188ccd1c57d316b621a6258ceb2591647f415fbdd6b135d5ab49261aa768",
+      "kind": "user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "ake-vless-retest",
+      "file": "posts/lisahost-vps-experience/ake-vless-retest-v1.png",
+      "article": "lisahost-vps-experience.md",
+      "abbrlink": "a6e102",
+      "alt": {
+        "zh-CN": "AKE 新 VPS 的 VLESS 后续复测，下载 69.98 Mbps，上传 52.35 Mbps。",
+        "en": "AKE VPS VLESS retest showing 69.98 Mbps download and 52.35 Mbps upload."
+      },
+      "caption": {
+        "zh-CN": "AKE 配置排查记录，使用 Windows v2rayN；并非 LisaHost 旧实例的性能数据。",
+        "en": "AKE troubleshooting record using Windows v2rayN, not performance data for the previous LisaHost instance."
+      },
+      "width": 1200,
+      "height": 732,
+      "bytes": 96501,
+      "sha256": "5ea6ea031cd1aeae06695cb3918b25298732f91e38fd9f62cf6d35ca5c70928a",
+      "kind": "user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "ake-hy2-test",
+      "file": "posts/lisahost-vps-experience/ake-hy2-test-v1.jpg",
+      "article": "lisahost-vps-experience.md",
+      "abbrlink": "a6e102",
+      "alt": {
+        "zh-CN": "AKE 新 VPS 的 HY2 测速，下载 61.87 Mbps，上传 71.02 Mbps。",
+        "en": "AKE VPS HY2 test showing 61.87 Mbps download and 71.02 Mbps upload."
+      },
+      "caption": {
+        "zh-CN": "同一电脑、同一网络，但与 VLESS 复测的时间和测速服务器不同。",
+        "en": "Same computer and local network, but a different time and Speedtest server from the VLESS retest."
+      },
+      "width": 1158,
+      "height": 693,
+      "bytes": 162045,
+      "sha256": "b4b8d9b02d62dabb07de34f1dc83aa43040ce294c012e9f925fe0263daf401a5",
       "kind": "user-screenshot",
       "role": "body"
     }

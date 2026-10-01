@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { postsFor } from '../../tools/lib.mjs';
+
+const englishPostCount = (await postsFor('en')).length;
 
 test.beforeEach(async ({ page }) => {
   // External visitor counts must not hold up local navigation checks.
@@ -72,5 +75,5 @@ test('Categories, gallery and mobile menu are usable', async ({ page, isMobile }
     await page.locator('#menus a.site-page').filter({ hasText: 'Gallery' }).click();
   }
   await expect(page).toHaveURL(/\/en\/gallery\/$/);
-  await expect(page.locator('.image-gallery figure')).toHaveCount(13);
+  await expect(page.locator('.image-gallery figure')).toHaveCount(englishPostCount);
 });
