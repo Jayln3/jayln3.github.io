@@ -1,5 +1,13 @@
 import { test, expect } from '@playwright/test';
 
+test.beforeEach(async ({ page }) => {
+  // External visitor counts must not hold up local navigation checks.
+  await page.route(/^https?:\/\/busuanzi\.ibruce\.info\//, route => route.fulfill({
+    contentType: 'application/javascript',
+    body: ''
+  }));
+});
+
 test('Indexes, assets and the language switch work without script errors', async ({ page }) => {
   const errors = [];
   const failures = [];
