@@ -33,5 +33,8 @@
   "cloudflare": {"zh-CN": "Cloudflare", "en": "Cloudflare"},
   "domains": {"zh-CN": "域名", "en": "Domains"},
   "business-email": {"zh-CN": "企业邮箱", "en": "Business Email"},
-  "github-pages": {"zh-CN": "GitHub Pages", "en": "GitHub Pages"}
+  "github-pages": {"zh-CN": "GitHub Pages", "en": "GitHub Pages"},
+  "roxybrowser": {"zh-CN": "RoxyBrowser", "en": "RoxyBrowser"},
+  "browser-profiles": {"zh-CN": "指纹浏览器", "en": "Browser Profiles"},
+  "mcp": {"zh-CN": "MCP", "en": "MCP"}
 }

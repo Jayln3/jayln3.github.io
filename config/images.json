@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/jayln3/blog-images",
-  "commit": "658e4fc5469fe3ccb4f6b460556cd866ba7c1060",
+  "commit": "6fca396f19b3c531530a65eee772bb8c7cb54c24",
   "assets": [
     {
       "id": "agent-memory",
@@ -322,6 +322,54 @@
       "bytes": 162045,
       "sha256": "b4b8d9b02d62dabb07de34f1dc83aa43040ce294c012e9f925fe0263daf401a5",
       "kind": "user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "roxybrowser-ai-workflow",
+      "file": "covers/2026/roxybrowser-ai-workflow-v1.png",
+      "article": "roxybrowser-ai-workflow.md",
+      "abbrlink": "c7b105",
+      "alt": {
+        "zh-CN": "三个独立浏览器工作区通过细线连接到自动化调度装置的概念插画，并非产品界面。",
+        "en": "Three separate browser workspaces connected to an automation hub, a conceptual illustration rather than a product interface."
+      },
+      "width": 1672,
+      "height": 941,
+      "bytes": 1948008,
+      "sha256": "081a03e42b8f7ad8024eac3ce215e1ebc86fdaef3524a93a9ea289a618697f5b",
+      "kind": "conceptual-illustration",
+      "role": "cover"
+    },
+    {
+      "id": "roxybrowser-mcp-setup",
+      "file": "posts/roxybrowser-ai-workflow/roxybrowser-mcp-redacted-v1.png",
+      "article": "roxybrowser-ai-workflow.md",
+      "abbrlink": "c7b105",
+      "alt": {
+        "zh-CN": "本地 RoxyBrowser 的 API 与 AI MCP 配置界面，API Key、网络与账户标识已遮盖。",
+        "en": "The local RoxyBrowser API and AI MCP screen with API key, network and account identifiers covered."
+      },
+      "width": 1559,
+      "height": 1009,
+      "bytes": 1127021,
+      "sha256": "d58b42a1a926e5d9b8b0d12712437dcf186c87a4c6676e1dbd82c4d260237c12",
+      "kind": "redacted-user-screenshot",
+      "role": "body"
+    },
+    {
+      "id": "roxybrowser-affiliate-banner",
+      "file": "posts/roxybrowser-ai-workflow/roxybrowser-affiliate-banner-v1.png",
+      "article": "roxybrowser-ai-workflow.md",
+      "abbrlink": "c7b105",
+      "alt": {
+        "zh-CN": "RoxyBrowser 官方推广横幅，配合 Jayln3 的邀请链接使用。",
+        "en": "Official Chinese RoxyBrowser promotional artwork used with Jayln3’s referral link."
+      },
+      "width": 1260,
+      "height": 660,
+      "bytes": 724259,
+      "sha256": "f600a09bc236ae29679c7b3d0f6b4f4a8f2d58974b0a760c780cf35f01472fdf",
+      "kind": "official-promotional-artwork",
       "role": "body"
     }
   ]
