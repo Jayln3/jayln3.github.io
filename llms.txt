@@ -20,6 +20,7 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [你好，我是 Jayln3](https://jayln3.com/posts/e2c6f0/)
 - [LinkedIn B2B营销实战：从开户到ABM精准获客全攻略](https://jayln3.com/posts/af40aec/)
 - [LisaHost 使用体验与 VPS 配置实录](https://jayln3.com/posts/a6e102/)
+- [RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行](https://jayln3.com/posts/c7b105/)
 - [晚高峰2K/4K直播推流实测：搬瓦工CN2 GIA vs Lisa主机Cogent线路深度对比](https://jayln3.com/posts/c9a4d8/)
 
 ## English articles
@@ -38,4 +39,5 @@ Notes by Jayln3 on global growth, AI and automation, and the infrastructure behi
 - [Hello, I'm Jayln3](https://jayln3.com/en/posts/e2c6f0/)
 - [LinkedIn B2B Marketing — From Account Setup to ABM](https://jayln3.com/en/posts/af40aec/)
 - [My LisaHost experience and VPS setup notes](https://jayln3.com/en/posts/a6e102/)
+- [RoxyBrowser: AI control, MCP integration and headless browsing](https://jayln3.com/en/posts/c7b105/)
 - [Evening Streaming Tests — BandwagonHost CN2 GIA and LisaHost Cogent](https://jayln3.com/en/posts/c9a4d8/)

@@ -1,160 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
-    <url>/en/posts/c3a7f2/</url>
-    <content><![CDATA[
-TL;DR
-
-Long-running agents face lost context, weak retrieval, growing token costs and fragmented information across sessions.
-The original review highlights Mem0, Letta, Cognee and SuperMemory, alongside eight related projects.
-Its selection framework starts with the use case: a prototype, a stateful production agent, relationship-heavy reasoning or multi-agent collaboration.
-
-
-Project descriptions and star counts below are from the original March 26, 2026 article.
-1. Four obstacles for long-running agentsTask completionA model’s context window is limited. As a conversation grows, earlier constraints may be lost or displaced, making long, multi-step tasks harder to complete consistently.
-Fragmented memory and weak retrievalStoring every conversation as a flat list in a vector database does not guarantee that the right detail will be retrieved.
-For example, “the parameters of that Python script we used last time” may need to resolve to a record about a named file and its configuration. Similarity between words is only part of that task.
-Token costsOne response to lost context is to include more history in every prompt. That increases the amount of material processed and the cost of repeated requests.
-The original article uses long GPT-4o contexts as an example of this problem. The general design question is how to supply useful context without repeatedly sending the entire history.
-Information split across servicesA user may discuss a task in one channel and expect an agent in another channel to continue it. Separate conversation stores make that difficult, especially when the agent also needs CRM data, documents and team messages.
-Poor memory can therefore lead to larger prompts, greater cost and a harder deployment process.
-2. Twelve approaches1. Mem0 — approximately 51,334 starsPositioning in the original review: a general-purpose memory layer for AI agents.
-The review highlights extraction, consolidation and retrieval to maintain continuity; compression and prioritization to reduce context size; and a common API for memory across sessions.
-It describes recent, important and long-term memory, with retention based on time and relevance, and emphasizes self-hosting.
-Suggested use: prototypes, assistants that remember preferences, and customer-service agents that need consistency across conversations.
-2. Letta — approximately 21,785 starsPositioning: a platform for stateful agents.
-The review focuses on persistent agent state, memory management, summaries and information sharing between agents. It also describes integration with commonly used agent frameworks.
-Suggested use: long-lived assistants, enterprise support and applications that need continuity across sessions.
-3. Cognee — approximately 14,717 starsPositioning: a knowledge engine that turns documents into a network of related information.
-The article emphasizes the combination of vector retrieval and knowledge graphs. The aim is to retrieve relationships between entities as well as semantically similar text.
-It also describes extracting knowledge from different input formats, returning structured context, and inspecting the resulting graph through a local interface.
-Suggested use: relationship-heavy document tasks, research assistants and knowledge bases built from unstructured material.
-4. SuperMemory — approximately 20,076 starsPositioning: a fast, scalable memory API.
-The original review emphasizes retrieval latency, compression, hybrid vector and keyword search, and a straightforward integration interface.
-Suggested use: interactive agents and applications sensitive to response time.
-5. MemVid — approximately 13,642 starsPositioning: a memory approach based on video-encoded storage.
-The article describes encoding stored information into video, with retrieval and replay as alternatives to a more elaborate retrieval pipeline.
-Suggested use in the original review: long-term archives and large histories where storage and context costs are a concern.
-6. Memori — approximately 12,781 starsPositioning: a SQL-native memory layer for language models and agents.
-The review emphasizes relational queries, a shared SQL store and integration with an existing enterprise stack.
-Suggested use: organizations already using SQL and applications requiring structured memory queries.
-7. DeepLake — approximately 9,053 starsPositioning: an AI data runtime and multimodal data layer.
-The article describes support for vectors, text, images and video, with indexing designed around AI workloads and options intended to reduce operational work.
-Suggested use: multimodal agents and large-scale data retrieval or training.
-8. MemOS — approximately 7,910 starsPositioning: a memory operating system for models and agents.
-The review focuses on persistent skills, reuse across tasks and knowledge sharing among agents. It describes compatibility with agent ecosystems such as OpenClaw and MoleBot.
-Suggested use: systems in which multiple agents accumulate and reuse skills.
-9. OpenViking — approximately 19,650 starsPositioning: a context database designed for AI agents such as OpenClaw.
-The article describes a filesystem-like hierarchy for memory, resources and skills, with context delivered at different levels of detail.
-Suggested use: OpenClaw-related systems and applications with complex context-management needs.
-10. 12-factor-agents — approximately 18,957 starsPositioning: principles and practices for production agents.
-This is a different kind of resource from a memory-storage engine. The review presents it as guidance for moving from a prototype to production, including memory, safety and monitoring.
-Suggested use: teams designing and deploying production systems.
-11. PraisonAI — approximately 57,742 starsPositioning: a low-code platform for multi-agent automation.
-The article highlights built-in memory and retrieval support, handoffs and guardrails, support for many models, and integrations with services such as Telegram, Discord and WhatsApp.
-Suggested use: business automation and workflows that coordinate several specialized agents.
-12. MemMachine — roughly 5,000 stars in the original comparison tablePositioning: a general-purpose memory layer.
-The review focuses on a common memory interface, support for different storage backends, and simplifying the state-management work of a larger agent system.
-Suggested use: systems that need a consistent abstraction over storage and retrieval.
-3. ComparisonThe strengths and suitability below summarize the original author’s assessments.
-
-
-
-Project
-Main emphasis
-Suggested use
-
-
-
-Mem0
-General-purpose memory and accessible integration
-Prototypes and memory across sessions
-
-
-Letta
-Persistent agent state
-Long-lived assistants and support
-
-
-Cognee
-Graph and vector retrieval
-Relationship-heavy knowledge tasks
-
-
-SuperMemory
-Fast retrieval
-Interactive, low-latency applications
-
-
-MemVid
-Video-based memory storage
-Archival and long histories
-
-
-Memori
-SQL-based memory
-Existing relational-data stacks
-
-
-DeepLake
-Multimodal data
-Large and varied datasets
-
-
-MemOS
-Reusable skills and shared memory
-Multi-agent collaboration
-
-
-OpenViking
-Hierarchical context
-Complex context management
-
-
-12-factor-agents
-Production design principles
-Architecture and deployment
-
-
-PraisonAI
-Low-code multi-agent workflows
-Business automation
-
-
-MemMachine
-A common memory abstraction
-Complex agent systems
-
-
-4. Direction and selectionThe original article sees agent memory as a rapidly expanding area. It identifies three development directions:
-
-Compression: representing more useful information with less context.
-Temporal reasoning: distinguishing an old preference from the current one.
-Multimodal memory: incorporating information from images, audio and video.
-
-Its practical starting points are:
-
-Prototype: evaluate Mem0 or SuperMemory.
-Production architecture: investigate Letta alongside the principles in 12-factor-agents.
-Relationships and context: investigate Cognee or OpenViking.
-Multiple agents: investigate PraisonAI or MemOS.
-Archival experiments: investigate MemVid.
-
-These are the original review’s selection suggestions; they are starting points for evaluating a workload, rather than a substitute for testing it.
-Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
-]]></content>
-      <categories>
-        <category>AI &amp; Automation</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>Memory</tag>
-        <tag>GitHub</tag>
-        <tag>Open Source</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The 2026 Agent Workflow Guide — Memory, Tools and Orchestration</title>
     <url>/en/posts/e6656c2b/</url>
     <content><![CDATA[TL;DRThe original article’s central problem is that an assistant can repeatedly rediscover the same information without accumulating useful knowledge.
@@ -380,50 +226,226 @@ Originally published on Jayln3’s Blog. Please credit the source when quoting o
       </tags>
   </entry>
   <entry>
-    <title>Daily AI Open-Source Digest — March 23, 2026</title>
-    <url>/en/posts/a7e2b6/</url>
+    <title>Breaking Agent Memory Silos — Twelve Open-Source Approaches</title>
+    <url>/en/posts/c3a7f2/</url>
     <content><![CDATA[
-Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+TL;DR
 
-Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
-Stars recorded in the original roundup: 20.
-Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
-Features highlighted in the original article:
+Long-running agents face lost context, weak retrieval, growing token costs and fragmented information across sessions.
+The original review highlights Mem0, Letta, Cognee and SuperMemory, alongside eight related projects.
+Its selection framework starts with the use case: a prototype, a stateful production agent, relationship-heavy reasoning or multi-agent collaboration.
 
-Video downloads from more than 1,800 platforms.
-AI-generated video summaries.
-Mind-map generation.
-International payments through Stripe.
 
-GitHub
-2. opencode-lazyA plugin manager for OpenCode.
-Stars recorded: 4. Stack: TypeScript.
+Project descriptions and star counts below are from the original March 26, 2026 article.
+1. Four obstacles for long-running agentsTask completionA model’s context window is limited. As a conversation grows, earlier constraints may be lost or displaced, making long, multi-step tasks harder to complete consistently.
+Fragmented memory and weak retrievalStoring every conversation as a flat list in a vector database does not guarantee that the right detail will be retrieved.
+For example, “the parameters of that Python script we used last time” may need to resolve to a record about a named file and its configuration. Similarity between words is only part of that task.
+Token costsOne response to lost context is to include more history in every prompt. That increases the amount of material processed and the cost of repeated requests.
+The original article uses long GPT-4o contexts as an example of this problem. The general design question is how to supply useful context without repeatedly sending the entire history.
+Information split across servicesA user may discuss a task in one channel and expect an agent in another channel to continue it. Separate conversation stores make that difficult, especially when the agent also needs CRM data, documents and team messages.
+Poor memory can therefore lead to larger prompts, greater cost and a harder deployment process.
+2. Twelve approaches1. Mem0 — approximately 51,334 starsPositioning in the original review: a general-purpose memory layer for AI agents.
+The review highlights extraction, consolidation and retrieval to maintain continuity; compression and prioritization to reduce context size; and a common API for memory across sessions.
+It describes recent, important and long-term memory, with retention based on time and relevance, and emphasizes self-hosting.
+Suggested use: prototypes, assistants that remember preferences, and customer-service agents that need consistency across conversations.
+2. Letta — approximately 21,785 starsPositioning: a platform for stateful agents.
+The review focuses on persistent agent state, memory management, summaries and information sharing between agents. It also describes integration with commonly used agent frameworks.
+Suggested use: long-lived assistants, enterprise support and applications that need continuity across sessions.
+3. Cognee — approximately 14,717 starsPositioning: a knowledge engine that turns documents into a network of related information.
+The article emphasizes the combination of vector retrieval and knowledge graphs. The aim is to retrieve relationships between entities as well as semantically similar text.
+It also describes extracting knowledge from different input formats, returning structured context, and inspecting the resulting graph through a local interface.
+Suggested use: relationship-heavy document tasks, research assistants and knowledge bases built from unstructured material.
+4. SuperMemory — approximately 20,076 starsPositioning: a fast, scalable memory API.
+The original review emphasizes retrieval latency, compression, hybrid vector and keyword search, and a straightforward integration interface.
+Suggested use: interactive agents and applications sensitive to response time.
+5. MemVid — approximately 13,642 starsPositioning: a memory approach based on video-encoded storage.
+The article describes encoding stored information into video, with retrieval and replay as alternatives to a more elaborate retrieval pipeline.
+Suggested use in the original review: long-term archives and large histories where storage and context costs are a concern.
+6. Memori — approximately 12,781 starsPositioning: a SQL-native memory layer for language models and agents.
+The review emphasizes relational queries, a shared SQL store and integration with an existing enterprise stack.
+Suggested use: organizations already using SQL and applications requiring structured memory queries.
+7. DeepLake — approximately 9,053 starsPositioning: an AI data runtime and multimodal data layer.
+The article describes support for vectors, text, images and video, with indexing designed around AI workloads and options intended to reduce operational work.
+Suggested use: multimodal agents and large-scale data retrieval or training.
+8. MemOS — approximately 7,910 starsPositioning: a memory operating system for models and agents.
+The review focuses on persistent skills, reuse across tasks and knowledge sharing among agents. It describes compatibility with agent ecosystems such as OpenClaw and MoleBot.
+Suggested use: systems in which multiple agents accumulate and reuse skills.
+9. OpenViking — approximately 19,650 starsPositioning: a context database designed for AI agents such as OpenClaw.
+The article describes a filesystem-like hierarchy for memory, resources and skills, with context delivered at different levels of detail.
+Suggested use: OpenClaw-related systems and applications with complex context-management needs.
+10. 12-factor-agents — approximately 18,957 starsPositioning: principles and practices for production agents.
+This is a different kind of resource from a memory-storage engine. The review presents it as guidance for moving from a prototype to production, including memory, safety and monitoring.
+Suggested use: teams designing and deploying production systems.
+11. PraisonAI — approximately 57,742 starsPositioning: a low-code platform for multi-agent automation.
+The article highlights built-in memory and retrieval support, handoffs and guardrails, support for many models, and integrations with services such as Telegram, Discord and WhatsApp.
+Suggested use: business automation and workflows that coordinate several specialized agents.
+12. MemMachine — roughly 5,000 stars in the original comparison tablePositioning: a general-purpose memory layer.
+The review focuses on a common memory interface, support for different storage backends, and simplifying the state-management work of a larger agent system.
+Suggested use: systems that need a consistent abstraction over storage and retrieval.
+3. ComparisonThe strengths and suitability below summarize the original author’s assessments.
 
-Search for plugins online.
-Install and manage plugins.
-Work with plugins directly inside a session.
 
-GitHub
-3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
-Stars recorded: 4.
-The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
-GitHub
-ObservationsThe original roundup identified three themes:
 
-AI and video processing: combining downloads with AI summaries.
-Developer productivity: demand for plugin-management tools.
-API aggregation: interest in free LLM resources.
+Project
+Main emphasis
+Suggested use
 
-The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+
+
+Mem0
+General-purpose memory and accessible integration
+Prototypes and memory across sessions
+
+
+Letta
+Persistent agent state
+Long-lived assistants and support
+
+
+Cognee
+Graph and vector retrieval
+Relationship-heavy knowledge tasks
+
+
+SuperMemory
+Fast retrieval
+Interactive, low-latency applications
+
+
+MemVid
+Video-based memory storage
+Archival and long histories
+
+
+Memori
+SQL-based memory
+Existing relational-data stacks
+
+
+DeepLake
+Multimodal data
+Large and varied datasets
+
+
+MemOS
+Reusable skills and shared memory
+Multi-agent collaboration
+
+
+OpenViking
+Hierarchical context
+Complex context management
+
+
+12-factor-agents
+Production design principles
+Architecture and deployment
+
+
+PraisonAI
+Low-code multi-agent workflows
+Business automation
+
+
+MemMachine
+A common memory abstraction
+Complex agent systems
+
+
+4. Direction and selectionThe original article sees agent memory as a rapidly expanding area. It identifies three development directions:
+
+Compression: representing more useful information with less context.
+Temporal reasoning: distinguishing an old preference from the current one.
+Multimodal memory: incorporating information from images, audio and video.
+
+Its practical starting points are:
+
+Prototype: evaluate Mem0 or SuperMemory.
+Production architecture: investigate Letta alongside the principles in 12-factor-agents.
+Relationships and context: investigate Cognee or OpenViking.
+Multiple agents: investigate PraisonAI or MemOS.
+Archival experiments: investigate MemVid.
+
+These are the original review’s selection suggestions; they are starting points for evaluating a workload, rather than a substitute for testing it.
+Originally published on Jayln3’s Blog. Please credit the source when quoting or republishing.
 ]]></content>
       <categories>
         <category>AI &amp; Automation</category>
       </categories>
       <tags>
-        <tag>GitHub</tag>
+        <tag>AI Agent</tag>
         <tag>Open Source</tag>
-        <tag>AI</tag>
-        <tag>Daily Digest</tag>
+        <tag>Memory</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
+    <url>/en/posts/b8f3c7/</url>
+    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
+It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
+BandwagonHost purchase page — affiliate link
+
+
+Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
+The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
+Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
+Location notes
+Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
+Osaka CN2 GIA: presented as an option for lower latency.
+Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
+
+Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
+
+
+
+Plan example
+CPU &#x2F; RAM
+Storage
+Transfer
+Port
+Recorded annual price
+
+
+
+CN2 GIA-E
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+2.5 Gbps
+$169.90
+
+
+Entry KVM
+2 cores &#x2F; 1 GB
+20 GB SSD
+1,000 GB
+1 Gbps
+$49.90
+
+
+Hong Kong CN2 GIA
+2 cores &#x2F; 2 GB
+40 GB SSD
+500 GB
+1 Gbps
+$899.90
+
+
+The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
+View plans on BandwagonHost — affiliate link
+Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
+Current plan specifications, availability and coupon validity should be checked on the purchase page.
+]]></content>
+      <categories>
+        <category>Infrastructure</category>
+      </categories>
+      <tags>
+        <tag>BandwagonHost</tag>
+        <tag>VPS</tag>
+        <tag>CN2 GIA</tag>
+        <tag>Networking</tag>
+        <tag>Ecommerce</tag>
       </tags>
   </entry>
   <entry>
@@ -442,101 +464,6 @@ Campaign operations: producing creative assets in batches and monitoring returns
       <tags>
         <tag>Automation</tag>
         <tag>Ecommerce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers</title>
-    <url>/en/posts/a1f3c9/</url>
-    <content><![CDATA[
-TL;DR: A common B2B advertising problem is paying for inquiries from individual shoppers. The original article proposes three filters: B2B audience criteria, visible minimum-order quantities, and job-title targeting.
-
-The problem: consumer traffic absorbs the budgetCross-border suppliers may receive plenty of inquiries from people who want one item or are simply comparing prices, while reaching few people with purchasing authority.
-The original article argues that broad consumer-oriented audiences need additional qualification for B2B campaigns. The following techniques are its proposed filters.
-1. Combine interests with B2B criteriaSetupIn the ad set’s detailed-targeting controls, the original workflow uses a “must also match” field:
-
-Add industry interests, such as jade wholesale or jewelry supply chains.
-Add qualifying terms such as wholesale, supply-chain management, corporate purchasing and B2B.
-
-The intended logic is to reach people who show both industry interest and a business-related attribute.
-Results reported in the original article
-
-
-Audience setup
-Consumer-traffic share
-Cost per B2B inquiry
-
-
-
-Interests only
-About 65%
-$28–35
-
-
-Interests plus additional criteria
-About 15%
-$12–18
-
-
-The original article attributes these figures to factory campaigns and notes that results vary by category.
-2. Put minimum-order quantities in the copyState the wholesale threshold directly:
-
-“Jade bangles: minimum order of 50 pieces, with private-label customization.”
-“Factory-direct apparel: minimum order of 500 pieces, with cross-border logistics.”
-
-An individual shopper can immediately see whether the offer fits. A wholesale buyer sees a signal that the seller can handle supply and production.
-This can also improve qualification: a buyer who submits an inquiry after reading the threshold already understands a key commercial condition.
-3. Focus on purchasing decision-makersThis approach becomes more useful once a campaign has a base of converted customers:
-
-Upload the customer list to create a custom audience.
-Build a lookalike audience from it.
-In the targeting workflow described by the original article, add relevant job titles:
-Purchasing Manager
-Production Manager
-CEO, Founder or Owner
-Supply Chain Manager
-
-
-
-Interest alone does not establish purchasing authority. The purpose of the job-title layer is to focus on people involved in purchase decisions.
-Combine the three techniquesThe proposed conversion path is:
-
-Ad set: industry interests, qualifying B2B criteria and job roles.
-Creative: minimum-order quantity, factory capabilities and an offer for business buyers.
-Destination: the business page, WhatsApp replies and a quotation guide.
-
-
-
-
-Technique
-Purpose
-Difficulty
-
-
-
-Additional audience criteria
-Qualify incoming traffic
-Low
-
-
-Minimum-order copy
-Qualify buyers and communicate the offer
-Low
-
-
-Job-title targeting
-Reach decision-makers
-Moderate
-
-
-The central idea is to combine audience selection with clear commercial information. The original article describes examples from jade, jewelry, apparel and consumer-electronics suppliers.
-]]></content>
-      <categories>
-        <category>Global Growth</category>
-      </categories>
-      <tags>
-        <tag>Meta Ads</tag>
-        <tag>B2B</tag>
-        <tag>Lead Generation</tag>
       </tags>
   </entry>
   <entry>
@@ -733,6 +660,101 @@ The useful result for me was getting jayln3.com and contact@jayln3.com working t
         <tag>Domains</tag>
         <tag>Business Email</tag>
         <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Facebook B2B Advertising — Three Ways to Reach Wholesale Buyers</title>
+    <url>/en/posts/a1f3c9/</url>
+    <content><![CDATA[
+TL;DR: A common B2B advertising problem is paying for inquiries from individual shoppers. The original article proposes three filters: B2B audience criteria, visible minimum-order quantities, and job-title targeting.
+
+The problem: consumer traffic absorbs the budgetCross-border suppliers may receive plenty of inquiries from people who want one item or are simply comparing prices, while reaching few people with purchasing authority.
+The original article argues that broad consumer-oriented audiences need additional qualification for B2B campaigns. The following techniques are its proposed filters.
+1. Combine interests with B2B criteriaSetupIn the ad set’s detailed-targeting controls, the original workflow uses a “must also match” field:
+
+Add industry interests, such as jade wholesale or jewelry supply chains.
+Add qualifying terms such as wholesale, supply-chain management, corporate purchasing and B2B.
+
+The intended logic is to reach people who show both industry interest and a business-related attribute.
+Results reported in the original article
+
+
+Audience setup
+Consumer-traffic share
+Cost per B2B inquiry
+
+
+
+Interests only
+About 65%
+$28–35
+
+
+Interests plus additional criteria
+About 15%
+$12–18
+
+
+The original article attributes these figures to factory campaigns and notes that results vary by category.
+2. Put minimum-order quantities in the copyState the wholesale threshold directly:
+
+“Jade bangles: minimum order of 50 pieces, with private-label customization.”
+“Factory-direct apparel: minimum order of 500 pieces, with cross-border logistics.”
+
+An individual shopper can immediately see whether the offer fits. A wholesale buyer sees a signal that the seller can handle supply and production.
+This can also improve qualification: a buyer who submits an inquiry after reading the threshold already understands a key commercial condition.
+3. Focus on purchasing decision-makersThis approach becomes more useful once a campaign has a base of converted customers:
+
+Upload the customer list to create a custom audience.
+Build a lookalike audience from it.
+In the targeting workflow described by the original article, add relevant job titles:
+Purchasing Manager
+Production Manager
+CEO, Founder or Owner
+Supply Chain Manager
+
+
+
+Interest alone does not establish purchasing authority. The purpose of the job-title layer is to focus on people involved in purchase decisions.
+Combine the three techniquesThe proposed conversion path is:
+
+Ad set: industry interests, qualifying B2B criteria and job roles.
+Creative: minimum-order quantity, factory capabilities and an offer for business buyers.
+Destination: the business page, WhatsApp replies and a quotation guide.
+
+
+
+
+Technique
+Purpose
+Difficulty
+
+
+
+Additional audience criteria
+Qualify incoming traffic
+Low
+
+
+Minimum-order copy
+Qualify buyers and communicate the offer
+Low
+
+
+Job-title targeting
+Reach decision-makers
+Moderate
+
+
+The central idea is to combine audience selection with clear commercial information. The original article describes examples from jade, jewelry, apparel and consumer-electronics suppliers.
+]]></content>
+      <categories>
+        <category>Global Growth</category>
+      </categories>
+      <tags>
+        <tag>Meta Ads</tag>
+        <tag>B2B</tag>
+        <tag>Lead Generation</tag>
       </tags>
   </entry>
   <entry>
@@ -996,98 +1018,9 @@ The original Chinese roundup was automatically compiled and published using Open
       </categories>
       <tags>
         <tag>AI Agent</tag>
-        <tag>GitHub</tag>
         <tag>Open Source</tag>
+        <tag>GitHub</tag>
         <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BandwagonHost in 2026 — CN2 GIA Notes for Cross-Border Operations</title>
-    <url>/en/posts/b8f3c7/</url>
-    <content><![CDATA[The original review examines BandwagonHost from the perspective of cross-border operations, with particular attention to peak-hour network stability.
-It discusses CN2 GIA routing and several plan examples. Prices, inventory, routing and promotions below are the figures recorded in the original February 4, 2026 article.
-BandwagonHost purchase page — affiliate link
-
-
-Why the original review favored BandwagonHostCN2 GIA routingThe article describes DC6 and DC9 as using China Telecom CN2 GIA, with routing options involving China Unicom and China Mobile. Its main interest is packet loss during congested evening hours.
-The author reported very low packet loss in a DC6 test and considered this useful for operations that depend on continuous data transfer.
-Peak-hour video playbackThe original test also reported responsive YouTube 4K playback during the 8–11 p.m. evening window. This is the review’s recorded observation, rather than a guarantee for every location or connection.
-Location notes
-Los Angeles DC6 CN2 GIA-E: the original review describes ports from 2.5 to 10 Gbps and considers it a general-purpose option.
-Osaka CN2 GIA: presented as an option for lower latency.
-Hong Kong CN2 GIA: presented as a premium, low-latency option; the original article reported ping measurements around 30–50 ms.
-
-Plans and promotion recorded in February 2026The original article lists coupon BWHCGLUKKB and an approximately 6.58% recurring discount.
-
-
-
-Plan example
-CPU &#x2F; RAM
-Storage
-Transfer
-Port
-Recorded annual price
-
-
-
-CN2 GIA-E
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-2.5 Gbps
-$169.90
-
-
-Entry KVM
-2 cores &#x2F; 1 GB
-20 GB SSD
-1,000 GB
-1 Gbps
-$49.90
-
-
-Hong Kong CN2 GIA
-2 cores &#x2F; 2 GB
-40 GB SSD
-500 GB
-1 Gbps
-$899.90
-
-
-The original review highlights location-switching flexibility for the GIA-E option, lower cost for the entry plan, and proximity for the Hong Kong plan.
-View plans on BandwagonHost — affiliate link
-Conclusion of the original reviewThe author preferred stability and predictable evening performance over the lowest price, especially for cross-border ecommerce operations. The review’s positive conclusion is based on its reported experience with CN2 GIA routing.
-Current plan specifications, availability and coupon validity should be checked on the purchase page.
-]]></content>
-      <categories>
-        <category>Infrastructure</category>
-      </categories>
-      <tags>
-        <tag>Ecommerce</tag>
-        <tag>BandwagonHost</tag>
-        <tag>VPS</tag>
-        <tag>CN2 GIA</tag>
-        <tag>Networking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello, I&#39;m Jayln3</title>
-    <url>/en/posts/e2c6f0/</url>
-    <content><![CDATA[Welcome to my blog. This is where I record what I learn about global growth, AI and automation, and technical infrastructure.
-What you will find here
-Global Growth: advertising, B2B lead generation, live commerce and online stores.
-AI &amp; Automation: open-source tools, agent workflows and operational automation.
-Infrastructure: networking, VPS hosting and website development.
-Site Notes: updates and changes to the blog.
-
-Chinese and EnglishArticles have Chinese and English editions. Use the language button at the top of the page to open the corresponding translation. Each language has its own index, search and subscription feed.
-Keep in touchFind my projects on GitHub, or leave a message in the guestbook. See the about page for the status of my personal domain and contact addresses.
-]]></content>
-      <categories>
-        <category>Site Notes</category>
-      </categories>
-      <tags>
-        <tag>Site News</tag>
       </tags>
   </entry>
   <entry>
@@ -1210,6 +1143,73 @@ The original methodology covers jade, jewelry, adult-product categories, factori
         <tag>WhatsApp</tag>
         <tag>Conversational Commerce</tag>
         <tag>Online Stores</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Daily AI Open-Source Digest — March 23, 2026</title>
+    <url>/en/posts/a7e2b6/</url>
+    <content><![CDATA[
+Tracking AI open-source projects over a 24-hour period, with operational automation based on OpenClaw.
+
+Today’s top three1. free-video-downloaderAn AI video downloader and summarizer.
+Stars recorded in the original roundup: 20.
+Stack: Vue 3, FastAPI, yt-dlp, DeepSeek and Stripe.
+Features highlighted in the original article:
+
+Video downloads from more than 1,800 platforms.
+AI-generated video summaries.
+Mind-map generation.
+International payments through Stripe.
+
+GitHub
+2. opencode-lazyA plugin manager for OpenCode.
+Stars recorded: 4. Stack: TypeScript.
+
+Search for plugins online.
+Install and manage plugins.
+Work with plugins directly inside a session.
+
+GitHub
+3. free-llm-api-keysA repository described in the original roundup as a collection of free LLM API resources.
+Stars recorded: 4.
+The original listing advertised free keys, three to five updates per day, support for GPT-5.4, Claude, DeepSeek, Gemini and Grok, and access without a credit card.
+GitHub
+ObservationsThe original roundup identified three themes:
+
+AI and video processing: combining downloads with AI summaries.
+Developer productivity: demand for plugin-management tools.
+API aggregation: interest in free LLM resources.
+
+The original article attributed its selection to GitHub Trending over the preceding 24 hours, under the AI topic.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>Open Source</tag>
+        <tag>GitHub</tag>
+        <tag>AI</tag>
+        <tag>Daily Digest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello, I&#39;m Jayln3</title>
+    <url>/en/posts/e2c6f0/</url>
+    <content><![CDATA[Welcome to my blog. This is where I record what I learn about global growth, AI and automation, and technical infrastructure.
+What you will find here
+Global Growth: advertising, B2B lead generation, live commerce and online stores.
+AI &amp; Automation: open-source tools, agent workflows and operational automation.
+Infrastructure: networking, VPS hosting and website development.
+Site Notes: updates and changes to the blog.
+
+Chinese and EnglishArticles have Chinese and English editions. Use the language button at the top of the page to open the corresponding translation. Each language has its own index, search and subscription feed.
+Keep in touchFind my projects on GitHub, or leave a message in the guestbook. See the about page for the status of my personal domain and contact addresses.
+]]></content>
+      <categories>
+        <category>Site Notes</category>
+      </categories>
+      <tags>
+        <tag>Site News</tag>
       </tags>
   </entry>
   <entry>
@@ -1365,6 +1365,115 @@ The article’s central argument is that the relevance of a B2B inquiry can matt
         <tag>ABM</tag>
         <tag>Job Targeting</tag>
         <tag>International Ads</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RoxyBrowser: AI control, MCP integration and headless browsing</title>
+    <url>/en/posts/c7b105/</url>
+    <content><![CDATA[Recently, I connected this blog to my own domain, documented domain email and VPS setup, and worked through problems with my desktop AI tools. Much of that work involved a browser: domain administration, email, website previews and project research.
+I already have RoxyBrowser installed locally, and its integration configuration was preserved when I repaired Claude Cowork in late September. Two capabilities particularly interest me: AI control and headless browsing. They offer a way to connect environment management, browser operation and individual tasks.
+For someone managing several projects, stores or client accounts, the appeal is specific: organize the browser environments first, then add automation gradually.
+
+Referral disclosure: This article contains my RoxyBrowser referral link. I may receive a commission or platform reward when you register or purchase through it. Official information was checked on October 5, 2026. The task flows below are introductory suggestions, without large-scale concurrency or long-term account performance testing.
+
+
+
+Explore RoxyBrowser through my referral link. For the automation details, head to the API, MCP and headless sections below.
+Where browser environments fit into the workMy previous posts covered Dynadot domains and email and LisaHost experience and VPS setup. I would assign each part a clear job:
+
+
+
+Part
+What I want it to handle
+
+
+
+Domain and email
+A website address and a public contact channel
+
+
+VPS and networking
+Running services and providing a tested connection
+
+
+Browser environments
+Separating projects, login sessions and network settings
+
+
+AI and automation tools
+Completing a defined task and returning an inspectable result
+
+
+Maintaining my blog, checking a client’s website and testing browser automation can involve different accounts and scopes. I want the name of a workspace to tell me which project it belongs to and what it is for.
+That also makes it easier to specify which environment a script or AI assistant should use.
+Three capabilities worth looking atSeparate profiles for separate purposesRoxyBrowser organizes environments into profiles. Its documentation describes separate cookies, local storage, fingerprint parameters and proxy settings, with options including language, time zone, Canvas and WebGL. Official FAQ
+For my own organization, I would use names such as BLOG-CONTENT, CLIENT-DEMO and AUTOMATION-TEST. These are examples; one or two may be enough to start.
+A useful name tells me which account and pages belong in that window. Generic names such as “Window 1” become harder to distinguish as the work grows.
+Collaboration with clear responsibilitiesThe official team documentation describes separate team data, member permissions and an activity log that can be filtered by member, module or time. Team documentation
+For a small team, I would first define ownership and the handover scope. Then I would test one handover: can a colleague find the right environment and complete their task, and can the owner locate the corresponding record? That gives a practical basis for deciding whether to move more work into the tool.
+API and MCP integrationThis is the part most closely connected to my recent AI tooling work. The “API &amp; AI MCP” page in my local client provides integration configuration. RoxyBrowser documents a local API that can work with Selenium, Puppeteer and Playwright, and maintains a public MCP project. API documentation, official MCP repository
+
+  
+  My local API & AI MCP page. The API key, network and account identifiers were covered using image-gen. Refer to the article and official documentation for configuration details.
+
+
+The page presents two complementary integrations: environment management through RoxyBrowser, and page interaction through Playwright MCP. That distinction helps identify whether a task is blocked on opening an environment or on the subsequent page operations.
+The workflow I want to explore is:
+Describe a task → call an available tool → open the specified environment → perform the task → return the result.
+For example, a dedicated test environment could be used to check article titles, links and language switching on my blog, then produce a list of problems to review manually.
+I suggest checking the connection in three stages: list the available tools, open the specified environment, then complete one page task. This makes it easier to locate a failure in the connection, profile launch or page interaction.
+Headless browsing for repeatable tasksHeadless browsing runs the browser without displaying a visible window, with software controlling the page. It can be useful for scheduled checks, repeated screenshots and reading information from your own website without filling the desktop with windows.
+RoxyBrowser’s official POST /browser/open documentation includes a headless parameter. The following request-body example opens an existing profile; replace both IDs with your actual values and configure the address and authentication according to the API documentation. Open-browser endpoint
+&#123;  &quot;workspaceId&quot;: &quot;YOUR_WORKSPACE_ID&quot;,  &quot;dirId&quot;: &quot;YOUR_PROFILE_ID&quot;,  &quot;headless&quot;: true&#125;
+
+The parameter selects how the browser starts. Checking links, entering content or taking screenshots still requires the corresponding script or AI tool.
+For blog maintenance, I would first verify the article and language-switching steps in a visible window. Once those steps work, I would try repeating the checks headlessly and saving page URLs, screenshots or errors. This is a suggested sequence; initial login and interactive verification are easier to handle visibly.
+A headless browser still consumes resources and needs a working network connection. Before scheduling a recurring task, I would record the duration, output and any failure from a complete run.
+Start with two profiles and one small taskAt the time of checking, the official pricing page listed a free tier with two profiles. That offers a starting point for testing the basics. Check API access, member allowances and paid options separately in the current plan details.
+Here is the trial I would run:
+
+Create two clearly named environments. Use one for research and another for your own test pages. Get comfortable with naming, notes, closing and reopening them.
+Check the actual network connection. The creation screen offers no proxy, a custom proxy or a saved proxy. Choosing no proxy uses the current local network; creating a profile does not itself supply another network connection. Profile creation guide
+Check session behavior with your own test accounts. Close and reopen the environments, and confirm that saved sessions behave as expected and the windows remain easy to identify.
+Complete a task you can check manually. Inspect a few links on your own website, record the results and verify them yourself.
+
+Unless a task requires specific settings, I would start with automatic or default fingerprint options. The official getting-started guide also recommends that approach to reduce inconsistent system, engine and fingerprint settings. Configuration guidance
+My decision would come down to three questions: is it easier to find the correct environment, does reopening it behave as expected, and can the same small task be repeated? More profiles and collaborators can follow once those basics work.
+Give the AI integration a concrete first taskTo use the API, enable it in the RoxyBrowser client and configure the actual host and key. The documented default local address is http://127.0.0.1:50000, requests require a token header, and request limits depend on the plan. API setup
+For MCP installation, follow the current official README. The project is evolving, so package names, tool names and configuration copied from older tutorials may differ. Keep the real API key in your own configuration and use a placeholder when sharing notes.
+After connecting and checking the available tools, a first task could be:
+
+Use the AUTOMATION-TEST environment to open my blog. Check the latest article’s title and destination link, then inspect its English counterpart. Return the results with page URLs that help locate any problems. This task is limited to browsing and inspection.
+
+This is a proposed trial, with a clear target and an output that is easy to review. It can also reveal which additional browser operation tools are needed. Publishing content or changing account settings would need checks appropriate to those specific tasks.
+Who should consider a trial?RoxyBrowser is worth evaluating if you manage several authorized brand, store or client accounts, hand environments over to colleagues, or want to connect repetitive browser work to scripts.
+If all you need is to separate personal and work browsing, first check whether your existing browser profiles already cover that need. Another tool should solve a concrete problem that justifies maintaining it.
+One limit matters: a fingerprint browser cannot guarantee that an account will avoid suspension. RoxyBrowser’s own FAQ acknowledges that platforms also consider behavior and transaction patterns. I would evaluate environment organization, collaboration and repeatable task execution. Official FAQ on account restrictions
+My referral link and a suggested trialTo explore the product and register, use my dedicated referral link:
+Try RoxyBrowser through Jayln3’s referral link
+
+  
+    
+  
+  Official Chinese promotional artwork linked to my invitation. It advertises an ongoing 5% registration discount; check actual eligibility and discounts on the registration and checkout pages.
+
+
+I suggest completing one small task within your available free allowance before evaluating paid features:
+
+Check current plans for profile, member and API allowances.
+Read the documentation for the configuration relevant to your task.
+
+Working on my domain, email, VPS and desktop AI tools has made me pay closer attention to where each tool fits and how to verify that it helps. RoxyBrowser offers a place to explore the browser-environment part of that workflow before adding more automation.
+If you are organizing RoxyBrowser, MCP or browser workflows for cross-border projects, use the Lark contact entry below and mention “Roxy workflow.” Bring one concrete task so we can start with a small, understandable process.
+]]></content>
+      <categories>
+        <category>AI &amp; Automation</category>
+      </categories>
+      <tags>
+        <tag>Automation</tag>
+        <tag>RoxyBrowser</tag>
+        <tag>Browser Profiles</tag>
+        <tag>MCP</tag>
       </tags>
   </entry>
   <entry>

@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行 | Jayln3 的博客</title><meta name="author" content="Jayln3,contact@jayln3.com"><meta name="copyright" content="Jayln3"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我本地安装的 RoxyBrowser 可以接入 AI，通过 MCP 管理浏览器环境，还支持无头运行。结合近期建站与自动化工作，介绍实际配置入口、headless 参数、入门方法和我的专属推广链接。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行">
+<meta property="og:url" content="https://jayln3.com/posts/c7b105/">
+<meta property="og:site_name" content="Jayln3 的博客">
+<meta property="og:description" content="我本地安装的 RoxyBrowser 可以接入 AI，通过 MCP 管理浏览器环境，还支持无头运行。结合近期建站与自动化工作，介绍实际配置入口、headless 参数、入门方法和我的专属推广链接。">
+<meta property="og:locale" content="zh_CN">
+
+<meta property="article:published_time" content="2026-10-05T07:40:00.000Z">
+<meta property="article:modified_time" content="2026-10-05T07:40:00.000Z">
+<meta property="article:author" content="Jayln3">
+<meta property="article:tag" content="MCP">
+<meta property="article:tag" content="RoxyBrowser">
+<meta property="article:tag" content="指纹浏览器">
+<meta property="article:tag" content="自动化">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行",
+  "url": "https://jayln3.com/posts/c7b105/",
+  "image": "https://jayln3.com/assets/images/roxybrowser-ai-workflow-v1-1280.webp",
+  "datePublished": "2026-10-05T07:40:00.000Z",
+  "dateModified": "2026-10-05T07:40:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jayln3",
+      "url": "https://jayln3.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/assets/images/ln3-favicon-v1-32.png"><link rel="canonical" href="https://jayln3.com/posts/c7b105/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=5.3.3"><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/assets/site.css"><link rel="apple-touch-icon" href="/assets/images/ln3-apple-touch-icon-v1.png"><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="Jayln3 的博客" type="application/atom+xml">
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=ln3-v1"><link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-16.png"><link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-16-dark.png"><link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-32.png"><link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-32-dark.png"><link rel="icon" type="image/png" sizes="48x48" media="(prefers-color-scheme: light)" href="/assets/images/ln3-favicon-v1-48.png"><link rel="icon" type="image/png" sizes="48x48" media="(prefers-color-scheme: dark)" href="/assets/images/ln3-favicon-v1-48-dark.png"><link rel="alternate" hreflang="zh-CN" href="https://jayln3.com/posts/c7b105/"><link rel="alternate" hreflang="en" href="https://jayln3.com/en/posts/c7b105/"><link rel="alternate" hreflang="x-default" href="https://jayln3.com/posts/c7b105/"><meta property="og:image" content="https://jayln3.com/assets/images/roxybrowser-ai-workflow-v1-1280.webp"><meta name="twitter:image" content="https://jayln3.com/assets/images/roxybrowser-ai-workflow-v1-1280.webp"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/assets/images/ln3-logo-v1.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="ln3 Logo" loading="lazy" width="256" height="256"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/assets/images/ln3-logo-v1.webp" alt="ln3 Logo" loading="lazy" width="256" height="256"><span class="site-name">Jayln3 的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行</span></a></span><a class="language-switch" href="/en/posts/c7b105/" hreflang="en" lang="en" aria-label="Read in English">English</a><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-05T07:40:00.000Z" title="发表于 2026-10-05 15:40:00">2026-10-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-05T07:40:00.000Z" title="更新于 2026-10-05 15:40:00">2026-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ai-automation/">AI 与自动化</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><aside class="translation-note">本文提供英文译编版。<a href="/en/posts/c7b105/" hreflang="en">Read in English</a></aside><figure class="article-illustration"><img src="/assets/images/roxybrowser-ai-workflow-v1-1280.webp" width="1280" height="720" alt="三个独立浏览器工作区通过细线连接到自动化调度装置的概念插画，并非产品界面。" decoding="async" loading="eager" srcset="/assets/images/roxybrowser-ai-workflow-v1-640.webp 640w, /assets/images/roxybrowser-ai-workflow-v1-1280.webp 1280w" sizes="(max-width: 900px) 94vw, 850px"><figcaption>AI 生成的概念插画。</figcaption></figure><p>最近，我把博客接上了自己的域名，整理了企业邮箱和 VPS 的配置记录，也处理过桌面 AI 工具的运行问题。回头看，这些工作都绕不开浏览器：域名后台、邮箱、网站预览、项目资料，入口越来越多。</p>
+<p>我本地已经安装了 <strong>RoxyBrowser</strong>，9 月底修复 Claude Cowork 时，也保留了它原有的接入配置。这款指纹浏览器让我关注的地方，是它<strong>可以接入 AI 操控，并且支持无头运行</strong>。管理环境、打开网页、执行任务，可以逐步串成一套流程。</p>
+<p>对同时维护几个项目、店铺或客户账号的人，我觉得它值得试的地方很具体：<strong>把账号所用的浏览器环境整理清楚，再逐步接入自动化。</strong></p>
+<blockquote>
+<p><strong>推广说明：</strong> 本文包含我的 RoxyBrowser 推广链接，通过链接注册或购买，我可能获得平台推广佣金或奖励。功能资料核对日期为 <strong>2026 年 10 月 5 日</strong>；文中的任务流程是入门建议，未做大规模并发或长期账号效果测试。</p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong><a href="https://roxybrowser.cn/invite/05013JIA" target="_blank" rel="sponsored nofollow noopener noreferrer">通过我的专属链接了解 RoxyBrowser</a></strong>。想先看 AI 接入和无头模式，可以直接阅读下面对应章节。</p>
+<h2 id="为什么做完域名和-VPS，还要整理浏览器环境"><a href="#为什么做完域名和-VPS，还要整理浏览器环境" class="headerlink" title="为什么做完域名和 VPS，还要整理浏览器环境"></a>为什么做完域名和 VPS，还要整理浏览器环境</h2><p>前两篇写了 <a href="/posts/d9a729/">Dynadot 域名与企业邮箱</a>和 <a href="/posts/a6e102/">LisaHost 使用体验与 VPS 配置</a>。把它们放在同一套工作流程里，我会这样分工：</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>我希望它负责的事情</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>域名与邮箱</td>
+<td>提供网站入口和对外联系方式</td>
+</tr>
+<tr>
+<td>VPS 与网络</td>
+<td>运行服务，提供经过验证的连接</td>
+</tr>
+<tr>
+<td>浏览器环境</td>
+<td>区分项目、登录状态和所用网络设置</td>
+</tr>
+<tr>
+<td>AI 与自动化工具</td>
+<td>在指定环境里完成任务，并留下结果</td>
+</tr>
+</tbody></table>
+<p>比如，维护自己的博客、替客户检查网站、测试一段网页自动化，虽然都发生在浏览器里，使用的账号和操作范围却不一样。我希望打开一个工作环境时，就能知道它属于哪个项目、拿来做什么。</p>
+<p>这也是我关注 RoxyBrowser 的原因：环境需要有名字、有用途，后面交给脚本或 AI 时才容易说清楚。</p>
+<h2 id="RoxyBrowser-的三个值得关注的功能"><a href="#RoxyBrowser-的三个值得关注的功能" class="headerlink" title="RoxyBrowser 的三个值得关注的功能"></a>RoxyBrowser 的三个值得关注的功能</h2><h3 id="独立配置文件，让环境和用途对应起来"><a href="#独立配置文件，让环境和用途对应起来" class="headerlink" title="独立配置文件，让环境和用途对应起来"></a>独立配置文件，让环境和用途对应起来</h3><p>RoxyBrowser 用配置文件管理浏览器环境。官方说明中，每个配置文件可以分别保存 Cookie、本地存储、指纹参数和代理设置；指纹选项涉及语言、时区、Canvas、WebGL 等信息。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/faqs">官方常见问题</a></p>
+<p>如果要给自己的工作做一轮整理，我会先按用途命名，例如 <code>BLOG-CONTENT</code>、<code>CLIENT-DEMO</code>、<code>AUTOMATION-TEST</code>。这是命名示例，可以按实际需要选其中一两个开始。</p>
+<p>关键在于：看到窗口名，就知道该用哪个账号、应该打开哪些页面。只靠“窗口 1”“窗口 2”，过一段时间仍然容易认错。</p>
+<h3 id="团队和权限，让交接更清楚"><a href="#团队和权限，让交接更清楚" class="headerlink" title="团队和权限，让交接更清楚"></a>团队和权限，让交接更清楚</h3><p>多人参与项目时，还需要知道谁可以使用哪些环境。RoxyBrowser 官方文档介绍了团队隔离、成员权限和操作日志：不同团队分别管理窗口、代理、项目与账号，日志可以按成员、模块和时间筛选。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/features/workspace.html">团队功能说明</a></p>
+<p>对小团队，我会先确定负责人和交接范围，再选需要开放的权限。试用时可以安排一次简单交接：同事能否找到正确窗口，能否完成自己的任务，负责人能否查到对应记录。这比一开始就导入全部账号，更容易看出工具是否适合团队。</p>
+<h3 id="API-与-MCP，让环境能被工具调用"><a href="#API-与-MCP，让环境能被工具调用" class="headerlink" title="API 与 MCP，让环境能被工具调用"></a>API 与 MCP，让环境能被工具调用</h3><p>这是和我最近的 AI 工具整理最相关的一部分。我本地客户端的 <strong>“API &amp; AI MCP”</strong> 页面已经提供接入配置。RoxyBrowser 提供本地 API，官方列出的配合框架包括 Selenium、Puppeteer 和 Playwright；它也有公开的 MCP 接入项目。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/api-documentation/api-reference.html">API 说明</a>、<a target="_blank" rel="noopener" href="https://github.com/roxybrowserlabs/roxybrowser-mcp-server">官方 MCP 项目</a></p>
+<figure class="article-screenshot">
+  <img src="/assets/images/roxybrowser-mcp-setup-v1-1280.webp" alt="我本地 RoxyBrowser 的 API 与 AI MCP 配置页面，敏感字段已遮盖。" loading="lazy" decoding="async" srcset="/assets/images/roxybrowser-mcp-setup-v1-640.webp 640w, /assets/images/roxybrowser-mcp-setup-v1-1280.webp 1280w" sizes="(max-width: 900px) 94vw, 850px" width="1280" height="828">
+  <figcaption>本地客户端的 API &amp; AI MCP 页面；API Key、网络和账户标识已使用 image-gen 遮盖。以文字说明与官方文档核对配置。</figcaption>
+</figure>
+
+<p>这个页面把两类接入放在一起：一类用于调用 RoxyBrowser 的环境管理能力，另一类通过 Playwright MCP 与页面交互。理解这个分工后，接入时就容易判断：是环境还没打开，还是缺少后续的页面操作能力。</p>
+<p>可以把这条链路理解为：</p>
+<p><strong>你说明任务 → AI 或脚本调用可用工具 → 打开指定浏览器环境 → 执行任务 → 返回结果。</strong></p>
+<p>例如，我想探索的一个用途是：在专门的测试环境里打开博客，检查文章标题、链接和语言切换，整理出待修正的地方。它和最近维护博客的工作直接相关，也方便人工核对结果。</p>
+<p>接入后，我建议分三步验收：客户端成功列出工具、打开指定环境、完成一个具体页面任务。这样出了问题，能看出卡在连接、环境还是页面操作这一层。</p>
+<h2 id="支持无头运行，适合哪些自动化任务"><a href="#支持无头运行，适合哪些自动化任务" class="headerlink" title="支持无头运行，适合哪些自动化任务"></a>支持无头运行，适合哪些自动化任务</h2><p><strong>无头运行（headless）</strong>，就是浏览器运行时不弹出可见窗口，由程序来操作页面。对定时检查、重复截图、读取自己网站的页面信息等任务，这种方式可以减少桌面窗口干扰。</p>
+<p>RoxyBrowser 的官方接口文档在 <code>POST /browser/open</code> 中提供了 <code>headless</code> 参数。下面是打开已有环境的请求体示意，两个 ID 都需要替换成自己的实际值；请求地址和认证按官方 API 配置填写。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/api-documentation/api-endpoint.html">打开浏览器窗口接口</a></p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"workspaceId"</span><span class="punctuation">:</span> <span class="string">"YOUR_WORKSPACE_ID"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"dirId"</span><span class="punctuation">:</span> <span class="string">"YOUR_PROFILE_ID"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"headless"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这个参数控制浏览器的启动方式。检查链接、填写内容、保存截图等具体动作，仍需要相应脚本或 AI 工具执行。</p>
+<p>以我的博客维护为例，可以先在有窗口的模式下核对文章和语言切换，确认步骤后，再尝试用无头模式重复检查，把页面地址、截图或错误信息保存下来。这是我建议的实施顺序；首次登录或需要人工处理验证的步骤，先在可见窗口里完成会更方便。</p>
+<p>无头模式仍会运行浏览器并占用资源，也需要可达的网络。对于准备长期运行的任务，我会先记录一次完整执行的耗时、结果和失败原因，再决定如何安排频率。</p>
+<h2 id="新手可以从两个窗口开始"><a href="#新手可以从两个窗口开始" class="headerlink" title="新手可以从两个窗口开始"></a>新手可以从两个窗口开始</h2><p>核对时，RoxyBrowser 的<a target="_blank" rel="noopener" href="https://roxybrowser.cn/pricing">官方价格页</a>列出了 <strong>2 个窗口的免费版</strong>。这适合先检查基本操作是否顺手；API 权益、成员额度和后续价格，应分别查看当前套餐。</p>
+<p>我建议用一个小任务来试：</p>
+<ol>
+<li><strong>创建两个用途明确的环境。</strong> 一个用于资料浏览，一个用于自己的测试页面，先熟悉命名、备注和重新打开的流程。</li>
+<li><strong>核对实际网络。</strong> 创建页可以选择不使用代理、自定义代理或已有代理。不使用代理时用的是本机当前网络；新建窗口本身不会自动提供一条新的独立线路。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/quick/Create-Profile.html">快速创建窗口</a></li>
+<li><strong>用自己的测试账号检查状态。</strong> 分别操作后关闭、重开，观察保存的登录状态是否符合预期，窗口是否容易区分。</li>
+<li><strong>完成一个能复核的任务。</strong> 例如检查自己网站的几个链接，记录结果，再手动确认一遍。</li>
+</ol>
+<p>没有明确需求时，先沿用自动匹配或默认的指纹设置。官方入门文档也这样建议，可以减少系统、内核和参数不一致带来的问题。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/quick/Create-Profile.html">创建窗口的设置建议</a></p>
+<p>试完后，我会用三个问题判断是否值得继续：找对环境是否更方便？关掉再打开是否符合预期？同一个小任务能否重复完成？先把这几件事验证清楚，再增加窗口和协作成员。</p>
+<h2 id="接入-AI-时，先做一个小而完整的任务"><a href="#接入-AI-时，先做一个小而完整的任务" class="headerlink" title="接入 AI 时，先做一个小而完整的任务"></a>接入 AI 时，先做一个小而完整的任务</h2><p>准备接 API 时，要先在 RoxyBrowser 客户端启用 API，按实际配置设置地址和密钥。官方文档给出的默认本地地址是 <code>http://127.0.0.1:50000</code>，请求需要携带 <code>token</code>；接口调用频率按套餐权益确认。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/api-documentation/api-reference.html">API 接入说明</a></p>
+<p>MCP 的具体安装和配置，建议直接看<a target="_blank" rel="noopener" href="https://github.com/roxybrowserlabs/roxybrowser-mcp-server">官方项目 README</a>。项目在持续迭代，旧教程里的包名、工具名和配置方式未必适用于当前版本。真实 API Key 留在自己的配置中，分享笔记时用占位符替换。</p>
+<p>连接完成并确认可用工具后，可以从这样的任务描述开始：</p>
+<blockquote>
+<p>使用 <code>AUTOMATION-TEST</code> 环境打开我的博客，检查首页最新文章的标题和目标链接，再查看对应英文页。整理检查结果，附上能定位问题的页面地址；本次只做浏览检查。</p>
+</blockquote>
+<p>这是一份试用任务示例。目标清楚、页面属于自己、结果容易复核，也能帮助判断还缺哪些浏览器操作工具。涉及正式内容发布或账号设置变更时，再为具体任务补上相应的核对步骤。</p>
+<h2 id="什么情况下值得试"><a href="#什么情况下值得试" class="headerlink" title="什么情况下值得试"></a>什么情况下值得试</h2><p>如果你负责多个经过授权的品牌、店铺或客户账号，需要经常切换环境、交接给同事，或者准备把重复网页操作接入脚本，RoxyBrowser 值得列入试用名单。</p>
+<p>如果只是把日常浏览和工作分开，我会先看看现有浏览器的配置文件是否已经够用。新增工具也有学习和维护成本，最好能对应一个明确的问题。</p>
+<p>还有一点要说清楚：<strong>指纹浏览器不能保证账号不被封禁。</strong> RoxyBrowser 自己的 FAQ 也说明，平台还会考虑操作行为、交易方式等因素。我的选型重点会放在环境管理、协作和任务可重复性上。<a target="_blank" rel="noopener" href="https://roxybrowser.cn/faqs">官方关于封禁风险的回答</a></p>
+<h2 id="我的推广入口与试用建议"><a href="#我的推广入口与试用建议" class="headerlink" title="我的推广入口与试用建议"></a>我的推广入口与试用建议</h2><p>如果你也想把浏览器接进 AI 工作流，可以通过我的专属链接了解产品并注册：</p>
+<p><strong><a href="https://roxybrowser.cn/invite/05013JIA" target="_blank" rel="sponsored nofollow noopener noreferrer">通过 Jayln3 的推广链接体验 RoxyBrowser</a></strong></p>
+<figure class="article-screenshot">
+  <a href="https://roxybrowser.cn/invite/05013JIA" target="_blank" rel="sponsored nofollow noopener noreferrer">
+    <img class="no-lightbox" src="/assets/images/roxybrowser-affiliate-banner-v1-1280.webp" srcset="/assets/images/roxybrowser-affiliate-banner-v1-640.webp 640w, /assets/images/roxybrowser-affiliate-banner-v1-1280.webp 1260w" sizes="(max-width: 900px) 94vw, 850px" alt="RoxyBrowser 官方推广横幅，点击通过 Jayln3 的专属链接了解产品。" loading="lazy" decoding="async" width="1260" height="660">
+  </a>
+  <figcaption>官方推广素材，点击图片可进入我的邀请链接。图中标注“注册即享 5% 永久折扣”，具体适用条件与实际优惠以注册和结算页面为准。</figcaption>
+</figure>
+
+<p>我建议先用现有免费额度完成一个小任务，再根据需要确认付费权益：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://roxybrowser.cn/pricing">查看当前套餐</a>：确认窗口、成员和接口权益。</li>
+<li><a target="_blank" rel="noopener" href="https://roxybrowser.cn/docs/">打开使用文档</a>：按自己的任务查配置步骤。</li>
+</ul>
+<p>最近整理域名、邮箱、VPS 和桌面 AI 工具，让我更在意一件事：每加一个工具，都要知道它接在哪一步、怎么验证它真的有用。RoxyBrowser 适合从浏览器环境这一环开始试，再逐步往自动化延伸。</p>
+<p>如果你也在整理 <strong>RoxyBrowser、MCP 或跨境业务的浏览器工作流</strong>，可以通过下方飞书入口加我，备注 <strong>“Roxy 工作流”</strong>，带上你正在处理的具体任务，我们可以从一个小流程开始交流。</p>
+</article><aside class="knowledge-base-cta" aria-labelledby="knowledge-base-title"><div class="knowledge-base-copy"><h2 id="knowledge-base-title"><i class="fas fa-book-open" aria-hidden="true"></i> 付费获取知识库</h2><p>想继续深入学习？添加我的飞书，了解知识库内容与购买方式。</p><a class="knowledge-base-link" href="https://www.feishu.cn/invitation/page/add_contact/?token=018r68b1-5512-4be2-86cf-1dbe82ec7107&amp;unique_id=vo5XLAOhJ7xXJdzq8lMsvQ==" target="_blank" rel="noopener noreferrer">添加飞书 · 了解知识库<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div><figure class="knowledge-base-qr"><a href="/assets/images/feishu-contact-zh-CN-v2.png" target="_blank" rel="noopener noreferrer" aria-label="查看飞书二维码原图"><img class="no-lightbox" src="/assets/images/feishu-contact-zh-CN-v2.png" width="686" height="840" loading="lazy" decoding="async" alt="使用飞书扫描二维码，添加 Jayln3 为联系人"></a><figcaption>飞书扫码添加好友</figcaption></figure></aside><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jayln3.com">Jayln3</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jayln3.com/posts/c7b105/">https://jayln3.com/posts/c7b105/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://jayln3.com" target="_blank">Jayln3 的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/automation/">自动化</a><a class="post-meta__tags" href="/tags/roxybrowser/">RoxyBrowser</a><a class="post-meta__tags" href="/tags/browser-profiles/">指纹浏览器</a><a class="post-meta__tags" href="/tags/mcp/">MCP</a></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/a6e102/" title="LisaHost 使用体验与 VPS 配置实录"><img class="cover" src="/assets/images/lisahost-vps-experience-v1-1280.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post" loading="lazy" srcset="/assets/images/lisahost-vps-experience-v1-640.webp 640w, /assets/images/lisahost-vps-experience-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="669"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">LisaHost 使用体验与 VPS 配置实录</div></div><div class="info-2"><div class="info-item-1">我用过一台 LisaHost（丽萨主机）的美国 9929 VPS：1 核、1GB 内存，上下行带宽标称都是 60Mbps。最近配置另一台新 VPS 时，我又把面板、订阅、手机和电脑客户端从头走了一遍，也遇到了两个很容易误判的问题：能测出延迟，却打不开网页；同一台电脑上，VLESS 和 HY2 的测速差很多。 这篇把我的实际配置过程整理出来：先说用过的 LisaHost 套餐，再讲怎么把一台 VPS 配到能用、遇到异常时怎么排查。想选机器的朋友可以参考前半部分，已经买好但没配顺的朋友，可以直接看后面的实操记录。  文中包含我的 LisaHost 推广链接，通过链接购买，我可能获得佣金。LisaHost 的旧实例截图与后文 AKE 新 VPS 的测速分别标注，方便辨认。    我用过的 LisaHost 套餐这台旧实例的管理页里，配置和费用列得很清楚：    项目 我当时使用的实例    线路 美国洛杉矶 9929   配置 1 核 CPU、1GB 内存、20GB 磁盘   系统 Ubuntu 22.04   标称带宽 上行 60Mbps、下行 60Mbps   流量额度 后台显示...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/e6656c2b/" title="2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流"><img class="cover" src="/assets/images/agent-workflow-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/agent-workflow-v1-640.webp 640w, /assets/images/agent-workflow-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-02</div><div class="info-item-2">2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流</div></div><div class="info-2"><div class="info-item-1">TL;DR 摘要核心痛点：传统AI工具（Cursor、Manus等）依赖人工操作，缺乏记忆积累和自动化能力，每次都在”重新发现”知识。 解决方案：采用分层记忆系统（语义记忆+情景记忆+动态调度）+ 多角色协同工作流，构建真正的”私人数字图书管理员”。 选型建议：  知识基建：LLM Wiki + Obsidian CLI + Firecrawl 交互体验：MemPalace（情景记忆） 全自动巡航：GBrain + GStack（定时任务+多角色协同）   引言：范式转移正在发生过去一年，AI工具栈经历了一次剧烈的范式转移。我们正在从2025年的”人类操作 + AI辅助（Copilot）”，全面迈入2026年的”全自动Agent工作流”。 过去的明星级单体工具正在被更底层、更自动化的框架替代：  代码领域：虽然Cursor依然强大，但基于CLI的Claude Code正在成为极客圈的标配，让纯代码生成（Vibe...</div></div></div></a><a class="pagination-related" href="/posts/d1b5e9/" title="跨境电商运营：从零到一的自动化增长指南"><img class="cover" src="/assets/images/ecommerce-automation-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/ecommerce-automation-v1-640.webp 640w, /assets/images/ecommerce-automation-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-05</div><div class="info-item-2">跨境电商运营：从零到一的自动化增长指南</div></div><div class="info-2"><div class="info-item-1">为什么选择自动化运营？在跨境电商领域，FB广告投放和独立站维护占据了运营人员大量的时间。通过 n8n 这种自动化工具，我们可以实现：  自动采集：定时抓取竞品价格。 消息推送：订单状态实时同步到手机。 高效投放：批量生成广告素材并监控回报率。  </div></div></div></a><a class="pagination-related" href="/posts/d9a729/" title="我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑"><img class="cover" src="/assets/images/dynadot-domain-email-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/dynadot-domain-email-v1-640.webp 640w, /assets/images/dynadot-domain-email-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="702"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-29</div><div class="info-item-2">我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑</div></div><div class="info-2"><div class="info-item-1">给自己的博客配上 jayln3.com，我原本以为就是买个域名、填几条解析记录。真正做下来，支付、邮箱开通、邮件转发、HTTPS，每一步都有需要弄清楚的地方。 这次我最终选择了 Dynadot 注册域名，并开通它附带的免费企业邮箱。对我来说，吸引力很具体：支持支付宝和人民币付款，可以先用自己的域名建立正式的联系地址，而且后面还能接 API 做自动化。 先把最重要的限制放在前面：免费邮箱只有 1 个地址额度，空间只有 1GB，官方当前还限制每天最多发送 25 封邮件。 适合个人网站起步，不能按多人团队邮箱或大容量邮件服务来期待。免费邮箱官方套餐  推广说明： 本文包含我的 Dynadot 推荐链接和推荐码。通过它注册并完成符合条件的首单后，我和新用户可能获得平台账户奖励。下文也会写清免费限制和遇到的问题。资料核对日期为 2026 年 9 月 29 日，价格及活动规则以当时的结账页和官方说明为准。    我最看重的赠送服务：一个自己的域名邮箱博客现在使用的联系地址是...</div></div></div></a><a class="pagination-related" href="/posts/a6e102/" title="LisaHost 使用体验与 VPS 配置实录"><img class="cover" src="/assets/images/lisahost-vps-experience-v1-1280.webp" alt="cover" loading="lazy" srcset="/assets/images/lisahost-vps-experience-v1-640.webp 640w, /assets/images/lisahost-vps-experience-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="669"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-10-01</div><div class="info-item-2">LisaHost 使用体验与 VPS 配置实录</div></div><div class="info-2"><div class="info-item-1">我用过一台 LisaHost（丽萨主机）的美国 9929 VPS：1 核、1GB 内存，上下行带宽标称都是 60Mbps。最近配置另一台新 VPS 时，我又把面板、订阅、手机和电脑客户端从头走了一遍，也遇到了两个很容易误判的问题：能测出延迟，却打不开网页；同一台电脑上，VLESS 和 HY2 的测速差很多。 这篇把我的实际配置过程整理出来：先说用过的 LisaHost 套餐，再讲怎么把一台 VPS 配到能用、遇到异常时怎么排查。想选机器的朋友可以参考前半部分，已经买好但没配顺的朋友，可以直接看后面的实操记录。  文中包含我的 LisaHost 推广链接，通过链接购买，我可能获得佣金。LisaHost 的旧实例截图与后文 AKE 新 VPS 的测速分别标注，方便辨认。    我用过的 LisaHost 套餐这台旧实例的管理页里，配置和费用列得很清楚：    项目 我当时使用的实例    线路 美国洛杉矶 9929   配置 1 核 CPU、1GB 内存、20GB 磁盘   系统 Ubuntu 22.04   标称带宽 上行 60Mbps、下行 60Mbps   流量额度 后台显示...</div></div></div></a></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/assets/images/ln3-logo-v1.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="ln3 Logo" loading="lazy" width="256" height="256"></div><div class="author-info-name">Jayln3</div><div class="author-info-description">Jayln3 的个人博客，记录跨境增长、AI 与自动化、技术基础设施的实践与思考。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="https://github.com/jayln3" target="_blank" rel="noopener noreferrer" aria-label="GitHub · Jayln3"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons"><a class="social-icon contact-icon contact-icon-email" title="邮箱：contact@jayln3.com" aria-label="邮箱：contact@jayln3.com" href="mailto:contact@jayln3.com"><i class="fas fa-envelope" aria-hidden="true"></i></a><a class="social-icon contact-icon contact-icon-facebook" title="Facebook · Jayln3mall" aria-label="Facebook · Jayln3mall" href="https://www.facebook.com/Jayln3mall" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><span class="social-icon contact-icon contact-icon-x" title="X（待开通）" aria-label="X（待开通）" role="link" aria-disabled="true"><i class="fab fa-x-twitter" aria-hidden="true"></i></span><span class="social-icon contact-icon contact-icon-linkedin" title="LinkedIn（待开通）" aria-label="LinkedIn（待开通）" role="link" aria-disabled="true"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">记录跨境增长、AI 与技术实践。点击语言按钮可阅读当前文章的对应译文。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%81%9A%E5%AE%8C%E5%9F%9F%E5%90%8D%E5%92%8C-VPS%EF%BC%8C%E8%BF%98%E8%A6%81%E6%95%B4%E7%90%86%E6%B5%8F%E8%A7%88%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">为什么做完域名和 VPS，还要整理浏览器环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RoxyBrowser-%E7%9A%84%E4%B8%89%E4%B8%AA%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">RoxyBrowser 的三个值得关注的功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E8%AE%A9%E7%8E%AF%E5%A2%83%E5%92%8C%E7%94%A8%E9%80%94%E5%AF%B9%E5%BA%94%E8%B5%B7%E6%9D%A5"><span class="toc-number">2.1.</span> <span class="toc-text">独立配置文件，让环境和用途对应起来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A2%E9%98%9F%E5%92%8C%E6%9D%83%E9%99%90%EF%BC%8C%E8%AE%A9%E4%BA%A4%E6%8E%A5%E6%9B%B4%E6%B8%85%E6%A5%9A"><span class="toc-number">2.2.</span> <span class="toc-text">团队和权限，让交接更清楚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-%E4%B8%8E-MCP%EF%BC%8C%E8%AE%A9%E7%8E%AF%E5%A2%83%E8%83%BD%E8%A2%AB%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">API 与 MCP，让环境能被工具调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E6%97%A0%E5%A4%B4%E8%BF%90%E8%A1%8C%EF%BC%8C%E9%80%82%E5%90%88%E5%93%AA%E4%BA%9B%E8%87%AA%E5%8A%A8%E5%8C%96%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">支持无头运行，适合哪些自动化任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E6%89%8B%E5%8F%AF%E4%BB%A5%E4%BB%8E%E4%B8%A4%E4%B8%AA%E7%AA%97%E5%8F%A3%E5%BC%80%E5%A7%8B"><span class="toc-number">4.</span> <span class="toc-text">新手可以从两个窗口开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5-AI-%E6%97%B6%EF%BC%8C%E5%85%88%E5%81%9A%E4%B8%80%E4%B8%AA%E5%B0%8F%E8%80%8C%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.</span> <span class="toc-text">接入 AI 时，先做一个小而完整的任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%B8%8B%E5%80%BC%E5%BE%97%E8%AF%95"><span class="toc-number">6.</span> <span class="toc-text">什么情况下值得试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%AF%95%E7%94%A8%E5%BB%BA%E8%AE%AE"><span class="toc-number">7.</span> <span class="toc-text">我的推广入口与试用建议</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c7b105/" title="RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行"><img src="/assets/images/roxybrowser-ai-workflow-v1-1280.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行" loading="lazy" srcset="/assets/images/roxybrowser-ai-workflow-v1-640.webp 640w, /assets/images/roxybrowser-ai-workflow-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/posts/c7b105/" title="RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行">RoxyBrowser 指纹浏览器：AI 操控、MCP 接入与无头运行</a><time datetime="2026-10-05T07:40:00.000Z" title="发表于 2026-10-05 15:40:00">2026-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a6e102/" title="LisaHost 使用体验与 VPS 配置实录"><img src="/assets/images/lisahost-vps-experience-v1-1280.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LisaHost 使用体验与 VPS 配置实录" loading="lazy" srcset="/assets/images/lisahost-vps-experience-v1-640.webp 640w, /assets/images/lisahost-vps-experience-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="669"></a><div class="content"><a class="title" href="/posts/a6e102/" title="LisaHost 使用体验与 VPS 配置实录">LisaHost 使用体验与 VPS 配置实录</a><time datetime="2026-10-01T08:00:00.000Z" title="发表于 2026-10-01 16:00:00">2026-10-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d9a729/" title="我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑"><img src="/assets/images/dynadot-domain-email-v1-1280.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑" loading="lazy" srcset="/assets/images/dynadot-domain-email-v1-640.webp 640w, /assets/images/dynadot-domain-email-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="702"></a><div class="content"><a class="title" href="/posts/d9a729/" title="我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑">我为什么选 Dynadot：免费 1 个企业邮箱（1GB），以及建站踩过的坑</a><time datetime="2026-09-29T04:25:00.000Z" title="发表于 2026-09-29 12:25:00">2026-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e6656c2b/" title="2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流"><img src="/assets/images/agent-workflow-v1-1280.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流" loading="lazy" srcset="/assets/images/agent-workflow-v1-640.webp 640w, /assets/images/agent-workflow-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/posts/e6656c2b/" title="2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流">2026 AI Agent 演进指南：从单体 Copilot 到全自动化工作流</a><time datetime="2026-05-01T16:00:00.000Z" title="发表于 2026-05-02 00:00:00">2026-05-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/af40aec/" title="LinkedIn B2B营销实战：从开户到ABM精准获客全攻略"><img src="/assets/images/linkedin-abm-v1-1280.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LinkedIn B2B营销实战：从开户到ABM精准获客全攻略" loading="lazy" srcset="/assets/images/linkedin-abm-v1-640.webp 640w, /assets/images/linkedin-abm-v1-1280.webp 1280w" sizes="(max-width: 768px) 90vw, 480px" width="1280" height="720"></a><div class="content"><a class="title" href="/posts/af40aec/" title="LinkedIn B2B营销实战：从开户到ABM精准获客全攻略">LinkedIn B2B营销实战：从开户到ABM精准获客全攻略</a><time datetime="2026-04-18T16:00:00.000Z" title="发表于 2026-04-19 00:00:00">2026-04-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2025 - 2026 By Jayln3</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text"><a href="/about/">关于 Jayln3</a> · <a href="/atom.xml">RSS</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.3.3"></script><script src="/js/main.js?v=5.3.3"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"lang":"zh-CN"}
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-new-kappa.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-new-kappa.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('/assets/vendor/twikoo/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.3.3"></script></div></div></body></html>

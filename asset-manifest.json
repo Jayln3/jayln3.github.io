@@ -1,5 +1,5 @@
 {
-  "imageCommit": "658e4fc5469fe3ccb4f6b460556cd866ba7c1060",
+  "imageCommit": "6fca396f19b3c531530a65eee772bb8c7cb54c24",
   "assets": [
     {
       "file": "/assets/images/agent-memory-v1-640.webp",
@@ -200,6 +200,36 @@
       "file": "/assets/images/ake-hy2-test-v1-1280.webp",
       "bytes": 35396,
       "sha256": "d37205c6b5ca16a49f15c0d5294d4250533e578e16540d247deaf7cf330b5f24"
+    },
+    {
+      "file": "/assets/images/roxybrowser-ai-workflow-v1-640.webp",
+      "bytes": 21442,
+      "sha256": "64a740768abd056d3f21a4600621f9759fe7f40cae8fbb0d869f6d6b0ee39e01"
+    },
+    {
+      "file": "/assets/images/roxybrowser-ai-workflow-v1-1280.webp",
+      "bytes": 57624,
+      "sha256": "ab32851b0ab0fbb29e59b0afc3a9816b695027e8bf0f4c44ddb94f1fb0925993"
+    },
+    {
+      "file": "/assets/images/roxybrowser-mcp-setup-v1-640.webp",
+      "bytes": 16590,
+      "sha256": "5c17918361f56076ae6df826163526c7c22055a03e2205be1a46223ec06c96a8"
+    },
+    {
+      "file": "/assets/images/roxybrowser-mcp-setup-v1-1280.webp",
+      "bytes": 49080,
+      "sha256": "1c5cf718ac8680c29176157f25721b14c3b759e404129188463fcdb2f72a1d55"
+    },
+    {
+      "file": "/assets/images/roxybrowser-affiliate-banner-v1-640.webp",
+      "bytes": 20514,
+      "sha256": "d673756bc42cd65f8b7811e2b994053ccc2043a2550ca1c201ca51763fc72dda"
+    },
+    {
+      "file": "/assets/images/roxybrowser-affiliate-banner-v1-1280.webp",
+      "bytes": 56570,
+      "sha256": "455b74e3b2d7cf1b8b4e482a680ab418b6c6da50f70a1c36ed8466e6ee1f72d6"
     }
   ]
 }
